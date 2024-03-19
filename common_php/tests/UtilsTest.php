@@ -7,7 +7,7 @@ final class UtilsTest extends TestCase
 {
     public function testGetConfig(): void
     {
-        $config = Utils::getConfig(__DIR__ . "/../config/config_line.json");
+        $config = Utils::getConfig(__DIR__ . "/../configs/config_line.json");
 
         $this->assertArrayHasKey("tokens", $config);
     }
@@ -30,7 +30,7 @@ final class UtilsTest extends TestCase
 
     public static function getBaseUrlDataProvider(): array
     {
-        $config = Utils::getConfig(__DIR__ . "/../config/common.json");
+        $config = Utils::getConfig(__DIR__ . "/../configs/common.json");
         return [
             // message => [isLocal, appName, expected]
             "local" => [true, "app", "http://localhost:8080/"],

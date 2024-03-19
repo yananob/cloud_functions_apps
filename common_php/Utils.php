@@ -49,7 +49,7 @@ final class Utils
             return "http://localhost:8080" . self::getBasePath($isLocal, $appName);
         }
         else {
-            $config = self::getConfig(__DIR__ . "/config/common.json");
+            $config = self::getConfig(__DIR__ . "/configs/common.json");
             return $config["base_url"] . self::getBasePath($isLocal, $appName);
         }
     }

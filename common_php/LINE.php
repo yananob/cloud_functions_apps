@@ -7,7 +7,7 @@ final class LINE
     private array $tokens;
 
     public function __construct() {
-        $config = Utils::getConfig(__DIR__ . "/config/config_line.json");
+        $config = Utils::getConfig(__DIR__ . "/configs/config_line.json");
         $this->tokens = $config["tokens"];
     }
 

@@ -14,7 +14,7 @@ function main(CloudEventInterface $event): void
     $trigger = new Trigger();
     $line = new LINE();
 
-    $config = Utils::getConfig(dirname(__FILE__) . "/config/config.json");
+    $config = Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 

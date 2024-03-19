@@ -19,7 +19,7 @@ function main(CloudEventInterface $event): void
 
     $user = 'me';
 
-    $config = Utils::getConfig(__DIR__ . "/config/config.json");
+    $config = Utils::getConfig(__DIR__ . "/configs/config.json");
 
     foreach ($config["targets"] as $target) {
         $logger->log("Processing target: " . json_encode($target));

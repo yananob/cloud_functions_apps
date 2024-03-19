@@ -26,7 +26,7 @@ final class GmailWrapper
         $client = new Client();
         $client->setApplicationName('MyCFApp');
         $client->setScopes($SCOPES);
-        $client->setAuthConfig(dirname(__FILE__) . '/credentials/googleapi_clientsecret.json');
+        $client->setAuthConfig(dirname(__FILE__) . '/configs/googleapi_clientsecret.json');
         $client->setAccessType('offline');
         $client->setPrompt('select_account consent');
         // $client->setRedirectUri('https://www.google.com/');
@@ -36,7 +36,7 @@ final class GmailWrapper
         // created automatically when the authorization flow completes for the first
         // time.
         // https://sqripts.com/2022/08/25/20386/
-        $tokenPath = dirname(__FILE__) . '/credentials/googleapi_token.json';
+        $tokenPath = dirname(__FILE__) . '/configs/googleapi_token.json';
         if (file_exists($tokenPath)) {
             $logger->log("token file exists");
             $accessToken = json_decode(file_get_contents($tokenPath), true);

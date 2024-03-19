@@ -63,7 +63,7 @@ jobs:
     # - name: Create config.json
     #   run: |
     #     pwd
-    #     cp -v config/config.json.sample config/config.json
+    #     cp -v configs/config.json.sample configs/config.json
 
     - name: Test with phpunit
       run: bash tests/run_tests.sh

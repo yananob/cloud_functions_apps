@@ -19,7 +19,7 @@ deploy.sh
 config.json.sample
 config_*.json.sample
 
-**/credentials/*.json.sample
+**/configs/*.json.sample
 
 # for local development
 run_local.sh

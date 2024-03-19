@@ -12,7 +12,7 @@ final class AccountsTest extends TestCase
     protected function setUp(): void
     {
         $this->accounts = new Accounts($is_test=true);
-        $testAccounts = Utils::getConfig(__DIR__ . "/config/accounts.json")["test_users"];
+        $testAccounts = Utils::getConfig(__DIR__ . "/configs/accounts.json")["test_users"];
         $this->testAccounts = [];
         foreach ($testAccounts as $testAccount) {
             $this->testAccounts[$testAccount["userid"]] = $testAccount;

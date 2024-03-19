@@ -9,7 +9,7 @@ final class IijmioUsageTest extends TestCase
     // can't call with dummy developer id
     // public function testCallApi(): void
     // {
-    //     $config = Utils::getConfig(dirname(__FILE__) . "/../config/config.json");
+    //     $config = Utils::getConfig(dirname(__FILE__) . "/../configs/config.json");
     //     $iijmio = new IijmioUsage(
     //         $config["iijmio"], 5
     //     );

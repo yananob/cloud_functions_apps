@@ -63,9 +63,9 @@ jobs:
     - name: Create config_*.json
       run: |
         pwd
-        cp -v config/common.json.sample config/common.json
-        cp -v config/config_line.json.sample config/config_line.json
-        cp -v config/config_pocket.json.sample config/config_pocket.json
+        cp -v configs/common.json.sample configs/common.json
+        cp -v configs/config_line.json.sample configs/config_line.json
+        cp -v configs/config_pocket.json.sample configs/config_pocket.json
 
     - name: Test with phpunit
       run: bash tests/run_tests.sh

@@ -18,7 +18,7 @@ final class CrawlerTest extends TestCase
 
     protected function setUp(): void
     {
-        $config = Utils::getConfig(__DIR__ . "/config/accounts.json");
+        $config = Utils::getConfig(__DIR__ . "/configs/accounts.json");
         $this->test_user_id = $config["test_users"][0]["userid"];
         $this->test_password = $config["test_users"][0]["password"];
         $this->crawler = new Crawler(

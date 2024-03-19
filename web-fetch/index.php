@@ -13,7 +13,7 @@ function main(CloudEventInterface $event): void
     $logger = new Logger("web-fetch");
     $trigger = new Trigger();
 
-    $config = Utils::getConfig(dirname(__FILE__) . "/config/config.json");
+    $config = Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 

@@ -1,11 +1,8 @@
 config.json
-config_*.json
-**/config/*.json
+**/configs/*.json
 
 tmp/
 _deploy/
-
-**/credentials/*.json
 
 # for Python
 *.pyc

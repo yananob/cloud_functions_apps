@@ -13,7 +13,7 @@ final class CloudStorageAccessor
     public static function getClient()
     {
         $storage = new StorageClient([
-            'keyFile' => json_decode(file_get_contents(__DIR__ . '/credentials/gcp_serviceaccount.json'), true) // TODO: project_id
+            'keyFile' => json_decode(file_get_contents(__DIR__ . '/configs_serviceaccount.json'), true) // TODO: project_id
         ]);
 
         return $storage;
