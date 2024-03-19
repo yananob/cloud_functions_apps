@@ -1,0 +1,13 @@
+{
+    "firestore": [
+        {
+            "type": "collection",
+            "path_teset": "daily-quotes-test/quotes/quotes",
+            "path": "daily-quotes-test/quotes/quotes",
+            "columns": ["no", "author", "created_at", "source", "source_link", "message", "updated_at"]
+        }
+    ],
+    "storage": {
+        "bucket": "backup_firestore_XXXX"
+    }
+}

@@ -1,0 +1,117 @@
+
+<html><head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>■□■  大阪市立図書館  ■□■</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        <link rel="stylesheet" href='/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.css' type="text/css">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.js"></script>
+        <link rel="apple-touch-icon" href="/webopac/image/mobile/smlogo.jpg">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+        <meta name="format-detection" content="telephone=no" />
+    </head>
+
+<body>
+
+    <div data-role="page" data-theme="c" data-add-back-btn="false">
+    <div data-role="header" data-theme="c" data-position="fixed">
+            <div style="padding: 8px 0px;">
+                    <a href="mobtopmnu.do" data-role="button" data-icon="home" data-iconpos="notext">メニューへ</a>
+                    <strong>■□■  大阪市立図書館  ■□■</strong>
+                </div>
+            </div>
+    <div data-role="content" data-theme="c">
+            <div>
+                <div align="left">- 貸出延長確認 -</div>
+<br />
+
+<div align="left">
+以下の本の貸出延長を行います。<br/>内容を確認して【決定】をクリックしてください。<br/>
+</div>
+<br/>
+
+<table width="100%" class="function">
+
+<tr class="func_body">
+    <td colspan="2" valign="top">
+        <form name="asklenform" method="post" action="/webopac/moblenupd.do"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="7f5f95734ae9547612ad1f75906c7dd0"><input type="hidden" name="sortkey" value="lmtdt,id/ASC"><input type="hidden" name="startpos" value="1"><input type="hidden" name="lenidlist" value="551161914"><style type="text/css">
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+</style>
+<strong>資料名</strong><br/>
+&nbsp;&nbsp;
+ふしぎ駄菓子屋銭天堂 18∥廣嶋 玲子/作∥偕成社∥2022.9∥Fヒロシ◇Fヒ…<br/>
+<strong>返却期限日</strong><br/>
+    &nbsp;&nbsp;2024/02/04<br/>
+<strong>資料ＩＤ</strong><br/>
+    &nbsp;&nbsp;5511619149<br/>
+<strong>貸出館</strong><br/>
+    &nbsp;&nbsp;阿倍野<br/>
+<br/>
+<input type="submit" value="決定" />
+                <input type="submit" value="戻る" name="cmdbak" />
+
+            </form></td>
+</tr>
+</table>
+
+<hr/>
+
+<div data-role="controlgroup">
+    <a href="moblenlst.do" data-role="button" data-icon="back">貸出一覧へ</a>
+    <a href="mobasklst.do" data-role="button" data-icon="search">利用状況一覧へ</a>
+        <a href="mobtopmnu.do" data-role="button" data-icon="home">メニューへ</a>
+        <a data-role="button" data-icon="home" href="https://www.oml.city.osaka.lg.jp" >PCサイトへ</a>
+    </div>
+</div>
+
+            <div>
+                <br />
+                <a data-role="button" href="moboff.do?mode=logout&display=moblogout" >ログアウト</a>
+                </div>
+            </div><!-- content -->
+    <div data-role="footer" data-theme="c">
+            <div align="center">
+                Copyright (C) 2014- OSAKA Municipal Library. All Rights Reserved. (003)
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+<!---
+    var sndFlg=false;
+    function checkSubmit(element) {
+        if(sndFlg==false){
+            sndFlg=true;
+            element.disabled = false;
+            return true;
+        }else{
+            element.disabled = true;
+            return false;
+        }
+    }
+// --->
+</script>
+
+</html>

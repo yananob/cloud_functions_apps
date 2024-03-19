@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+form {
+    margin-block-end: 0em;
+}
+tr, td {
+    vertical-align: middle;
+}
+
+.nav > .nav-link {
+    --bs-nav-link-padding-x: 0.5em;
+}
+
+.navbar-brand {
+    --bs-navbar-brand-font-size: 1.1rem;
+}

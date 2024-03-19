@@ -1,0 +1,16 @@
+[
+  {
+    "name": "delete",
+    "action": {"type": "Delete"},
+    "condition": {
+      "olderThan": "1h"
+    }
+  },
+  {
+    "name": "keep-minimum-versions",
+    "action": {"type": "Keep"},
+    "mostRecentVersions": {
+      "keepCount": 1
+    }
+  }
+]

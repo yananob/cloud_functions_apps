@@ -1,0 +1,128 @@
+<html><head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>■□■  大阪市立図書館  ■□■</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        <link rel="stylesheet" href='/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.css' type="text/css">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.js"></script>
+        <link rel="apple-touch-icon" href="/webopac/image/mobile/smlogo.jpg">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+        <meta name="format-detection" content="telephone=no" />
+    </head>
+
+<body>
+
+    <div data-role="page" data-theme="c" data-add-back-btn="false">
+    <div data-role="header" data-theme="c" data-position="fixed">
+            <div style="padding: 8px 0px;">
+                    <a href="mobtopmnu.do" data-role="button" data-icon="home" data-iconpos="notext">メニューへ</a>
+                    <strong>■□■  大阪市立図書館  ■□■</strong>
+                </div>
+            </div>
+    <div data-role="content" data-theme="c">
+            <div>
+                <form name="svcrsvform" method="post" action="/webopac/mobrsvchk.do"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="521e54fd0f9c868a6e740021eecbd728"><input type="hidden" name="reqType" value="_NEW"><font size="3">
+    - 予約確認 -
+</font>
+
+<br/><br/>
+
+予約された本をお探しするのは申込の翌日以降となります。<br/>
+    当日や翌日すぐの利用をご希望の場合は、電話またはカウンターにてお問い合わせください。<br/>
+<br/>
+
+<table align="center" width="100%">
+    <caption></caption>
+    <tr valign="top">
+        <td colspan="7">
+            <B>タイトル</B>
+        </td>
+    </tr>
+    <tr>
+        <td >
+            &nbsp;&nbsp;</td>
+        <td colspan="6">
+            ミオととなりのマーメイド 11 まいごの恋とシルバーをさがして。(ミオととなりのマーメイド 11)∥…</td>
+    </tr>
+
+    <tr>
+        <td colspan="7" >
+            <B>予約受取館</B>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;</td>
+        <td colspan="6">
+            阿倍野
+</td>
+    </tr>
+
+    <tr>
+                <td colspan="7" >
+                    <B>連絡方法</B>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;</td>
+                <td colspan="6">
+                    メール
+</td>
+            </tr>
+        </table>
+
+<br/>
+
+<input type="submit" value="決定" onclick="return checkSubmit(this);" />
+<input type="submit" value="戻る" name="cmdbak" />
+
+</form><hr>
+
+<div data-role="controlgroup">
+    <a href="mobcatdbl.do?cmd=research" data-role="button" data-icon="back">書誌詳細へ</a>
+    <a href="mobmopsre.do" data-role="button" data-icon="search" >蔵書検索へ</a>
+    <a href="mobtopmnu.do" data-role="button" data-icon="home">メニューへ</a>
+    <a href="https://www.oml.city.osaka.lg.jp" data-role="button" data-icon="home"  >PCサイトへ</a>
+</div>
+</div>
+
+            <div>
+                <br />
+                <a data-role="button" href="moboff.do?mode=logout&display=moblogout" >ログアウト</a>
+                </div>
+            </div><!-- content -->
+    <div data-role="footer" data-theme="c">
+            <div align="center">
+                Copyright (C) 2014- OSAKA Municipal Library. All Rights Reserved. (002)
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+<!---
+    var sndFlg=false;
+    function checkSubmit(element) {
+        if(sndFlg==false){
+            sndFlg=true;
+            element.disabled = false;
+            return true;
+        }else{
+            element.disabled = true;
+            return false;
+        }
+    }
+// --->
+</script>
+
+</html>

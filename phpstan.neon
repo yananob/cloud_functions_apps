@@ -1,0 +1,11 @@
+parameters:
+    level: 5
+    paths:
+        - .
+    excludePaths:
+        - cache
+        - src/common/
+        - vendor
+        - templates_c
+
+    treatPhpDocTypesAsCertain: false

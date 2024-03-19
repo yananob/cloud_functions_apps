@@ -1,0 +1,18 @@
+config.json
+config_*.json
+**/config/*.json
+
+tmp/
+_deploy/
+
+**/credentials/*.json
+
+# for Python
+*.pyc
+venv*/
+_backup/
+
+# for PHP
+**/cache/
+**/templates_c/
+**/vendor/

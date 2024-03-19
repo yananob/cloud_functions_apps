@@ -1,0 +1,125 @@
+<html><head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>■□■  大阪市立図書館  ■□■</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        <link rel="stylesheet" href='/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.css' type="text/css">
+        <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.1.1.min.js"></script>
+        <link rel="apple-touch-icon" href="/webopac/image/mobile/smlogo.jpg">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+        <meta name="format-detection" content="telephone=no" />
+    </head>
+
+<body>
+
+    <div data-role="page" data-theme="c" data-add-back-btn="false">
+    <div data-role="header" data-theme="c" data-position="fixed">
+            <div style="padding: 8px 0px;">
+                    <a href="mobtopmnu.do" data-role="button" data-icon="home" data-iconpos="notext">メニューへ</a>
+                    <strong>■□■  大阪市立図書館  ■□■</strong>
+                </div>
+            </div>
+    <div data-role="content" data-theme="c">
+            <div>
+
+- 予約の取消確認 -
+<br/>
+<br/>
+
+<table width="100%" class="function">
+
+<tr class="func_body">
+    <td colspan="2" valign="top">
+        <form name="askrsvform" method="post" action="/webopac/mobrsvdel.do"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="268995cb27ec7fcc1b999968b058a5e0"><input type="hidden" name="startpos" value="1"><input type="hidden" name="listpos" value=""><input type="hidden" name="hitcnt" value="1"><input type="hidden" name="listcnt" value="3"><input type="hidden" name="sortkey" value="rsvst,canrs,reqdt/DESC"><input type="hidden" name="svcidlist" value="00117543">以下の予約を削除します。よろしければ【決定】をクリックしてください。<br>
+            内容を確認して【決定】をクリックしてください。<br>
+
+            <br>
+
+            <strong>種別</strong><br/>
+<br/>
+
+<strong>資料名</strong><br/>
+&nbsp;&nbsp;
+虎の血 -阪神タイガース、謎の老人監督-∥村瀬 秀信/著∥集英社∥2024.2∥…<br/>
+
+<strong>予約受取館</strong><br/>
+&nbsp;&nbsp;阿倍野<br/>
+
+<strong>連絡方法</strong><br/>
+
+&nbsp;&nbsp;メール<br/>
+
+<strong>予約順</strong><br/>
+&nbsp;&nbsp;13<br/>
+
+<strong>受付番号</strong><br/>
+&nbsp;&nbsp;1068240301010874<br/>
+
+<strong>書誌ID</strong><br/>
+&nbsp;&nbsp;0015481268<br/>
+
+<strong>予約受付日</strong><br/>
+&nbsp;&nbsp;2024/03/01<br/>
+
+<strong>状態</strong><br/>
+&nbsp;&nbsp;待ち
+<br/>
+<strong>取置期限日</strong><br/>
+&nbsp;&nbsp;<br/>
+
+<br>
+                        <input type="submit" value="決定" />
+                        <input type="submit" value="戻る" name="cmdbak" />
+                    </form></td>
+</tr>
+</table>
+
+<hr>
+
+<div data-role="controlgroup">
+        <a href="mobrsvlst.do" data-role="button" data-icon="back">予約一覧へ</a>
+        <a href="mobasklst.do" data-role="button" data-icon="back">利用状況一覧へ</a>
+        <a href="mobtopmnu.do" data-role="button" data-icon="home">メニューへ</a>
+        <a href="https://www.oml.city.osaka.lg.jp" data-role="button" data-icon="home" >PCサイトへ</a>
+    </div>
+</div>
+
+            <div>
+                <br />
+                <a data-role="button" href="moboff.do?mode=logout&display=moblogout" >ログアウト</a>
+                </div>
+            </div><!-- content -->
+    <div data-role="footer" data-theme="c">
+            <div align="center">
+                Copyright (C) 2014- OSAKA Municipal Library. All Rights Reserved. (002)
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+<!---
+    var sndFlg=false;
+    function checkSubmit(element) {
+        if(sndFlg==false){
+            sndFlg=true;
+            element.disabled = false;
+            return true;
+        }else{
+            element.disabled = true;
+            return false;
+        }
+    }
+// --->
+</script>
+
+</html>

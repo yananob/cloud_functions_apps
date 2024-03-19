@@ -1,0 +1,21 @@
+{
+    "settings": [
+        {
+            "timing": {
+                "day": 1,
+                "hour": 25
+            },
+            "message": "25日、お給料日です",
+            "method": "line",
+            "target": "user1"
+        },
+        {
+            "timing": {
+                "hour": 7
+            },
+            "message": "7時、おはようございます",
+            "method": "line",
+            "target": "user2"
+        }
+    ]
+}

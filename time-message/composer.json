@@ -1,0 +1,26 @@
+{
+    "name": "yananob/time-message",
+    "description": "yananob/time-message",
+    "license": "proprietary",
+
+    "require": {
+        "php": ">= 7.4",
+        "google/cloud-functions-framework": "^1.3",
+        "google/apiclient": "^2.0"
+    },
+    "scripts": {
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "FUNCTION_TARGET=main php -S localhost:${PORT:-8080} vendor/google/cloud-functions-framework/router.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.3",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyApp\\": "./src/"
+        }
+    }
+}

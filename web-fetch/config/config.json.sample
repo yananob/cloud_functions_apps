@@ -1,0 +1,11 @@
+{
+    "settings": [
+        {
+            "timing": {
+                "weekdays": [1],
+                "hour": 25
+            },
+            "url": "https://www.google.com"
+        }
+    ]
+}

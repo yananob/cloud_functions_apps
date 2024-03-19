@@ -1,0 +1,14 @@
+{
+    "test_users": [
+        {
+            "owner": "user1",
+            "userid": "123456789",
+            "password": "passwordA"
+        },
+        {
+            "owner": "user2",
+            "userid": "234567890",
+            "password": "passwordB"
+        }
+    ]
+}
