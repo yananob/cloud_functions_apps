@@ -13,7 +13,7 @@ final class FirestoreAccessor
     public static function getClient()
     {
         $firestore = new FirestoreClient([
-            "keyFilePath" => __DIR__ . '/configsebase.json'
+            "keyFilePath" => __DIR__ . '/configs/firebase.json'
         ]);
 
         return $firestore;
