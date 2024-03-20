@@ -11,12 +11,9 @@ FunctionsFramework::cloudEvent('main', 'main');
 function main(CloudEventInterface $event): void
 {
     $logger = new Logger();
-    # disabled to run locally
-    # (when launched from local, $event parameter becomes just a string and cause an error)
-    // $cloudEventData = $event->getData();
-    // $logger->log("cloudEventData: {$cloudEventData}");
-    // $pubSubData = base64_decode($cloudEventData['message']['data']);
-    // $logger->log("message: {$pubSubData}");
+
+    $isLocal = Utils::isLocalEvent($event);
+    $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $config = Utils::getConfig(__DIR__ . "/configs/config.json");
     $iijmio = new IijmioUsage(
