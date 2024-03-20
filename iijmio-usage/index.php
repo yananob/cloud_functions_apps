@@ -18,6 +18,9 @@ function main(CloudEventInterface $event): void
     // $pubSubData = base64_decode($cloudEventData['message']['data']);
     // $logger->log("message: {$pubSubData}");
 
+    $isLocal = Utils::isLocalEvent($event);
+    $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
+
     $config = Utils::getConfig(__DIR__ . "/configs/config.json");
     $iijmio = new IijmioUsage(
         $config["iijmio"], $config["alert"]["send_usage_each_n_days"]
