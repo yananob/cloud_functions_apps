@@ -6,7 +6,6 @@ final class CacheStore
 {
     public function __construct()
     {
-
     }
 
     private static function __rootPath(): string
