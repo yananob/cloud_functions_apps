@@ -6,7 +6,6 @@ final class CacheStore
 {
     public function __construct()
     {
-
     }
 
     private static function __rootPath(): string
@@ -14,15 +13,14 @@ final class CacheStore
         return "myapp";
     }
 
-    // return false if root path is not set
-    private static function __checkRootPath(): bool
+    private static function __hasRootPathData(): bool
     {
-        return !isset($_SESSION[self::__rootPath()]);
+        return isset($_SESSION[self::__rootPath()]);
     }
 
     public static function prune(): void
     {
-        if (self::__checkRootPath()) {
+        if (!self::__hasRootPathData()) {
             return;
         }
         foreach (array_keys($_SESSION[self::__rootPath()]) as $key) {
@@ -32,7 +30,7 @@ final class CacheStore
 
     public static function clear(string $key): void
     {
-        if (self::__checkRootPath()) {
+        if (!self::__hasRootPathData()) {
             return;
         }
         unset($_SESSION[self::__rootPath()][$key]);
