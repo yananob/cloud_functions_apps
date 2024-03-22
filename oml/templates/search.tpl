@@ -15,7 +15,7 @@
 {block name=content}
     <form onsubmit="return false;">
         <div class="row mb-1">
-            <div class="col-8">
+            <div class="col-9">
                 <input type="search" name="keyword" class="form-control js_enter_search" placeholder="キーワード (3文字以上)">
             </div>
             <button type="button" class="btn btn-primary col-3" id="search_button" data-progress=".js_search_button_progress">
@@ -24,6 +24,7 @@
             <button type="button" class="btn btn-primary col-3 js_search_button_progress" disabled style="display: none">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             </button>
+            {*
             <div class="col-1 align-self-center">
                 <label class="form-check-label js_toggle_search_detail js_search_detail" for="flexCheckDefault">
                     <i class="bi bi-arrows-expand"></i>
@@ -32,8 +33,9 @@
                     <i class="bi bi-arrows-collapse"></i>
                 </label>
             </div>
+            *}
         </div>
-        <div class="row mb-3 js_search_detail" style="display: none">
+        <div class="row mb-3 js_search_detail">
             <div class="col-6">
                 <input type="search" name="title" class="form-control js_enter_search" placeholder="タイトル">
             </div>
