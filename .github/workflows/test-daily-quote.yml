@@ -60,7 +60,7 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Put commonphp configs
+    - name: Put common-php configs
       uses: ./.github/actions/put_commonphp_configs
       with:
         COMMON_FIREBASE_BASE64: ${{ secrets.COMMON_FIREBASE_BASE64 }}

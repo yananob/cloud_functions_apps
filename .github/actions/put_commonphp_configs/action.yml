@@ -1,5 +1,6 @@
 runs:
   using: "Composite"
+
   steps:
     - name: Create src/common/tests/configs/firebase.json
       env:
