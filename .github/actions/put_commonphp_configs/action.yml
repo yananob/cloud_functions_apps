@@ -5,5 +5,5 @@ runs:
       env:
         DECODED_BASE64: ${{ inputs.COMMON_FIREBASE_BASE64 }}
       run: |
-        echo $DECODED_BASE64 | base64 --decode > src/common/configs/firebase.json
+        echo $DECODED_BASE64 | base64 --decode > ${{ target }}/src/common/configs/firebase.json
       shell: bash
