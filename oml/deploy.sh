@@ -50,9 +50,7 @@ gcloud functions deploy $SCRIPT_NAME \
     --entry-point=main \
     --trigger-http \
     --allow-unauthenticated \
-    --max-instances 3
-
-
+    --max-instances 5
     # --max-instances 6
 
 echo "-------- deploying topic --------"
