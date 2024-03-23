@@ -60,6 +60,9 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Put commonphp configs
+      uses: ./.github/actions/put_commonphp_configs
+
     # - name: Create config.json
     #   run: |
     #     pwd
