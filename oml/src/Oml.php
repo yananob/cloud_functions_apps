@@ -53,6 +53,8 @@ final class Oml
 
     public function getReservedBooks(string $userId): array
     {
+        $this->__checkReservedBooksExpired();
+
         $cache = CacheStore::get(CacheItems::ReservedBooks->value);
         if (isset($cache[$userId])) {
             return $cache[$userId];
@@ -81,6 +83,8 @@ final class Oml
 
     public function getLendingBooks(string $userId): array
     {
+        $this->__checkLendingBooksExpired();
+
         $cache = CacheStore::get(CacheItems::LendingBooks->value);
         if (isset($cache[$userId])) {
             return $cache[$userId];
@@ -97,15 +101,23 @@ final class Oml
         return $result;
     }
 
-    private function __setReservedBooksExpired(): void
+    private function __checkReservedBooksExpired(): void
     {
-        CacheStore::clear(CacheItems::ReservedBooks->value);
-        CacheStore::clear(CacheItems::ReservedCount->value);
+        $updatedDatesFromDB = $this->getUpdatedDates(false);
+        $updatedDatesFromCache = $this->getUpdatedDates(true);
+        if ($updatedDatesFromDB["reserved_books"] !== $updatedDatesFromCache["reserved_books"]) {
+            CacheStore::clear(CacheItems::ReservedBooks->value);
+            CacheStore::clear(CacheItems::ReservedCount->value);
+        }
     }
 
-    private function __setLendingBooksExpired(): void
+    private function __checkLendingBooksExpired(): void
     {
-        CacheStore::clear(CacheItems::LendingBooks->value);
+        $updatedDatesFromDB = $this->getUpdatedDates(false);
+        $updatedDatesFromCache = $this->getUpdatedDates(true);
+        if ($updatedDatesFromDB["lending_books"] !== $updatedDatesFromCache["lending_books"]) {
+            CacheStore::clear(CacheItems::LendingBooks->value);
+        }
     }
 
     private function __setUpdatedTimestampsExpired(): void
@@ -129,8 +141,6 @@ final class Oml
             $book = $book->toArray();
             $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)->collection($userId)->newDocument()->set($book);
         }
-
-        $this->__setReservedBooksExpired();  // TODO: ユーザー単位の更新なのに、全体クリアしてる
     }
 
     public function updateLendingBooks(string $userId): void
@@ -149,8 +159,6 @@ final class Oml
             $book = $book->toArray();
             $this->rootCollection->document(self::LENDING_BOOKS_COLLECTION_NAME)->collection($userId)->newDocument()->set($book);
         }
-
-        $this->__setLendingBooksExpired();  // TODO: ユーザー単位の更新なのに、全体クリアしてる
     }
 
     private function __removeDocumentsInCollection(CollectionReference $col): void
@@ -172,15 +180,15 @@ final class Oml
             $book->toArray(),
             ["merge" => true],
         );
-
-        $this->__setLendingBooksExpired();
     }
 
-    public function getUpdatedDates(): array
+    public function getUpdatedDates(bool $fromCache=true): array
     {
-        $cache = CacheStore::get(CacheItems::UpdatedTimestamps->value, null);
-        if (!empty($cache)) {
-            return $cache;
+        if ($fromCache) {
+            $cache = CacheStore::get(CacheItems::UpdatedTimestamps->value, null);
+            if (!empty($cache)) {
+                return $cache;
+            }
         }
 
         $result = [
