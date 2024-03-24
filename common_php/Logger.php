@@ -13,9 +13,12 @@ final class Logger
         $this->title = $title;
     }
 
-    public function log(string|array $message): void
+    public function log(string|array|object|null $message): void
     {
-        if (gettype($message) === "array") {
+        if (is_null($message)) {
+            $message = "";
+        }
+        else if (in_array(gettype($message), ["array", "object"])) {
             $message = json_encode($message);
         }
         $log_message = $message;

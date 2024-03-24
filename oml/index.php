@@ -27,6 +27,7 @@ function main(ServerRequestInterface $request): string
     $logger = new Logger(APP_NAME);
     $params = $request->getQueryParams();
     $params = array_merge($params, $request->getParsedBody());
+    $logger->log(str_repeat("-", 120));
     $logger->log("Params: " . json_encode($params));
 
     session_start([
@@ -111,14 +112,12 @@ function main(ServerRequestInterface $request): string
             return $smarty->fetch('lendingList.tpl');
 
         case Command::UpdateAllReserved->value:    // TODO: ajax化
-            // __update_all_reserved($isLocal, $oml, $logger, $isParallel=!$isLocal);
-            __update_all_reserved($isLocal, $oml, $logger, $isParallel=false);
+            __update_all_reserved($isLocal, $oml, $logger, $isParallel=!$isLocal);
             $messagesQueue->pushMessage("予約リストを更新しました。");
             __redirect_to_reserved_list($isLocal);
 
         case Command::UpdateAllLending->value:    // TODO: ajax化
-            // __update_all_lending($isLocal, $oml, $logger, $isParallel=!$isLocal);
-            __update_all_lending($isLocal, $oml, $logger, $isParallel=false);
+            __update_all_lending($isLocal, $oml, $logger, $isParallel=!$isLocal);
             $messagesQueue->pushMessage("貸出リストを更新しました。");
             __redirect_to_lending_list($isLocal);
 

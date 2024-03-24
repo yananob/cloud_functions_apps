@@ -138,6 +138,7 @@ final class OmlTest extends TestCase
             $account=self::SAVE_ACCOUNT,
             $book
         );
+        CacheStore::prune();
         $loaded = $this->oml->getLendingBooks($account=self::SAVE_ACCOUNT)[$arrayIndex];
 
         $expected = $this->__arrayToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT))[$arrayIndex];
@@ -161,7 +162,7 @@ final class OmlTest extends TestCase
                 "reserved_books" => $reservedBookDate,
                 "lending_books" => $lendingBookDate,
             ],
-            $this->oml->getUpdatedDates()
+            $this->oml->getUpdatedDates(false)
         );
     }
 
