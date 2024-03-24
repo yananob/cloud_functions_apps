@@ -162,7 +162,7 @@ final class OmlTest extends TestCase
                 "reserved_books" => $reservedBookDate,
                 "lending_books" => $lendingBookDate,
             ],
-            $this->oml->getUpdatedDates()
+            $this->oml->getUpdatedDates(false)
         );
     }
 
