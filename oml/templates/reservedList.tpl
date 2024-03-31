@@ -42,6 +42,13 @@
                         <td>{$book->keepLimitDate|substr:5:5}</td>
                         <td style="text-align: center">{substr($book->owner, -2)}</td>
                         <td style="text-align: center" id="message_{$book->reservedBookId}">
+                            <a class="btn btn-secondary btn-sm js_reserve_again" data-userid="{$book->owner}" data-bookid="{$book->reservedBookId}" data-progress=".js_reserve_again_progress_{$book->reservedBookId}" data-message="#message_{$book->reservedBookId}" role="button">
+                                再予約
+                            </a>
+                            <button class="btn btn-secondary btn-sm js_reserve_again_progress_{$book->reservedBookId}" style="display: none" type="button" disabled data-bookid="{$book->reservedBookId}">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            </button>
+
                             <a class="btn btn-secondary btn-sm js_cancel_reservation" data-userid="{$book->owner}" data-bookid="{$book->reservedBookId}" data-progress=".js_cancel_reservation_progress_{$book->reservedBookId}" data-message="#message_{$book->reservedBookId}" role="button">
                                 取消
                             </a>

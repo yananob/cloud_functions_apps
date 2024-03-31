@@ -159,8 +159,7 @@ function main(ServerRequestInterface $request): string
         case Command::JsonReserve->value:
             try {
                 $userId = $oml->reserve($params["book_id"]);
-                $message = "<div class='alert alert-success' role='alert'><i class='bi bi-check-circle-fill'></i> OK: " . substr($userId, -2) . "</div>";
-                return json_encode(["success" => true, "message" => $message]);
+                return json_encode(["success" => true, "message" => __get_success_tag(substr($userId, -2))]);
             }
             catch (Exception $e) {
                 return json_encode(["success" => false, "message" => $e->getMessage()]);
@@ -179,11 +178,19 @@ function main(ServerRequestInterface $request): string
                 return json_encode(["success" => false, "message" => $e->getMessage()]);
             }
 
+        case Command::JsonReserveAgain->value:
+            try {
+                $userId = $oml->reserveAgain($params["user_id"], $params["book_id"]);
+                return json_encode(["success" => true, "message" => __get_success_tag(substr($userId, -2))]);
+            }
+            catch (Exception $e) {
+                return json_encode(["success" => false, "message" => $e->getMessage()]);
+            }
+
         case Command::JsonCancelReservation->value:
             try {
                 $oml->cancelReservation($params["user_id"], $params["book_id"]);
-                $message = "<div class='alert alert-success' role='alert'><i class='bi bi-check-circle-fill'></i> OK</div>";
-                return json_encode(["success" => true, "message" => $message]);
+                return json_encode(["success" => true, "message" => __get_success_tag()]);
             }
             catch (Exception $e) {
                 return json_encode(["success" => false, "message" => $e->getMessage()]);
@@ -285,6 +292,11 @@ function __json_response(int $response_code): string
     return json_encode([
         "response_code" => $response_code,
     ]);
+}
+
+function __get_success_tag(string $info=""): string
+{
+    return "<div class='alert alert-success' role='alert'><i class='bi bi-check-circle-fill'></i> OK {$info}</div>";
 }
 
 FunctionsFramework::cloudEvent('update', 'update');

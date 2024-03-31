@@ -171,6 +171,7 @@ final class Oml
 
     public function updateLendingBookInfo(string $userId, LendingBook $book): void
     {
+        $this->logger->log("updating lendingBookInfo of {$book->lendingBookId}");
         $query = $this->rootCollection->document(self::LENDING_BOOKS_COLLECTION_NAME)
                     ->collection($userId)->where("lending_book_id", "==",  $book->lendingBookId);
         $documents = iterator_to_array($query->documents());
@@ -206,6 +207,7 @@ final class Oml
 
     public function updateReservedBooksUpdatedDate(\DateTime $datetime = new \DateTime()): void
     {
+        $this->logger->log("updating reservedBooksUpdatedDate");
         $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)->set(
             ["updated_timestamp" => $datetime->format(self::DATETIME_FORMAT)],
             ["merge" => true],
@@ -215,6 +217,7 @@ final class Oml
 
     public function updateLendingBooksUpdatedDate(\DateTime $datetime = new \DateTime()): void
     {
+        $this->logger->log("updating lendingBooksUpdatedDate");
         $this->rootCollection->document(self::LENDING_BOOKS_COLLECTION_NAME)->set(
             ["updated_timestamp" => $datetime->format(self::DATETIME_FORMAT)],
             ["merge" => true],
@@ -225,6 +228,7 @@ final class Oml
     public function search(string $keyword="", string $title="", string $author="", int $page=1): array
     {
         $crawler = new Crawler("", "");     // TODO: 検索時（ログインしないとき）のuseridの渡し方改善
+        $this->logger->log("searching keyword={$keyword}, title={$title}, author={$author} for page {$page}");
         return $crawler->search($keyword, $title, $author, $page);
     }
 
@@ -240,6 +244,7 @@ final class Oml
         if (empty($userId)) {
             throw new \Exception("予約できるユーザーがなく、予約できませんでした");
         }
+        $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $crawler->reserve($bookId);
         $this->__addReservedCount($userId);
@@ -267,7 +272,6 @@ final class Oml
     {
         foreach ($this->getUserIds() as $userId) {
             if ($this->getUserReservableCount($userId) > 0) {
-                $this->logger->log("using account {$userId} to reserve");
                 return $userId;
             }
         }
@@ -288,13 +292,22 @@ final class Oml
 
     public function extend(string $userId, string $bookId): void
     {
+        $this->logger->log("extending book {$bookId} of user {$userId}");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $lendingBook = $crawler->extendLendingBook($bookId);
         $this->updateLendingBookInfo($userId, $lendingBook);
     }
 
+    public function reserveAgain(string $userId, string $bookId): string
+    {
+        $this->logger->log("reserving again {$bookId} of user {$userId}");
+        $this->cancelReservation($userId, $bookId);
+        return $this->reserve($bookId);
+    }
+
     public function cancelReservation(string $userId, string $bookId): void
     {
+        $this->logger->log("canceling reservation of book {$bookId} of user {$userId}");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $crawler->cancelReservation($bookId, $this->getUserReservedBook($userId, $bookId)->changingId, count($this->getReservedBooks($userId)));
     }
