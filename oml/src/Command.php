@@ -18,6 +18,7 @@ enum Command: string
     case JsonSearch = "json-search";
     case JsonReserve = "json-reserve";
     case JsonBookReserveInfo = "json-bookreserveinfo";
+    case JsonReserveAgain = "json-reserveagain";
     case JsonCancelReservation = "json-cancelreservation";
     // case JsonBookContent = "json-bookcontent";
 }

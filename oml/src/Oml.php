@@ -293,6 +293,12 @@ final class Oml
         $this->updateLendingBookInfo($userId, $lendingBook);
     }
 
+    public function reserveAgain(string $userId, string $bookId): string
+    {
+        $this->cancelReservation($userId, $bookId);
+        return $this->reserve($bookId);
+    }
+
     public function cancelReservation(string $userId, string $bookId): void
     {
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
