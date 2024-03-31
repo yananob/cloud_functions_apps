@@ -19,7 +19,6 @@ $(document).ready(function () {
             showAjaxError("エラー", $($(this).data().message));
             stopProgress(this);
         });
-
     });
 
     $(".js_cancel_reservation").click(function() {
@@ -42,6 +41,5 @@ $(document).ready(function () {
             showAjaxError("エラー", $($(this).data().message));
             stopProgress(this);
         });
-
     });
 });

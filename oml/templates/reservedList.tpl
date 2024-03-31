@@ -39,7 +39,7 @@
                             </span>
                         </td>
                         <td style="text-align: right">{$book->reservedOrder}</td>
-                        <td>{$book->keepLimitDate|substr:5:5}</td>
+                        <td>{substr($book->keepLimitDate, 5, 5)}</td>
                         <td style="text-align: center">{substr($book->owner, -2)}</td>
                         <td style="text-align: center" id="message_{$book->reservedBookId}">
                             <a class="btn btn-secondary btn-sm js_reserve_again" data-userid="{$book->owner}" data-bookid="{$book->reservedBookId}" data-progress=".js_reserve_again_progress_{$book->reservedBookId}" data-message="#message_{$book->reservedBookId}" role="button">

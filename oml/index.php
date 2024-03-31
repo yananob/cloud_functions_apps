@@ -129,11 +129,6 @@ function main(ServerRequestInterface $request): string
             $oml->updateLendingBooks($params["account"]);
             return __json_response(200);
 
-        case Command::Extend->value:    // TODO: ajax化
-            $oml->extend($params["user_id"], $params["book_id"]);
-            $messagesQueue->pushMessage("貸出期限を延長しました。");
-            __redirect_to_lending_list($isLocal);
-
         case Command::Search->value:
             $smarty->assign("totalReservableCount", $oml->getTotalReservableCount());
             return $smarty->fetch('search.tpl');
@@ -190,6 +185,15 @@ function main(ServerRequestInterface $request): string
         case Command::JsonCancelReservation->value:
             try {
                 $oml->cancelReservation($params["user_id"], $params["book_id"]);
+                return json_encode(["success" => true, "message" => __get_success_tag()]);
+            }
+            catch (Exception $e) {
+                return json_encode(["success" => false, "message" => $e->getMessage()]);
+            }
+
+        case Command::JsonExtend->value:
+            try {
+                $oml->extend($params["user_id"], $params["book_id"]);
                 return json_encode(["success" => true, "message" => __get_success_tag()]);
             }
             catch (Exception $e) {
