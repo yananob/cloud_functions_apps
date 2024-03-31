@@ -3,18 +3,9 @@
 {block name=title}貸出一覧{/block}
 
 {block name=head}
-    {literal}
-        <script type="text/javascript">
-            $(document).ready(function () {
-                // initProgress($("#btn_extend"));
-
-                $(".js-btn_extend").click(function () {
-                    showProgress($(this));
-                    run("extend", {user_id: $(this).data().userid, book_id: $(this).data().bookid});
-                });
-            });
-        </script>
-    {/literal}
+    <script type="text/javascript">
+        {include file="js/lendingList.js"}
+    </script>
 {/block}
 
 {block name=header_info}
@@ -45,16 +36,16 @@
                         <td style="text-align: center">{$book->state->value}</td>
                         <td>
                             <span class="{if $book->returnLimitDate >= today}bg-warning{/if}">
-                                {$book->returnLimitDate|substr:5:5}
+                                {substr($book->returnLimitDate, 5, 5)}
                             </span>
                         </td>
                         <td style="text-align: center">{substr($book->owner, -2)}</td>
-                        <td style="text-align: center">
+                        <td style="text-align: center" id="message_{$book->lendingBookId}">
                             {if $book->isExtendable()}
-                                <a class="btn btn-secondary btn-sm js-btn_extend" data-userid="{$book->owner}" data-bookid="{$book->lendingBookId}" data-progress=".js-btn_extend_progress_{$book->lendingBookId}" role="button">
+                                <a class="btn btn-secondary btn-sm js_extend" data-userid="{$book->owner}" data-bookid="{$book->lendingBookId}" data-progress=".js_extend_progress_{$book->lendingBookId}" data-message="#message_{$book->lendingBookId}" role="button">
                                     延長
                                 </a>
-                                <button class="btn btn-secondary btn-sm js-btn_extend_progress_{$book->lendingBookId}" style="display: none" type="button" disabled data-bookid="{$book->lendingBookId}">
+                                <button class="btn btn-secondary btn-sm js_extend_progress_{$book->lendingBookId}" style="display: none" type="button" disabled data-bookid="{$book->lendingBookId}">
                                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                 </button>
                             {/if}

@@ -12,7 +12,6 @@ enum Command: string
     case UpdateAllLending = "update_all_lending";
     case UpdateAccountReserved = "update_account_reserved";
     case UpdateAccountLending = "update_account_lending";
-    case Extend = "extend";
 
     case Search = "search";
     case JsonSearch = "json-search";
@@ -20,5 +19,6 @@ enum Command: string
     case JsonBookReserveInfo = "json-bookreserveinfo";
     case JsonReserveAgain = "json-reserveagain";
     case JsonCancelReservation = "json-cancelreservation";
+    case JsonExtend = "json-extend";
     // case JsonBookContent = "json-bookcontent";
 }
