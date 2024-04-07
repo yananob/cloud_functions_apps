@@ -294,9 +294,16 @@ class Crawler
             throw new \Exception("検索結果が多すぎます。絞り込みしてください。");
         }
 
-        $searchedBooks = $this->__parseSearchResultPage($body);
-
-        return $searchedBooks;
+        if (strpos($body, "- 検索結果一覧 -") !== false) {
+            return $this->__parseSearchResultPage($body);
+        }
+        if (strpos($body, "- 書誌詳細 -") !== false) {
+            $bookInfo = $this->__parseBookDetailPage($body);
+            return [
+                new SearchedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
+            ];
+        }
+        return [];
     }
 
     private function __parseSearchResultPage(string $contents): array
@@ -427,10 +434,8 @@ class Crawler
 
     private function __parseBookDetailPage(string $contents): array
     {
-        $result = [];
-
         // 不要部分除去
-        $contents = preg_replace('/[\S\s]+?- 所蔵情報 -/m', "", $contents);
+        $contents = preg_replace('/[\S\s]+?- 書誌詳細 -/m', "", $contents);
         $contents = preg_replace('/<form method="post" action="mobidf.do[\S\s]+/m', "", $contents);
 
         $result = [
@@ -438,22 +443,35 @@ class Crawler
             "reserves" => 0,
         ];
 
+        $result["book_id"] = $this->__extractBookDetailText($contents, "書誌ID");
+        $result["title"] = $this->__extractBookDetailText($contents, "タイトル");
+        $result["author"] = $this->__extractBookDetailText($contents, "著者名");
+        $result["published_by"] = $this->__extractBookDetailText($contents, "出版者");
+        $result["published_year"] = $this->__extractBookDetailText($contents, "出版年");
+
         // 所蔵数
         preg_match("@<dd>([0-9]+?)&nbsp;件の所蔵があります</dd>@", $contents, $matches);
         if (!empty($matches)) {
             $result["books"] = (int)$matches[1];
         }
-
         // 予約数
         preg_match("@<dd>([0-9]+?)&nbsp;件の予約があります</dd>@", $contents, $matches);
         if (!empty($matches)) {
             $result["reserves"] = (int)$matches[1];
         }
-
         // 予想待ち週
         $result["waitWeeks"] = (int)(ceil($result["reserves"] / $result["books"]) * 2);
 
         return $result;
+    }
+
+    private function __extractBookDetailText(string $bookDetailText, string $fieldName): string
+    {
+        preg_match("@<dt><strong>{$fieldName}</strong></dt>\n\s+<dd>(.+?)</dd>@", $bookDetailText, $matches);
+        if (!empty($matches)) {
+            return $matches[1];
+        }
+        return "";
     }
 
     // public function getBookContent(string $bookId): array

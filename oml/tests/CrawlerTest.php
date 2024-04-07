@@ -246,16 +246,29 @@ final class CrawlerTest extends TestCase
     public static function providerParseBookDetailPage(): array
     {
         return [
-            // case => file name, expected books, expected reserves, expected waitWeeks
-            "some reserves" => ["book-detail_some-reserves.html", 3, 25, 18],
-            "no reserves" => ["book-detail_no-reserves.html", 1, 0, 0],
+            // case => filename, book id, title, author, published by, published year, expected books, expected reserves, expected waitWeeks
+            "some reserves" => [
+                "book-detail_some-reserves.html",
+                "0015365135", "うえをむいて名探偵", "杉山 亮/作<br/>中川 大輔/絵", "東京：偕成社", "2023.5",
+                3, 25, 18,
+            ],
+            "no reserves" => [
+                "book-detail_no-reserves.html",
+                "0012200573", "少年少女世界名作ライブラリー　16", "", "東京：山田書院", "[19--]",
+                1, 0, 0,
+            ],
         ];
     }
     #[DataProvider('providerParseBookDetailPage')]
-    public function testParseBookDetailPage($filename, $expectedBooks, $expectedReserves, $expectedWaitWeeks): void
+    public function testParseBookDetailPage($filename, $expectedBookId, $expectedTitle, $expectedAuthor, $expectedPublishedBy, $expectedPublishedYear, $expectedBooks, $expectedReserves, $expectedWaitWeeks): void
     {
         $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $filename);
         $bookDetail = Utils::invokePrivateMethod($this->crawler, "__parseBookDetailPage", $contents);
+        $this->assertSame($expectedBookId, $bookDetail["book_id"]);
+        $this->assertSame($expectedTitle, $bookDetail["title"]);
+        $this->assertSame($expectedAuthor, $bookDetail["author"]);
+        $this->assertSame($expectedPublishedBy, $bookDetail["published_by"]);
+        $this->assertSame($expectedPublishedYear, $bookDetail["published_year"]);
         $this->assertSame($expectedBooks, $bookDetail["books"]);
         $this->assertSame($expectedReserves, $bookDetail["reserves"]);
         $this->assertSame($expectedWaitWeeks, $bookDetail["waitWeeks"]);
