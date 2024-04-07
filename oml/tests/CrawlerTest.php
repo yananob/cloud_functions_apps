@@ -300,4 +300,14 @@ final class CrawlerTest extends TestCase
             "svcidlist" => "00117543",
         ], $pageDetail);
     }
+
+    public function testParseReserveResultPage(): void
+    {
+        $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "reserve-result.html");
+        $bookInfo = Utils::invokePrivateMethod($this->crawler, "__parseReserveResultPage", $contents);
+
+        $this->assertSame([
+            "title" => "まちがいなく名探偵([ミルキー杉山のあなたも名探偵シリーズ] [22])∥杉山 亮/作∥偕成社∥20…",
+        ], $bookInfo);
+    }
 }

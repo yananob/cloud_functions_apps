@@ -247,7 +247,9 @@ final class Oml
         $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $crawler->reserve($bookId);
-        $this->__addReservedCount($userId);
+        // #4 TODO: 予約書籍情報を受け取って、Firestore予約書籍を更新
+        // #4 TODO: 予約書籍タイムスタンプを更新 $this->updateReservedBooksUpdatedDate()
+        $this->__addReservedCount($userId);  // TODO: 廃止
 
         return $userId;
     }
@@ -296,6 +298,7 @@ final class Oml
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $lendingBook = $crawler->extendLendingBook($bookId);
         $this->updateLendingBookInfo($userId, $lendingBook);
+        // TODO: $this->updateLendingBooksUpdatedDate()
     }
 
     public function reserveAgain(string $userId, string $bookId): string
