@@ -298,10 +298,12 @@ class Crawler
             return $this->__parseSearchResultPage($body);
         }
         if (strpos($body, "- 書誌詳細 -") !== false) {
-            return []; // TODO
+            $bookInfo = $this->__parseBookDetailPage($body);
+            return [
+                new SearchedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
+            ];
         }
-
-        throw new \Exception("検索結果が不明です。 keyword: {$keyword}, title: {$title}, author: {$author}, page: {$page}");
+        return [];
     }
 
     private function __parseSearchResultPage(string $contents): array
@@ -465,7 +467,7 @@ class Crawler
 
     private function __extractBookDetailText(string $bookDetailText, string $fieldName): string
     {
-        preg_match("@<dt><strong>{$fieldName}</strong></dt>\n +<dd>(.+?)</dd>@", $bookDetailText, $matches);
+        preg_match("@<dt><strong>{$fieldName}</strong></dt>\n\s+<dd>(.+?)</dd>@", $bookDetailText, $matches);
         if (!empty($matches)) {
             return $matches[1];
         }
