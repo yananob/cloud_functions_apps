@@ -192,7 +192,7 @@ final class Oml
                 "lending_books" => null,
             ];
             $cache = CacheStore::get(CacheItems::UpdatedTimestamps->value, $nullValue);
-            if (!empty($cache)) {
+            if ($cache != $nullValue) {
                 return $cache;
             }
         }
