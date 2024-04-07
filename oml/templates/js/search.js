@@ -32,8 +32,8 @@ function triggerSearch(startPage) {
     if (keyword === "" && title === "" && author === "") {
         return;
     }
-    if ((keyword + title + author).length < 3) {
-        alert("合計3文字以上入力してください。");
+    if ((keyword + title + author).length < 2) {
+        alert("合計2文字以上入力してください。");
         return;
     }
 
