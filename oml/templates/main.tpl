@@ -51,7 +51,7 @@
                 <th>カード</th>
                 <th>取置数 / 予約数</th>
                 <th>延滞数 / 貸出数</th>
-                <th></th>
+                {* <th></th> *}
             </tr>
             {assign var="total_keeping" value=0}
             {assign var="total_reserved" value=0}
@@ -80,8 +80,8 @@
                         /
                         {count($lending_books)}
                     </td>
-                    <td>
-                        {*
+                    {*
+                        <td>
                             <form name="oml_login_{$user_id}" method="POST" action="https://web.oml.city.osaka.lg.jp/webopac/mobidf.do?cmd=login">
                                 <a id="btn_oml" class="btn btn-secondary" href="javascript:oml_login('{$user_id}')" role="button">
                                     <i class="bi bi-book"></i> oml
@@ -89,8 +89,8 @@
                                 <input type="hidden" name="userid" value="{$user_id}">
                                 <input type="hidden" name="password" value="">
                             </form>
-                        *}
                     </td>
+                    *}
                     {assign var="total_keeping" value=$total_keeping+$account_books["count_keeping"]}
                     {assign var="total_reserved" value=$total_reserved+count($reserved_books)}
                     {assign var="total_overdue" value=$total_overdue+$account_books["count_overdue"]}
