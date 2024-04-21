@@ -147,6 +147,25 @@ final class OmlTest extends TestCase
         );
     }
 
+    public function testRemoveReservedBookInfo(): void
+    {
+        $arrayIndex = 1;
+
+        $loaded = $this->oml->getReservedBooks($userId=self::SAVE_ACCOUNT);
+        $expected = $loaded;
+        unset($expected[$arrayIndex]);
+        $expected = array_merge($expected);
+
+        Utils::invokePrivateMethod($this->oml, "__removeReservedBookInfo", self::SAVE_ACCOUNT, $loaded[$arrayIndex]->reservedBookId);
+        CacheStore::prune();
+        $loaded = $this->oml->getReservedBooks($userId=self::SAVE_ACCOUNT);
+
+        $this->assertEquals(
+            $expected,
+            $loaded
+        );
+    }
+
     public function testUpdateLendingBookInfo(): void
     {
         $arrayIndex = 0;

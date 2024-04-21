@@ -172,7 +172,6 @@ final class Oml
     public function __addReservedBookInfo(string $userId, ReservedBook $book): void
     {
         $this->logger->log("adding reservedBookInfo of {$book->reservedBookId}");
-
         $book = $book->toArray();
         $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)->collection($userId)->newDocument()->set($book);
     }
@@ -306,7 +305,7 @@ final class Oml
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $lendingBook = $crawler->extendLendingBook($bookId);
         $this->__updateLendingBookInfo($userId, $lendingBook);
-        // TODO: $this->updateLendingBooksUpdatedDate()
+        $this->updateLendingBooksUpdatedDate();
     }
 
     public function reserveAgain(string $userId, string $bookId): string
@@ -321,5 +320,19 @@ final class Oml
         $this->logger->log("canceling reservation of book {$bookId} of user {$userId}");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $crawler->cancelReservation($bookId, $this->getUserReservedBook($userId, $bookId)->changingId, count($this->getReservedBooks($userId)));
+        $this->__removeReservedBookInfo($userId, $bookId);
+        $this->updateReservedBooksUpdatedDate();
+    }
+
+    public function __removeReservedBookInfo(string $userId, string $bookId): void
+    {
+        $this->logger->log("removing reservedBook of {$bookId}");
+        $query = $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)
+                    ->collection($userId)->where("reserved_book_id", "==",  $bookId);
+        $documents = iterator_to_array($query->documents());
+        if (count($documents) != 1) {
+            throw new \Exception("Got more/less than " . count($documents) . " documents by bookId " . $bookId);
+        }
+        $documents[0]->reference()->delete();
     }
 }
