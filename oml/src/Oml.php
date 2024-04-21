@@ -59,7 +59,6 @@ final class Oml
         if (!empty($cache) && $cache["timestamp"] != $reservedUpdatedDate) {
             $this->logger->log("Clearing reserved_books cache");
             CacheStore::clear(CacheItems::ReservedBooks->value);
-            CacheStore::clear(CacheItems::ReservedCount->value);
         }
 
         $cache = CacheStore::get(CacheItems::ReservedBooks->value);
@@ -272,9 +271,7 @@ final class Oml
 
     public function getUserReservableCount(string $userId): int
     {
-        $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
-        $reservedCount = isset($reservedCounts[$userId]) ? $reservedCounts[$userId] : 0;
-        return self::MAX_RESERVABLE_COUNT - (count($this->getReservedBooks($userId)) + $reservedCount);
+        return self::MAX_RESERVABLE_COUNT - count($this->getReservedBooks($userId));
     }
 
     private function __getReservableUserId(): string|null
@@ -286,18 +283,6 @@ final class Oml
         }
         return null;
     }
-
-    // private function __addReservedCount(string $userId): void
-    // {
-    //     $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
-
-    //     if (!isset($reservedCounts[$userId])) {
-    //         $reservedCounts[$userId] = 0;
-    //     }
-    //     $reservedCounts[$userId]++;
-
-    //     CacheStore::put(CacheItems::ReservedCount->value, $reservedCounts);
-    // }
 
     public function extend(string $userId, string $bookId): void
     {
