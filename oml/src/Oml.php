@@ -264,7 +264,7 @@ final class Oml
         $reservedBook = $crawler->reserve($bookId);
         $this->updateReservedBookInfo($userId, $reservedBook); // TODO
         $this->updateReservedBooksUpdatedDate(); // TODO
-        $this->__addReservedCount($userId);  // TODO: 廃止
+        // $this->__addReservedCount($userId);
 
         return $userId;
     }
@@ -295,17 +295,17 @@ final class Oml
         return null;
     }
 
-    private function __addReservedCount(string $userId): void
-    {
-        $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
+    // private function __addReservedCount(string $userId): void
+    // {
+    //     $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
 
-        if (!isset($reservedCounts[$userId])) {
-            $reservedCounts[$userId] = 0;
-        }
-        $reservedCounts[$userId]++;
+    //     if (!isset($reservedCounts[$userId])) {
+    //         $reservedCounts[$userId] = 0;
+    //     }
+    //     $reservedCounts[$userId]++;
 
-        CacheStore::put(CacheItems::ReservedCount->value, $reservedCounts);
-    }
+    //     CacheStore::put(CacheItems::ReservedCount->value, $reservedCounts);
+    // }
 
     public function extend(string $userId, string $bookId): void
     {

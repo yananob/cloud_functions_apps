@@ -188,16 +188,16 @@ final class OmlTest extends TestCase
         );
     }
 
-    public function testAddReservableCount(): void
-    {
-        CacheStore::prune();
+    // public function testAddReservableCount(): void
+    // {
+    //     CacheStore::prune();
 
-        $userId = "TEST_01";
+    //     $userId = "TEST_01";
 
-        Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
-        $this->assertEquals([$userId => 1], CacheStore::get(CacheItems::ReservedCount->value));
+    //     Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
+    //     $this->assertEquals([$userId => 1], CacheStore::get(CacheItems::ReservedCount->value));
 
-        Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
-        $this->assertEquals([$userId => 2], CacheStore::get(CacheItems::ReservedCount->value));
-    }
+    //     Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
+    //     $this->assertEquals([$userId => 2], CacheStore::get(CacheItems::ReservedCount->value));
+    // }
 }
