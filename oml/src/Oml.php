@@ -169,7 +169,15 @@ final class Oml
         }
     }
 
-    public function updateLendingBookInfo(string $userId, LendingBook $book): void
+    public function __addReservedBookInfo(string $userId, ReservedBook $book): void
+    {
+        $this->logger->log("adding reservedBookInfo of {$book->reservedBookId}");
+
+        $book = $book->toArray();
+        $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)->collection($userId)->newDocument()->set($book);
+    }
+
+    public function __updateLendingBookInfo(string $userId, LendingBook $book): void
     {
         $this->logger->log("updating lendingBookInfo of {$book->lendingBookId}");
         $query = $this->rootCollection->document(self::LENDING_BOOKS_COLLECTION_NAME)
@@ -246,8 +254,10 @@ final class Oml
         }
         $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
-        $crawler->reserve($bookId);
-        $this->__addReservedCount($userId);
+        $reservedBook = $crawler->reserve($bookId);
+        $this->__addReservedBookInfo($userId, $reservedBook);
+        $this->updateReservedBooksUpdatedDate();
+        // $this->__addReservedCount($userId);
 
         return $userId;
     }
@@ -278,24 +288,25 @@ final class Oml
         return null;
     }
 
-    private function __addReservedCount(string $userId): void
-    {
-        $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
+    // private function __addReservedCount(string $userId): void
+    // {
+    //     $reservedCounts = CacheStore::get(CacheItems::ReservedCount->value);
 
-        if (!isset($reservedCounts[$userId])) {
-            $reservedCounts[$userId] = 0;
-        }
-        $reservedCounts[$userId]++;
+    //     if (!isset($reservedCounts[$userId])) {
+    //         $reservedCounts[$userId] = 0;
+    //     }
+    //     $reservedCounts[$userId]++;
 
-        CacheStore::put(CacheItems::ReservedCount->value, $reservedCounts);
-    }
+    //     CacheStore::put(CacheItems::ReservedCount->value, $reservedCounts);
+    // }
 
     public function extend(string $userId, string $bookId): void
     {
         $this->logger->log("extending book {$bookId} of user {$userId}");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $lendingBook = $crawler->extendLendingBook($bookId);
-        $this->updateLendingBookInfo($userId, $lendingBook);
+        $this->__updateLendingBookInfo($userId, $lendingBook);
+        // TODO: $this->updateLendingBooksUpdatedDate()
     }
 
     public function reserveAgain(string $userId, string $bookId): string

@@ -75,7 +75,7 @@ final class OmlTest extends TestCase
         return Utils::sortObjectArrayByProperty($result, "reservedBookId");
     }
 
-    private function __arrayToLendingBooks(array $books): array
+    private function __arraysToLendingBooks(array $books): array
     {
         $result = [];
         foreach ($books as $book) {
@@ -99,7 +99,7 @@ final class OmlTest extends TestCase
         $books = $this->oml->getLendingBooks($account=self::LOAD_ACCOUNT);
 
         $this->assertEquals(
-            $this->__arrayToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::LOAD_ACCOUNT)),
+            $this->__arraysToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::LOAD_ACCOUNT)),
             $books
         );
     }
@@ -118,12 +118,31 @@ final class OmlTest extends TestCase
 
     public function testUpdateLendingBooks(): void
     {
-        Utils::invokePrivateMethod($this->oml, "__saveLendingBooks", self::SAVE_ACCOUNT, $this->__arrayToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)));
+        Utils::invokePrivateMethod($this->oml, "__saveLendingBooks", self::SAVE_ACCOUNT, $this->__arraysToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)));
 
         $loaded = $this->oml->getLendingBooks($account=self::SAVE_ACCOUNT);
 
         $this->assertEquals(
-            $this->__arrayToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)),
+            $this->__arraysToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)),
+            $loaded
+        );
+    }
+
+    public function testAddReservedBookInfo(): void
+    {
+        $reservedBook = new ReservedBook(self::SAVE_ACCOUNT, "TITLE", 999, "", "", BookState::Waiting, "", "");
+        Utils::invokePrivateMethod($this->oml, "__addReservedBookInfo", self::SAVE_ACCOUNT, $reservedBook);
+
+        CacheStore::prune();
+        // 追加分が先頭になる模様。ちゃんとソートしたほうがいいかも？
+        $loaded = $this->oml->getReservedBooks($account=self::SAVE_ACCOUNT);
+
+        $expected = [];
+        $expected[] = $reservedBook;
+        $expected = array_merge($expected, $this->__arraysToReservedBooks($this->__overwriteOwner(self::TEST_RESERVED_BOOKS, self::SAVE_ACCOUNT)));
+
+        $this->assertEquals(
+            $expected,
             $loaded
         );
     }
@@ -134,14 +153,11 @@ final class OmlTest extends TestCase
 
         $book = LendingBook::fromArray($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)[$arrayIndex]);
         $book->fullTitle = "@@@" . $book->fullTitle;
-        $this->oml->updateLendingBookInfo(
-            $account=self::SAVE_ACCOUNT,
-            $book
-        );
+        Utils::invokePrivateMethod($this->oml, "__updateLendingBookInfo", self::SAVE_ACCOUNT, $book);
         CacheStore::prune();
         $loaded = $this->oml->getLendingBooks($account=self::SAVE_ACCOUNT)[$arrayIndex];
 
-        $expected = $this->__arrayToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT))[$arrayIndex];
+        $expected = $this->__arraysToLendingBooks($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT))[$arrayIndex];
         $expected->fullTitle = "@@@" . $expected->fullTitle;
         $expected->title = "@@@" . $expected->title;
         $this->assertEquals(
@@ -166,16 +182,16 @@ final class OmlTest extends TestCase
         );
     }
 
-    public function testAddReservableCount(): void
-    {
-        CacheStore::prune();
+    // public function testAddReservableCount(): void
+    // {
+    //     CacheStore::prune();
 
-        $userId = "TEST_01";
+    //     $userId = "TEST_01";
 
-        Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
-        $this->assertEquals([$userId => 1], CacheStore::get(CacheItems::ReservedCount->value));
+    //     Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
+    //     $this->assertEquals([$userId => 1], CacheStore::get(CacheItems::ReservedCount->value));
 
-        Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
-        $this->assertEquals([$userId => 2], CacheStore::get(CacheItems::ReservedCount->value));
-    }
+    //     Utils::invokePrivateMethod($this->oml, "__addReservedCount", $userId);
+    //     $this->assertEquals([$userId => 2], CacheStore::get(CacheItems::ReservedCount->value));
+    // }
 }

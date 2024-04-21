@@ -47,7 +47,8 @@ function triggerSearch(startPage) {
     showProgress($("#search_button"));
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
-    search(keyword, title, author, startPage, startPage + 4);
+    search(keyword, title, author, startPage, startPage + 3);
+    // search(keyword, title, author, startPage, startPage + 1);
 }
 
 function search(keyword, title, author, searchPage, endPage) {
@@ -74,7 +75,7 @@ function search(keyword, title, author, searchPage, endPage) {
 
             searchPage++;
             currentPage = searchPage;
-            if ((currentPage >= endPage) || (data.html.length === 0)) {
+            if ((currentPage > endPage) || (data.html.length === 0)) {
                 stopProgress(searchButton);
                 searching = false;
                 if ((searchPage >= endPage) && (data.html.length !== 0)) {

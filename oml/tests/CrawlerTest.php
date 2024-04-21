@@ -300,4 +300,14 @@ final class CrawlerTest extends TestCase
             "svcidlist" => "00117543",
         ], $pageDetail);
     }
+
+    public function testParseReserveResultPage(): void
+    {
+        $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "reserve-result.html");
+        $bookInfo = Utils::invokePrivateMethod($this->crawler, "__parseReserveResultPage", $contents);
+
+        $this->assertSame([
+            "title" => "家政夫くんは名探偵! [4] 夏休みの料理と推理(ファン文庫 く-2-6)∥楠谷 佑/著∥マイナビ出…",
+        ], $bookInfo);
+    }
 }

@@ -24,7 +24,7 @@
                 <tr class="thead-light sticky-top">
                     <th>書籍名</th>
                     <th style="text-align: center">状態</th>
-                    <th>返却期限</th>
+                    <th style="text-align: center">返却期限</th>
                     <th style="text-align: center">カード</th>
                     <th style="text-align: center"></th>
                 </tr>
@@ -34,7 +34,7 @@
                     <tr>
                         <td>{$book->title} | {$book->author}</td>
                         <td style="text-align: center">{$book->state->value}</td>
-                        <td>
+                        <td style="text-align: center">
                             <span class="{if $book->returnLimitDate >= today}bg-warning{/if}">
                                 {substr($book->returnLimitDate, 5, 5)}
                             </span>
