@@ -415,7 +415,10 @@ class Crawler
         //     <td colspan="6">
         //         まちがいなく名探偵([ミルキー杉山のあなたも名探偵シリーズ] [22])∥杉山 亮/作∥偕成社∥20…</td>
         // </tr>
-        preg_match('@<td colspan="7">\n\s+?<B>タイトル</B>\n\s+?</td>\n</tr>\n<tr>\n[\S\s]+?<td colspan="6">\n\s+?(.+?)</td>@', $content, $matches);
+        preg_match('@<td colspan="7">\n\s+?<B>タイトル</B>\n\s+?</td>\n\s+?</tr>\n\s+?<tr>\n[\S\s]+?<td colspan="6">\n\s+?(.+?)</td>@', $content, $matches);
+        if (empty($matches)) {
+            throw new \Exception("Failed to parse reserve result page: \n" . $content);
+        }
         $result["title"] = trim($matches[1]);
 
         return $result;

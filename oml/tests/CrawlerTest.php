@@ -307,7 +307,7 @@ final class CrawlerTest extends TestCase
         $bookInfo = Utils::invokePrivateMethod($this->crawler, "__parseReserveResultPage", $contents);
 
         $this->assertSame([
-            "title" => "まちがいなく名探偵([ミルキー杉山のあなたも名探偵シリーズ] [22])∥杉山 亮/作∥偕成社∥20…",
+            "title" => "家政夫くんは名探偵! [4] 夏休みの料理と推理(ファン文庫 く-2-6)∥楠谷 佑/著∥マイナビ出…",
         ], $bookInfo);
     }
 }
