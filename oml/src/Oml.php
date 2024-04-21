@@ -169,6 +169,21 @@ final class Oml
         }
     }
 
+    public function updateReservedBookInfo(string $userId, ReservedBook $book): void
+    {
+        $this->logger->log("updating reservedBookInfo of {$book->reservedBookId}");
+        $query = $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)
+                    ->collection($userId)->where("reserved_book_id", "==",  $book->reservedBookId);
+        $documents = iterator_to_array($query->documents());
+        if (count($documents) != 1) {
+            throw new \Exception("Got more/less than " . count($documents) . " documents by bookId " . $book->reservedBookId);
+        }
+        $documents[0]->reference()->set(
+            $book->toArray(),
+            ["merge" => true],
+        );
+    }
+
     public function updateLendingBookInfo(string $userId, LendingBook $book): void
     {
         $this->logger->log("updating lendingBookInfo of {$book->lendingBookId}");
@@ -246,9 +261,9 @@ final class Oml
         }
         $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
-        $crawler->reserve($bookId);
-        // #4 TODO: 予約書籍情報を受け取って、Firestore予約書籍を更新
-        // #4 TODO: 予約書籍タイムスタンプを更新 $this->updateReservedBooksUpdatedDate()
+        $reservedBook = $crawler->reserve($bookId);
+        $this->updateReservedBookInfo($userId, $reservedBook); // TODO
+        $this->updateReservedBooksUpdatedDate(); // TODO
         $this->__addReservedCount($userId);  // TODO: 廃止
 
         return $userId;
