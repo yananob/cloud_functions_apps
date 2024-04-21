@@ -128,22 +128,19 @@ final class OmlTest extends TestCase
         );
     }
 
-    public function testUpdateReservedBookInfo(): void
+    public function testAddReservedBookInfo(): void
     {
-        $arrayIndex = 0;
+        $reservedBook = new ReservedBook(self::SAVE_ACCOUNT, "TITLE", 999, "", "", BookState::Waiting, "", "");
+        Utils::invokePrivateMethod($this->oml, "__addReservedBookInfo", self::SAVE_ACCOUNT, $reservedBook);
 
-        $book = ReservedBook::fromArray($this->__overwriteOwner(self::TEST_RESERVED_BOOKS, self::SAVE_ACCOUNT)[$arrayIndex]);
-        $book->fullTitle = "@@@" . $book->fullTitle;
-        $this->oml->updateReservedBookInfo(
-            $account=self::SAVE_ACCOUNT,
-            $book
-        );
         CacheStore::prune();
-        $loaded = $this->oml->getReservedBooks($account=self::SAVE_ACCOUNT)[$arrayIndex];
+        // 追加分が先頭になる模様。ちゃんとソートしたほうがいいかも？
+        $loaded = $this->oml->getReservedBooks($account=self::SAVE_ACCOUNT);
 
-        $expected = $this->__arraysToReservedBooks($this->__overwriteOwner(self::TEST_RESERVED_BOOKS, self::SAVE_ACCOUNT))[$arrayIndex];
-        $expected->fullTitle = "@@@" . $expected->fullTitle;
-        $expected->title = "@@@" . $expected->title;
+        $expected = [];
+        $expected[] = $reservedBook;
+        $expected = array_merge($expected, $this->__arraysToReservedBooks($this->__overwriteOwner(self::TEST_RESERVED_BOOKS, self::SAVE_ACCOUNT)));
+
         $this->assertEquals(
             $expected,
             $loaded
@@ -156,10 +153,7 @@ final class OmlTest extends TestCase
 
         $book = LendingBook::fromArray($this->__overwriteOwner(self::TEST_LENDING_BOOKS, self::SAVE_ACCOUNT)[$arrayIndex]);
         $book->fullTitle = "@@@" . $book->fullTitle;
-        $this->oml->updateLendingBookInfo(
-            $account=self::SAVE_ACCOUNT,
-            $book
-        );
+        Utils::invokePrivateMethod($this->oml, "__updateLendingBookInfo", self::SAVE_ACCOUNT, $book);
         CacheStore::prune();
         $loaded = $this->oml->getLendingBooks($account=self::SAVE_ACCOUNT)[$arrayIndex];
 

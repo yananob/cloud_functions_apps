@@ -169,22 +169,15 @@ final class Oml
         }
     }
 
-    public function updateReservedBookInfo(string $userId, ReservedBook $book): void
+    public function __addReservedBookInfo(string $userId, ReservedBook $book): void
     {
-        $this->logger->log("updating reservedBookInfo of {$book->reservedBookId}");
-        $query = $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)
-                    ->collection($userId)->where("reserved_book_id", "==",  $book->reservedBookId);
-        $documents = iterator_to_array($query->documents());
-        if (count($documents) != 1) {
-            throw new \Exception("Got more/less than " . count($documents) . " documents by bookId " . $book->reservedBookId);
-        }
-        $documents[0]->reference()->set(
-            $book->toArray(),
-            ["merge" => true],
-        );
+        $this->logger->log("adding reservedBookInfo of {$book->reservedBookId}");
+
+        $book = $book->toArray();
+        $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)->collection($userId)->newDocument()->set($book);
     }
 
-    public function updateLendingBookInfo(string $userId, LendingBook $book): void
+    public function __updateLendingBookInfo(string $userId, LendingBook $book): void
     {
         $this->logger->log("updating lendingBookInfo of {$book->lendingBookId}");
         $query = $this->rootCollection->document(self::LENDING_BOOKS_COLLECTION_NAME)
@@ -262,8 +255,8 @@ final class Oml
         $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $reservedBook = $crawler->reserve($bookId);
-        $this->updateReservedBookInfo($userId, $reservedBook); // TODO
-        $this->updateReservedBooksUpdatedDate(); // TODO
+        $this->__addReservedBookInfo($userId, $reservedBook);
+        $this->updateReservedBooksUpdatedDate();
         // $this->__addReservedCount($userId);
 
         return $userId;
@@ -312,7 +305,7 @@ final class Oml
         $this->logger->log("extending book {$bookId} of user {$userId}");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $lendingBook = $crawler->extendLendingBook($bookId);
-        $this->updateLendingBookInfo($userId, $lendingBook);
+        $this->__updateLendingBookInfo($userId, $lendingBook);
         // TODO: $this->updateLendingBooksUpdatedDate()
     }
 

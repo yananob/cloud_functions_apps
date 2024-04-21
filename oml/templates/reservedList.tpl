@@ -24,7 +24,7 @@
                     <th>書籍名</th>
                     <th style="text-align: center">状態</th>
                     <th style="text-align: right">予約順</th>
-                    <th>取置期限</th>
+                    <th style="text-align: center">取置期限</th>
                     <th style="text-align: center">カード</th>
                     <th style="text-align: center"></th>
                 </tr>
@@ -39,7 +39,7 @@
                             </span>
                         </td>
                         <td style="text-align: right">{$book->reservedOrder}</td>
-                        <td>{substr($book->keepLimitDate, 5, 5)}</td>
+                        <td style="text-align: center">{substr($book->keepLimitDate, 5, 5)}</td>
                         <td style="text-align: center">{substr($book->owner, -2)}</td>
                         <td style="text-align: center" id="message_{$book->reservedBookId}">
                             <a class="btn btn-secondary btn-sm js_reserve_again" data-userid="{$book->owner}" data-bookid="{$book->reservedBookId}" data-progress=".js_reserve_again_progress_{$book->reservedBookId}" data-message="#message_{$book->reservedBookId}" role="button">
