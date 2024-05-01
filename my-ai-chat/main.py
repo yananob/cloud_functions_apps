@@ -1,22 +1,33 @@
 import sys
 import logging
 import json
-import urllib
+import traceback
 import flask
 import functions_framework
 import requests
 
-LOG_LEVEL = logging.INFO
+LOG_LEVEL = logging.DEBUG
 
 def send_message(api_key: str, model: str, message: str):
     headers = {
+        "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key}",
     }
     payload = {
-        "messages": [message],
         "model": model,
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant.",
+            },
+            {
+                "role": "user",
+                "content": message,
+            },
+        ],
     }
-    r = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, data=payload)
+    logging.debug(f"payload: {json.dumps(payload)}")
+    r = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, data=json.dumps(payload))
     return r
 
 @functions_framework.http
@@ -25,29 +36,31 @@ def main(request):
                         level=LOG_LEVEL, datefmt="%Y/%m/%d %H:%M:%S")
 
     try:
-        logging.info(f"args: {request.args}")
+        logging.info(f"data: {request.data}")
 
         with open("./configs/config.json", "r") as f:
             config = json.load(f)
 
-        message = request.args.get("message", "")
+        # message = request.args.get("message", "")
+        data = json.loads(request.data.decode("utf-8"))
+        message = data["message"]
         answer = send_message(config["api_key"], config["model"], message)
-        logging.debug(f"answer: {answer}")
+        logging.info(f"answer: {answer.text}")
 
         message_json = {
             "message": message,
-            "answer": answer,
+            "answer": answer.text,
         }
         message = json.dumps(message_json, ensure_ascii=False)
-        content_type = "application/json"
 
     except Exception:
         ex, ms, tb = sys.exc_info()
-        message = f"Error: <{ms}>"
-        logging.error(ms)
+        logging.error(f"Error: <{ms}>")
+        traceback.print_tb(tb)
+        message = "Error!"
 
     finally:
         logging.info(f"message: {message}")
         response = flask.Response(message)
-        response.headers["content-type"] = content_type
+        response.headers["content-type"] = "application/json"
         return response
