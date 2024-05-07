@@ -1,13 +1,19 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/bash
+set -eu
 
-SCRIPT_NAME=$1
+DEPLOY_DIR=_deploy
 export SCRIPT_NAME=$1
 # remove "/" on the right side
-SCRIPT_NAME=`php -r '$result=getenv("SCRIPT_NAME"); echo substr($result, -1) === "/" ? rtrim($result, "/") : $result;'`
+SCRIPT_NAME=`python -c 'import os; script_name = os.environ["SCRIPT_NAME"]; print(script_name if script_name[-1] != "/" else script_name[:-1])'`
 
-echo "Checking $SCRIPT_NAME"
+echo "Checking ${SCRIPT_NAME}"
 pushd ${SCRIPT_NAME}
+
+# Check existance of .gcloudignore
+if ! test -f ".gcloudignore"; then
+    echo ".gcloudignore doesn't exist. Please create it."
+    exit 1
+fi
 
 # Check existance of specific deploy.sh
 if test -f "deploy.sh"; then
@@ -22,10 +28,17 @@ if test -f "config.json.sample"; then
         exit 1
     fi
 fi
+popd
 
-echo "Starting to deploy $SCRIPT_NAME"
+echo "Starting to deploy ${SCRIPT_NAME}"
 
-cp -rp ../common_py ./common
+mkdir -p ${DEPLOY_DIR}
+pushd ${DEPLOY_DIR}
+
+rm -rf ./${SCRIPT_NAME}
+rsync -vaL --exclude-from=../_misc/deploy/rsync_exclude.conf ../${SCRIPT_NAME} ./
+
+pushd ${SCRIPT_NAME}
 
 echo "-------- deploying http --------"
 gcloud functions deploy ${SCRIPT_NAME} \
@@ -38,6 +51,6 @@ gcloud functions deploy ${SCRIPT_NAME} \
     --allow-unauthenticated \
     --max-instances 1
 
-rm -rv ./common
-
+popd
+rm -rf ./${SCRIPT_NAME}
 popd
