@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 export GOOGLE_APPLICATION_CREDENTIALS="./src/common/configs/gcp_serviceaccount.json"
 

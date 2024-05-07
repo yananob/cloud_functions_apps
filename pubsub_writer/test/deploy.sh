@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eu
 
 echo "deploying pubsub function"
 gcloud functions deploy pubsub-test-sub \

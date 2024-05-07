@@ -1,4 +1,4 @@
 #!/bin/bash
-set -e
+set -eu
 
 gcloud pubsub topics publish firestore-backup --message="test!"
