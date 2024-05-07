@@ -1,3 +1,4 @@
+import os
 import sys
 import logging
 import json
@@ -6,7 +7,10 @@ import flask
 import functions_framework
 import requests
 
+from common.utils import load_attributed_config
+
 LOG_LEVEL = logging.DEBUG
+
 
 def send_message(api_key: str, model: str, message: str):
     headers = {
@@ -27,24 +31,28 @@ def send_message(api_key: str, model: str, message: str):
         ],
     }
     logging.debug(f"payload: {json.dumps(payload)}")
-    r = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, data=json.dumps(payload))
+    r = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers=headers,
+        data=json.dumps(payload))
     return r
+
 
 @functions_framework.http
 def main(request):
-    logging.basicConfig(format="[%(asctime)s] [%(levelname)s] %(message)s",
-                        level=LOG_LEVEL, datefmt="%Y/%m/%d %H:%M:%S")
+    logging.basicConfig(
+        format="[%(asctime)s] [%(levelname)s] %(message)s",
+        level=LOG_LEVEL, datefmt="%Y/%m/%d %H:%M:%S")
 
     try:
         logging.info(f"data: {request.data}")
 
-        with open("./configs/config.json", "r") as f:
-            config = json.load(f)
+        config = load_attributed_config(os.path.join("configs", "config.json"))
 
         # message = request.args.get("message", "")
         data = json.loads(request.data.decode("utf-8"))
         message = data["message"]
-        answer = send_message(config["api_key"], config["model"], message)
+        answer = send_message(config.api_key, config.model, message)
         logging.info(f"answer: {answer.text}")
 
         message_json = {

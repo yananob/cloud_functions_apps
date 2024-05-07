@@ -2,4 +2,4 @@
 
 set -eu
 
-functions-framework --target=main
+functions-framework --target=main --debug
