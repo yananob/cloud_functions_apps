@@ -12,10 +12,7 @@ class AttributedDict(object):
         self._obj = obj
 
     def __getattr__(self, name):
-        if name in self._obj:
-            return self._obj.get(name)
-        else:
-            return None
+        return self._obj.get(name)
 
     def fields(self):
         return self._obj

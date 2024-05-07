@@ -1,6 +1,7 @@
 import os
 import json
 import pytest
+
 import utils
 
 
@@ -18,26 +19,34 @@ CASES_LOAD_CONF = [
     },
 ]
 
+
 @pytest.mark.parametrize("test_case", CASES_LOAD_CONF)
-def test_load_conf(test_case):
-    target_filename = test_case["filename"] if test_case["filename"] else "config.json"
-    print(target_filename)
+def test_load_attributed_config(test_case):
+    target_filepath = os.path.join(
+        "configs",
+        test_case["filename"] if test_case["filename"] else "config.json"
+    )
+
     try:
         _write_config(
-            target_filename,
+            target_filepath,
             {
-                "hoge1": "hage1",
-                "hoge2": "hage2"
-            },
+                "strk1": "strv1",
+                "array1": ["av1", "av2"],
+                "dict1":  {"dk1": "dv1"},
+                "dict2": [
+                    {
+                        "dk2": "dv2"
+                    }
+                ]
+            }
         )
+        config = utils.load_attributed_config(target_filepath)
 
-        if test_case["filename"]:
-            conf = utils.load_conf(test_case["filename"])
-        else:
-            conf = utils.load_conf()
-
-        assert conf["hoge1"] == "hage1"
-        assert conf["hoge2"] == "hage2"
+        assert config.strk1 == "strv1"
+        assert config.array1 == ["av1", "av2"]
+        assert config.dict1.dk1 == "dv1"
+        assert config.dict2[0].dk2 == "dv2"
 
     finally:
-        os.remove(target_filename)
+        os.remove(target_filepath)
