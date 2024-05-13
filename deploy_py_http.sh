@@ -4,7 +4,7 @@ set -eu
 DEPLOY_DIR=_deploy
 export SCRIPT_NAME=$1
 # remove "/" on the right side
-SCRIPT_NAME=`python -c 'import os; script_name = os.environ["SCRIPT_NAME"]; print(script_name if script_name[-1] != "/" else script_name[:-1])'`
+SCRIPT_NAME=`python3 -c 'import os; script_name = os.environ["SCRIPT_NAME"]; print(script_name if script_name[-1] != "/" else script_name[:-1])'`
 
 echo "Checking ${SCRIPT_NAME}"
 pushd ${SCRIPT_NAME}
