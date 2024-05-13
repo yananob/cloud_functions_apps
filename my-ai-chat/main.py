@@ -44,31 +44,30 @@ def main(request):
         format="[%(asctime)s] [%(levelname)s] %(message)s",
         level=LOG_LEVEL, datefmt="%Y/%m/%d %H:%M:%S")
 
-    try:
-        logging.info(f"data: {request.data}")
+    logging.info(f"data: {request.form.to_dict()}")
 
-        config = load_attributed_config(os.path.join("configs", "config.json"))
+    config = load_attributed_config(os.path.join("configs", "config.json"))
 
-        # message = request.args.get("message", "")
-        data = json.loads(request.data.decode("utf-8"))
-        message = data["message"]
-        answer = send_message(config.api_key, config.model, message)
-        logging.info(f"answer: {answer.text}")
+    data = request.form.to_dict()
+    # if request.method == "GET":
+    # if message is None:
+        # return flask.render_template("form.html", response=response)
 
-        message_json = {
-            "message": message,
-            "answer": answer.text,
-        }
-        message = json.dumps(message_json, ensure_ascii=False)
+    # elif request.method == "POST":
+    question = ""
+    answer = ""
+    if data:
+        question = data["question"]
+        answer = send_message(config.api_key, config.model, question)
+        logging.info(f"answer: {answer.json()}")
+        answer = answer.json()["choices"][0]["message"]["content"]
+        # response = flask.Response(json.dumps(message_json, ensure_ascii=False))
+        # response.headers["content-type"] = "application/json"
+        # return response
 
-    except Exception:
-        ex, ms, tb = sys.exc_info()
-        logging.error(f"Error: <{ms}>")
-        traceback.print_tb(tb)
-        message = "Error!"
+    # response = flask.Response()
+    # response.headers["content-type"] = "text/html"
+    return flask.render_template("form.html", question=question, answer=answer)
 
-    finally:
-        logging.info(f"message: {message}")
-        response = flask.Response(message)
-        response.headers["content-type"] = "application/json"
-        return response
+    # else:
+    #     raise Exception(f"Unknown method: {request.method}")
