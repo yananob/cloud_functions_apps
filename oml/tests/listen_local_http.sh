@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 export FUNCTION_TARGET=main
 composer start

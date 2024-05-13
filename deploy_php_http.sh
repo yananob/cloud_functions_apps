@@ -1,13 +1,13 @@
 #!/bin/bash
-set -e
+set -eu
 
 DEPLOY_DIR=_deploy
 export SCRIPT_NAME=$1
 # remove "/" on the right side
 SCRIPT_NAME=`php -r '$result=getenv("SCRIPT_NAME"); echo substr($result, -1) === "/" ? rtrim($result, "/") : $result;'`
 
-echo "Checking $SCRIPT_NAME"
-pushd $SCRIPT_NAME
+echo "Checking ${SCRIPT_NAME}"
+pushd ${SCRIPT_NAME}
 
 # Check existance of .gcloudignore
 if ! test -f ".gcloudignore"; then
@@ -30,16 +30,17 @@ if test -f "config.json.sample"; then
 fi
 popd
 
-echo "Starting to deploy $SCRIPT_NAME"
+echo "Starting to deploy ${SCRIPT_NAME}"
 
-mkdir -p $DEPLOY_DIR
-pushd $DEPLOY_DIR
+mkdir -p ${DEPLOY_DIR}
+pushd ${DEPLOY_DIR}
 
-rm -rf ./$SCRIPT_NAME
-rsync -vaL --exclude-from=../_misc/deploy/rsync_exclude.conf ../$SCRIPT_NAME ./
+rm -rf ./${SCRIPT_NAME}
+rsync -vaL --exclude-from=../_misc/deploy/rsync_exclude.conf ../${SCRIPT_NAME} ./
 
-pushd $SCRIPT_NAME
+pushd ${SCRIPT_NAME}
 
+echo "-------- deploying http --------"
 gcloud functions deploy ${SCRIPT_NAME} \
     --gen2 \
     --runtime=php82 \
@@ -51,5 +52,5 @@ gcloud functions deploy ${SCRIPT_NAME} \
     --max-instances 1
 
 popd
-rm -rf ./$SCRIPT_NAME
+rm -rf ./${SCRIPT_NAME}
 popd

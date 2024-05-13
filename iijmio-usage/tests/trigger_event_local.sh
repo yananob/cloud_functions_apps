@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 curl localhost:8080 \
     -H "ce-id: 9999999999" \

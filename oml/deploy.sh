@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 DEPLOY_DIR=_deploy
 export SCRIPT_NAME=$1

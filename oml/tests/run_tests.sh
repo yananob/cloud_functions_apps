@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 ./vendor/bin/phpstan analyze -c phpstan.neon
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -eu
 
 # TODO: project_id
 curl localhost:8080 \
