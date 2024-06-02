@@ -2,7 +2,7 @@
 set -eu
 
 DEPLOY_DIR=_deploy
-export SCRIPT_NAME=$1
+#export SCRIPT_NAME=$1
 # remove "/" on the right side
 SCRIPT_NAME=daily-quote
 
