@@ -244,13 +244,15 @@ final class Oml
         return $crawler->getBookReserveInfo($bookId);
     }
 
-    public function reserve(string $bookId): string
+    public function reserve(string $bookId, string $userId=null): string
     {
-        $userId = $this->__getReservableUserId();
         if (empty($userId)) {
-            throw new \Exception("予約できるユーザーがなく、予約できませんでした");
+            $userId = $this->__getReservableUserId();
+            if (empty($userId)) {
+                throw new \Exception("予約できるユーザーがなく、予約できませんでした");
+            }
+            $this->logger->log("using account {$userId} to reserve");
         }
-        $this->logger->log("using account {$userId} to reserve");
         $crawler = new Crawler($userId, $this->accounts->list()[$userId]["password"]);
         $reservedBook = $crawler->reserve($bookId);
         $this->__addReservedBookInfo($userId, $reservedBook);
@@ -297,7 +299,7 @@ final class Oml
     {
         $this->logger->log("reserving again {$bookId} of user {$userId}");
         $this->cancelReservation($userId, $bookId);
-        return $this->reserve($bookId);
+        return $this->reserve($bookId, $userId);
     }
 
     public function cancelReservation(string $userId, string $bookId): void
