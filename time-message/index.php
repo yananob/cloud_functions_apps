@@ -1,20 +1,15 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\LINE;
-use MyApp\common\Trigger;
+require_once __DIR__ . '/vendor/autoload.php';
 
-FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger("time-message");
-    $trigger = new Trigger();
-    $line = new LINE();
+    $logger = new yananob\mytools\Logger("time-message");
+    $trigger = new yananob\mytools\Trigger();
+    $line = new yananob\mytools\Line();
 
-    $config = Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
+    $config = yananob\mytools\Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 

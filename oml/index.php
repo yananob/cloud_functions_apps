@@ -1,17 +1,7 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Google\CloudFunctions\FunctionsFramework;
-use GuzzleHttp\Client;
-use GuzzleHttp\Pool;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\LINE;
-use MyApp\common\MessagesQueue;
+require_once __DIR__ . '/vendor/autoload.php';
+
 use MyApp\AlertType;
 use MyApp\Alerter;
 use MyApp\BookState;
@@ -21,10 +11,10 @@ use MyApp\Oml;
 
 const APP_NAME = "oml";
 
-FunctionsFramework::http('main', 'main');
-function main(ServerRequestInterface $request): string
+Google\CloudFunctions\FunctionsFramework::http('main', 'main');
+function main(Psr\Http\Message\ServerRequestInterface $request): string
 {
-    $logger = new Logger(APP_NAME);
+    $logger = new yananob\mytools\Logger(APP_NAME);
     $params = $request->getQueryParams();
     $params = array_merge($params, $request->getParsedBody());
     $logger->log(str_repeat("-", 120));
@@ -37,15 +27,15 @@ function main(ServerRequestInterface $request): string
     $smarty = new Smarty();
     $smarty->setTemplateDir(__DIR__ . "/templates");
 
-    $isLocal = Utils::isLocalHttp($request);
+    $isLocal = yananob\mytools\Utils::isLocalHttp($request);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
     $alerter = new Alerter($isLocal, "oml");
-    $messagesQueue = new MessagesQueue();
+    $messagesQueue = new yananob\mytools\MessagesQueue();
 
     $smarty->assign("is_local", $isLocal);
-    $smarty->assign("base_path", Utils::getBasePath($isLocal, APP_NAME));
+    $smarty->assign("base_path", yananob\mytools\Utils::getBasePath($isLocal, APP_NAME));
     $smarty->assign("updated_dates", $oml->getUpdatedDates());
     $smarty->assign("messages", $messagesQueue->popMessages());
     $smarty->assign("alerts", $messagesQueue->popAlerts());
