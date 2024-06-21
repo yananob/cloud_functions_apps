@@ -1,14 +1,12 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use MyApp\common\LINE;
-use MyApp\common\Utils;
+require_once __DIR__ . '/vendor/autoload.php';
 
-final class LINETest extends TestCase
+final class LINETest extends PHPUnit\Framework\TestCase
 {
     public function testSendMessage(): void
     {
-        $line = new LINE();
+        $line = new \yananob\mytools\Line(__DIR__ . '/tests/config.json.test');
 
         $line->sendMessage("nobu", "[LINETest] hoge\nhoge!");
 
