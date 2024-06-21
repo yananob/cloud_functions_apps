@@ -6,7 +6,8 @@
     "require": {
         "php": ">= 7.4",
         "google/cloud-functions-framework": "^1.3",
-        "yananob/mytools": "dev-main"
+        "yananob/mytools": "dev-main",
+        "yananob/my_gcptools": "dev-main"
     },
     "scripts": {
         "start": [
@@ -22,6 +23,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:yananob/mytools.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:yananob/my_gcptools.git"
         }
     ],
     "autoload": {

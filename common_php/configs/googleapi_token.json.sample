@@ -1,8 +1,0 @@
-{
-    "access_token": "{ACCESS_TOKEN}",
-    "expires_in": 3599,
-    "refresh_token": "{REFRESH_TOKEN}",
-    "scope": "{SCOPE}",
-    "token_type": "Bearer",
-    "created": {CREATED}
-}
