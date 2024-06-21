@@ -7,7 +7,7 @@ function main(\CloudEvents\V1\CloudEventInterface $event): void
 {
     $logger = new yananob\mytools\Logger();
 
-    $isLocal = yananob\mytools\Utils::isLocalEvent($event);
+    $isLocal = yananob\my_gcptools\GcpUtils::isLocalEvent($event);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $config = yananob\mytools\Utils::getConfig(__DIR__ . "/configs/config.json");
