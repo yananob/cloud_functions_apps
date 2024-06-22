@@ -7,9 +7,9 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
 {
     $logger = new yananob\mytools\Logger("time-message");
     $trigger = new yananob\mytools\Trigger();
-    $line = new yananob\mytools\Line();
+    $line = new yananob\mytools\Line(__DIR__ . '/configs/line.json');
 
-    $config = yananob\mytools\Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
+    $config = yananob\mytools\Utils::getConfig(__DIR__ . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 
