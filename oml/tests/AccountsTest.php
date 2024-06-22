@@ -1,10 +1,9 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use MyApp\common\Utils;
+use yananob\mytools\Utils;
 use MyApp\Accounts;
 
-final class AccountsTest extends TestCase
+final class AccountsTest extends PHPUnit\Framework\TestCase
 {
     private Accounts $accounts;
     private array $testAccounts;

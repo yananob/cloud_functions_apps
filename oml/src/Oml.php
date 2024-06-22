@@ -4,11 +4,9 @@ namespace MyApp;
 
 use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Firestore\CollectionReference;
-use Google\Cloud\Firestore\DocumentReference;
-use MyApp\common\Utils;
-use MyApp\common\Logger;
-use MyApp\common\FirestoreAccessor;
-use MyApp\common\CacheStore;
+use yananob\mytools\Utils;
+use yananob\mytools\Logger;
+use yananob\mytools\CacheStore;
 use MyApp\CacheItems;
 use MyApp\Accounts;
 
@@ -26,13 +24,11 @@ final class Oml
     public const MAX_RESERVABLE_COUNT = 15;
     public const MAX_LENDABLE_COUNT = 15;
 
-    // TODO: Omlの機能で、検索・予約一覧取得・更新とかをする
-
     public function __construct($is_test=true) {
         date_default_timezone_set('Asia/Tokyo');
 
         $this->logger = new Logger("Oml");
-        $this->dbAccessor = FirestoreAccessor::getClient();
+        $this->dbAccessor = new \Google\Cloud\Firestore\FirestoreClient(["keyFilePath" => __DIR__ . '/../configs/firebase.json']);
         $collection_name = "oml";
         if ($is_test) {
             $collection_name .= "-test";

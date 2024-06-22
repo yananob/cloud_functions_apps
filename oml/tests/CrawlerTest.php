@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use MyApp\common\Utils;
+// use PHPUnit\Framework\Attributes\DataProvider;
+// use PHPUnit\Framework\TestCase;
+use yananob\mytools\Utils;
 use MyApp\BookState;
 use MyApp\ReservedBook;
 use MyApp\LendingBook;
 use MyApp\SearchedBook;
 use MyApp\Crawler;
 
-final class CrawlerTest extends TestCase
+final class CrawlerTest extends PHPUnit\Framework\TestCase
 {
     private Crawler $crawler;
 
@@ -175,7 +175,7 @@ final class CrawlerTest extends TestCase
             ]],
         ];
     }
-    #[DataProvider('providerSearch')]
+    #[PHPUnit\Framework\Attributes\DataProvider('providerSearch')]
     public function testSearch($keyword, $title, $author, $page, $expected): void
     {
         $searchedBooks = $this->crawler->search($keyword, $title, $author, $page, $order="asc");
@@ -221,7 +221,7 @@ final class CrawlerTest extends TestCase
             "fail" => ["reserve-confirm_fail.html", "二重依頼または本人貸出中"],
         ];
     }
-    #[DataProvider('providerCheckReserveConfirmPage')]
+    #[PHPUnit\Framework\Attributes\DataProvider('providerCheckReserveConfirmPage')]
     public function testCheckReserveConfirmPage($filename, $expectedMessage): void
     {
         $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $filename);
@@ -259,7 +259,7 @@ final class CrawlerTest extends TestCase
             ],
         ];
     }
-    #[DataProvider('providerParseBookDetailPage')]
+    #[PHPUnit\Framework\Attributes\DataProvider('providerParseBookDetailPage')]
     public function testParseBookDetailPage($filename, $expectedBookId, $expectedTitle, $expectedAuthor, $expectedPublishedBy, $expectedPublishedYear, $expectedBooks, $expectedReserves, $expectedWaitWeeks): void
     {
         $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $filename);

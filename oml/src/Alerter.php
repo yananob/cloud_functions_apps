@@ -2,27 +2,19 @@
 
 namespace MyApp;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Cookie\CookieJar;
-use MyApp\common\Utils;
-use MyApp\common\FirestoreAccessor;
-use MyApp\common\LINE;
-use MyApp\ReservedBook;
+use yananob\mytools\Utils;
+use yananob\mytools\Line;
 use MyApp\AlertType;
 use MyApp\BookState;
 
 final class Alerter
 {
     private array $alerts;
-    private bool $isLocal;
-    private string $alertTo;
     private $debugDate;
 
-    public function __construct(bool $isLocal, string $alertTo)
+    public function __construct(private bool $isLocal, private string $alertTo)
     {
         $this->alerts = [];
-        $this->isLocal = $isLocal;
-        $this->alertTo = $alertTo;
         $this->debugDate = null;
     }
 
@@ -98,7 +90,7 @@ oml books アラート:
 
 {$baseUrl}
 EOT;
-        $line = new LINE();
+        $line = new Line(__DIR__ . '/../configs/line.json');
         $line->sendMessage("oml", $message);
     }
 

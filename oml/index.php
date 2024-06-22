@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use yananob\mytools\Logger;
+use yananob\mytools\Utils;
 use MyApp\AlertType;
 use MyApp\Alerter;
 use MyApp\BookState;
@@ -14,7 +16,7 @@ const APP_NAME = "oml";
 Google\CloudFunctions\FunctionsFramework::http('main', 'main');
 function main(Psr\Http\Message\ServerRequestInterface $request): string
 {
-    $logger = new yananob\mytools\Logger(APP_NAME);
+    $logger = new Logger(APP_NAME);
     $params = $request->getQueryParams();
     $params = array_merge($params, $request->getParsedBody());
     $logger->log(str_repeat("-", 120));
@@ -27,7 +29,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
     $smarty = new Smarty();
     $smarty->setTemplateDir(__DIR__ . "/templates");
 
-    $isLocal = yananob\mytools\Utils::isLocalHttp($request);
+    $isLocal = yananob\my_gcptools\GcpUtils::isLocalHttp($request);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
@@ -35,7 +37,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
     $messagesQueue = new yananob\mytools\MessagesQueue();
 
     $smarty->assign("is_local", $isLocal);
-    $smarty->assign("base_path", yananob\mytools\Utils::getBasePath($isLocal, APP_NAME));
+    $smarty->assign("base_path", Utils::getBasePath($isLocal, APP_NAME));
     $smarty->assign("updated_dates", $oml->getUpdatedDates());
     $smarty->assign("messages", $messagesQueue->popMessages());
     $smarty->assign("alerts", $messagesQueue->popAlerts());
@@ -221,32 +223,32 @@ function __update_all_lending(bool $isLocal, Oml $oml, Logger $logger, bool $isP
 
 function __update_books(BookType $bookType, bool $isLocal, Oml $oml, Logger $logger, bool $isParallel): void
 {
-    if ($isParallel) {
-        $generator = function () use ($bookType, $oml, $isLocal, $logger) {
-            foreach ($oml->getUserIds() as $userId) {
-                $command = ($bookType === BookType::Reserved ? Command::UpdateAccountReserved->value : Command::UpdateAccountLending->value);
-                $url = Utils::getBaseUrl($isLocal, APP_NAME) . "?cmd={$command}&account={$userId}";
-                $logger->log("updating {$bookType->value} books of {$userId}: {$url}");
-                yield new Request('GET', $url);
-            }
-        };
-        $result = [];
-        $pool = new Pool(new Client(), $generator(), [
-            'concurrency' => count($oml->getUserIds()),
-            'fulfilled' => function (Response $response, int $index) use ($logger, &$result) {
-                $logger->log("Result [{$index}] fulfilled: [" . $response->getStatusCode() . "]");
-                $result[] = $response->getStatusCode();
-            },
-            'rejected' => function (Exception $e, int $index) use ($logger) {
-                $logger->log("Result [{$index}] rejected: " . $e->getMessage());
-            },
-        ]);
-        $pool->promise()->wait();
-        if (count($result) < count($oml->getUserIds())) {
-            throw new Exception("Could not get all result. Result count: " . count($result));
-        }
-    }
-    else {
+    // if ($isParallel) {
+    //     $generator = function () use ($bookType, $oml, $isLocal, $logger) {
+    //         foreach ($oml->getUserIds() as $userId) {
+    //             $command = ($bookType === BookType::Reserved ? Command::UpdateAccountReserved->value : Command::UpdateAccountLending->value);
+    //             $url = yananob\mytools\Utils::getBaseUrl($isLocal, APP_NAME) . "?cmd={$command}&account={$userId}";
+    //             $logger->log("updating {$bookType->value} books of {$userId}: {$url}");
+    //             yield new Request('GET', $url);
+    //         }
+    //     };
+    //     $result = [];
+    //     $pool = new Pool(new Client(), $generator(), [
+    //         'concurrency' => count($oml->getUserIds()),
+    //         'fulfilled' => function (Response $response, int $index) use ($logger, &$result) {
+    //             $logger->log("Result [{$index}] fulfilled: [" . $response->getStatusCode() . "]");
+    //             $result[] = $response->getStatusCode();
+    //         },
+    //         'rejected' => function (Exception $e, int $index) use ($logger) {
+    //             $logger->log("Result [{$index}] rejected: " . $e->getMessage());
+    //         },
+    //     ]);
+    //     $pool->promise()->wait();
+    //     if (count($result) < count($oml->getUserIds())) {
+    //         throw new Exception("Could not get all result. Result count: " . count($result));
+    //     }
+    // }
+    // else {
         foreach ($oml->getUserIds() as $userId) {
             if ($bookType === BookType::Reserved) {
                 $oml->updateReservedBooks($userId);
@@ -255,7 +257,7 @@ function __update_books(BookType $bookType, bool $isLocal, Oml $oml, Logger $log
                 $oml->updateLendingBooks($userId);
             }
         }
-    }
+    // }
 
     if ($bookType === BookType::Reserved) {
         $oml->updateReservedBooksUpdatedDate();
@@ -293,12 +295,12 @@ function __get_success_tag(string $info=""): string
     return "<div class='alert alert-success' role='alert'><i class='bi bi-check-circle-fill'></i> OK {$info}</div>";
 }
 
-FunctionsFramework::cloudEvent('update', 'update');
-function update(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('update', 'update');
+function update(CloudEvents\V1\CloudEventInterface $event): void
 {
     $logger = new Logger(APP_NAME);
 
-    $isLocal = Utils::isLocalEvent($event);
+    $isLocal = yananob\my_gcptools\GcpUtils::isLocalEvent($event);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
