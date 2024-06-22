@@ -14,7 +14,7 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
 
         if ($trigger->isLaunch($setting["timing"])) {
             $logger->log("Adding page to Pocket");
-            $pocket = new yananob\mytools\Pocket();
+            $pocket = new yananob\mytools\Pocket(__DIR__ . '/configs/pocket.json');
             $pocket->add($setting["url"]);
         }
     };
