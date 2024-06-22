@@ -19,7 +19,7 @@ No. {$quote["no"]}
 
 [{$quote["author"]}] {$quote["source"]} {$quote["source_link"]}
 EOF;
-    $line = new yananob\mytools\LINE();
+    $line = new yananob\mytools\Line();
     $line->sendMessage("stnb", $message);
 
     $logger->log("Succeeded.");
@@ -37,8 +37,8 @@ function editor(Psr\Http\Message\ServerRequestInterface $request): string
     $smarty = new Smarty();
     $smarty->setTemplateDir(__DIR__ . "/templates");
 
-    $isLocal = yananob\mytools\Utils::isLocalHttp($request);
-    $quotes = $isLocal ? new yananob\mytools\Quotes("daily-quotes-test", 5) : new MyApp\Quotes();
+    $isLocal = yananob\my_gcptools\GcpUtils::isLocalHttp($request);
+    $quotes = $isLocal ? new MyApp\Quotes("daily-quotes-test", 5) : new MyApp\Quotes();
 
     session_start([
         "cookie_lifetime" => 60 * 60 * 2,   // 2h
@@ -124,7 +124,7 @@ function __login(string $password, array $form_body): void
 {
     if ($form_body['password'] !== $password) {
         unset($_SESSION["authorized"]);
-        throw new UnauthorizedException("パスワードが違います。");
+        throw new MyApp\UnauthorizedException("パスワードが違います。");
     }
 
     $_SESSION["authorized"] = true;
@@ -133,12 +133,12 @@ function __login(string $password, array $form_body): void
 function __check_login(): void
 {
     if (!isset($_SESSION['authorized']) || $_SESSION['authorized'] !== true) {
-        throw new UnauthorizedException("パスワードを入力してログインしてください。");
+        throw new MyApp\UnauthorizedException("パスワードを入力してログインしてください。");
     }
 }
 
 function __redirect_to_list(string $appName, bool $isLocal): void
 {
-    header("Location: " . Utils::getBaseUrl($isLocal, $appName));
+    header("Location: " . \yananob\mytools\Utils::getBaseUrl($isLocal, $appName));
     exit;
 }
