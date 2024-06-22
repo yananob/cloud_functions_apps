@@ -6,7 +6,10 @@ Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
 function main(CloudEvents\V1\CloudEventInterface $event): void
 {
     $logger = new yananob\mytools\Logger("gmail-cleanup");
-    $client = yananob\mytools\GmailWrapper::getClient();
+    $client = yananob\mytools\GmailWrapper::getClient(
+        __DIR__ . '/configs/googleapi_clientsecret.json',
+        __DIR__ . '/configs/googleapi_token.json',
+    );
     $service = new Google\Service\Gmail($client);
     $query = new MyApp\Query();
 
