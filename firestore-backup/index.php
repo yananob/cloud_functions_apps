@@ -10,19 +10,17 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
     $db_accessor = new Google\Cloud\Firestore\FirestoreClient([
         "keyFilePath" => __DIR__ . '/configs/firebase.json'
     ]);
-    $storage = new Google\Cloud\Storage\StorageClient([
-        'keyFile' => json_decode(file_get_contents(__DIR__ . '/configs_serviceaccount.json'), true)
+    $storage = new Google\Cloud\Storage\StorageClient(['keyFile' => json_decode(file_get_contents(__DIR__ . '/configs/gcp_serviceaccount.json'), true)
     ]);
 
-
-    $config = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.json"), true);
+    $config = \yananob\mytools\Utils::getConfig(__DIR__ . '/configs/config.json');
 
     foreach ($config["firestore"] as $target) {
         $logger->log("Processing [" . $target["path"] . "]");
 
         $tmp_filepath = null;
         if ($target["type"] === "collection") {
-            $tmp_filepath = __save_csv($target["columns"], $db_accessor->collection($target["path"])->documents());
+            $tmp_filepath = __save_csv($target["columns"], $db_accessor->collection($target["path"])->orderBy('no')->documents());
         }
         // document:
         // $backup_doc = $db_accessor->document("daily-quotes-test/admin")->snapshot()->data();
@@ -47,7 +45,11 @@ function __save_csv(array $columns, Google\Cloud\Firestore\QuerySnapshot $docume
     try {
         fputcsv($fp, $columns);
         foreach ($documents as $doc) {
-            fputcsv($fp, $doc->data());
+            $data = [];
+            foreach ($columns as $column) {
+                $data[$column] = $doc->data()[$column];
+            }
+            fputcsv($fp, $data);
         }
     } finally {
         fclose($fp);
