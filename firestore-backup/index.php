@@ -1,21 +1,19 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Google\CloudFunctions\FunctionsFramework;
-use Google\Cloud\Firestore\FirestoreClient;
-use Google\Cloud\Firestore\QuerySnapshot;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\FirestoreAccessor;
-use MyApp\common\CloudStorageAccessor;
+require_once __DIR__ . '/vendor/autoload.php';
 
-FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger("firestore-backup");
+    $logger = new yananob\mytools\Logger("firestore-backup");
 
-    $db_accessor = FirestoreAccessor::getClient();
-    $storage = CloudStorageAccessor::getClient();
+    $db_accessor = new Google\Cloud\Firestore\FirestoreClient([
+        "keyFilePath" => __DIR__ . '/configs/firebase.json'
+    ]);
+    $storage = new Google\Cloud\Storage\StorageClient([
+        'keyFile' => json_decode(file_get_contents(__DIR__ . '/configs_serviceaccount.json'), true)
+    ]);
+
 
     $config = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.json"), true);
 
@@ -42,7 +40,7 @@ function main(CloudEventInterface $event): void
     $logger->log("Succeeded.");
 }
 
-function __save_csv(array $columns, QuerySnapshot $documents): string
+function __save_csv(array $columns, Google\Cloud\Firestore\QuerySnapshot $documents): string
 {
     $tmpfname = tempnam(__DIR__ . DIRECTORY_SEPARATOR . "tmp", "temp.csv");
     $fp = fopen($tmpfname, "w");

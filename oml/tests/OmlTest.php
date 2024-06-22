@@ -1,15 +1,13 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use MyApp\common\Utils;
-use MyApp\common\CacheStore;
+use yananob\mytools\Utils;
+use yananob\mytools\CacheStore;
 use MyApp\Oml;
 use MyApp\ReservedBook;
 use MyApp\LendingBook;
 use MyApp\BookState;
-use MyApp\CacheItems;
 
-final class OmlTest extends TestCase
+final class OmlTest extends PHPUnit\Framework\TestCase
 {
     private Oml $oml;
 

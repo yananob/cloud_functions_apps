@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use MyApp\common\Utils;
 use MyApp\Query;
 
-final class QueryTest extends TestCase
+final class QueryTest extends PHPUnit\Framework\TestCase
 {
     public static function buildDataProvider(): array
     {

@@ -4,9 +4,9 @@ namespace MyApp;
 
 use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Firestore\CollectionReference;
-use Google\Cloud\Firestore\DocumentReference;
-use MyApp\common\FirestoreAccessor;
-use MyApp\common\CacheStore;
+// use Google\Cloud\Firestore\DocumentReference;
+// use MyApp\common\FirestoreAccessor;
+use yananob\mytools\CacheStore;
 use MyApp\CacheItems;
 
 class Accounts
@@ -15,7 +15,7 @@ class Accounts
     private CollectionReference $accountsCollection;
 
     public function __construct($is_test=true) {
-        $this->dbAccessor = FirestoreAccessor::getClient();
+        $this->dbAccessor = new \Google\Cloud\Firestore\FirestoreClient(["keyFilePath" => __DIR__ . '/../configs/firebase.json']);
         $collection_name = "oml";
         if ($is_test) {
             $collection_name .= "-test";

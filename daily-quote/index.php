@@ -1,51 +1,44 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\LINE;
-use MyApp\Quotes;
-use MyApp\UnauthorizedException;
+require_once __DIR__ . '/vendor/autoload.php';
 
-FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger("daily-quote");
+    $logger = new yananob\mytools\Logger("daily-quote");
 
-    $quotes = new Quotes();
+    $quotes = new MyApp\Quotes();
     $quote = $quotes->getRandom();
 
     // No.${index}
     $message = <<<EOF
 Quote of the day:
-No. ${quote["no"]}
+No. {$quote["no"]}
 
-${quote["message"]}
+{$quote["message"]}
 
-[${quote["author"]}] ${quote["source"]} ${quote["source_link"]}
+[{$quote["author"]}] {$quote["source"]} {$quote["source_link"]}
 EOF;
-    $line = new LINE();
+    $line = new yananob\mytools\Line(__DIR__ . '/configs/line.json');
     $line->sendMessage("stnb", $message);
 
     $logger->log("Succeeded.");
 }
 
-FunctionsFramework::http('editor', 'editor');
-function editor(ServerRequestInterface $request): string
+Google\CloudFunctions\FunctionsFramework::http('editor', 'editor');
+function editor(Psr\Http\Message\ServerRequestInterface $request): string
 {
     $appName = "daily-quote-editor";
 
-    $logger = new Logger($appName);
+    $logger = new yananob\mytools\Logger($appName);
     $query_params = $request->getQueryParams();
     $logger->log("params: " . json_encode($query_params));
 
     $smarty = new Smarty();
     $smarty->setTemplateDir(__DIR__ . "/templates");
 
-    $isLocal = Utils::isLocalHttp($request);
-    $quotes = $isLocal ? new Quotes("daily-quotes-test", 5) : new Quotes();
+    $isLocal = yananob\my_gcptools\GcpUtils::isLocalHttp($request);
+    $quotes = $isLocal ? new MyApp\Quotes("daily-quotes-test", 5) : new MyApp\Quotes();
 
     session_start([
         "cookie_lifetime" => 60 * 60 * 2,   // 2h
@@ -56,14 +49,14 @@ function editor(ServerRequestInterface $request): string
         try {
             __login($quotes->getPassword(), $body);
             __redirect_to_list($appName, $isLocal);
-        } catch (UnauthorizedException $e) {
+        } catch (MyApp\UnauthorizedException $e) {
             $smarty->assign("message", $e->getMessage());
             return $smarty->fetch('login.tpl');
         }
     }
     try {
         __check_login();
-    } catch (UnauthorizedException $e) {
+    } catch (MyApp\UnauthorizedException $e) {
         $smarty->assign("message", $e->getMessage());
         return $smarty->fetch('login.tpl');
     }
@@ -131,7 +124,7 @@ function __login(string $password, array $form_body): void
 {
     if ($form_body['password'] !== $password) {
         unset($_SESSION["authorized"]);
-        throw new UnauthorizedException("パスワードが違います。");
+        throw new MyApp\UnauthorizedException("パスワードが違います。");
     }
 
     $_SESSION["authorized"] = true;
@@ -140,12 +133,12 @@ function __login(string $password, array $form_body): void
 function __check_login(): void
 {
     if (!isset($_SESSION['authorized']) || $_SESSION['authorized'] !== true) {
-        throw new UnauthorizedException("パスワードを入力してログインしてください。");
+        throw new MyApp\UnauthorizedException("パスワードを入力してログインしてください。");
     }
 }
 
 function __redirect_to_list(string $appName, bool $isLocal): void
 {
-    header("Location: " . Utils::getBaseUrl($isLocal, $appName));
+    header("Location: " . \yananob\mytools\Utils::getBaseUrl($isLocal, $appName));
     exit;
 }

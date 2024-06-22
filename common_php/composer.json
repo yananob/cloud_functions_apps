@@ -2,9 +2,8 @@
     "name": "yananob/common",
     "description": "yananob/common",
     "license": "proprietary",
-
     "require": {
-        "php": ">= 7.4",
+        "php": ">= 8.2",
         "google/apiclient": "^2.0",
         "google/protobuf": "^3.17",
         "google/cloud-firestore": "^1.37",

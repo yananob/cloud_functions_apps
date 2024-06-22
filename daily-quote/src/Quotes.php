@@ -2,21 +2,15 @@
 
 namespace MyApp;
 
-use Google\Cloud\Firestore\FirestoreClient;
-use Google\Cloud\Firestore\CollectionReference;
-use Google\Cloud\Firestore\DocumentReference;
-// use MyApp\common\TopicLogger;
-use MyApp\common\FirestoreAccessor;
-
 // https://cloud.google.com/firestore/docs/samples/firestore-data-set-field?hl=ja
 
 final class UnauthorizedException extends \Exception {}
 
 final class Quotes
 {
-    private FirestoreClient $db_accessor;
-    private CollectionReference $quote_collection;
-    private DocumentReference $admin_document;
+    private \Google\Cloud\Firestore\FirestoreClient $db_accessor;
+    private \Google\Cloud\Firestore\CollectionReference $quote_collection;
+    private \Google\Cloud\Firestore\DocumentReference $admin_document;
     // private TopicLogger $logger;
     private int $count_per_page;
 
@@ -25,7 +19,9 @@ final class Quotes
     public function __construct($collection_name="daily-quotes", $count_per_page=20) {
         date_default_timezone_set("Asia/Tokyo");
 
-        $this->db_accessor = FirestoreAccessor::getClient();
+        $this->db_accessor = new \Google\Cloud\Firestore\FirestoreClient([
+            "keyFilePath" => __DIR__ . '/../configs/firebase.json'
+        ]);
         $this->quote_collection = $this->db_accessor->collection($collection_name)->document("quotes")->collection("quotes");
         $this->admin_document = $this->db_accessor->collection($collection_name)->document("admin");
         // $this->logger = new TopicLogger();

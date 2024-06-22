@@ -1,3 +1,0 @@
-{
-    "base_url": "https://{REGION}-{PROJECT_ID}.cloudfunctions.net"
-}

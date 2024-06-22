@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use MyApp\common\Utils;
 use MyApp\Quotes;
 
-final class QuotesTest extends TestCase
+final class QuotesTest extends PHPUnit\Framework\TestCase
 {
     private $quotes;
     private array $check_fields = ["no", "message", "author", "source", "source_link"];

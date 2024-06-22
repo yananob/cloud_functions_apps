@@ -1,25 +1,20 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\Trigger;
-use MyApp\common\Pocket;
+require_once __DIR__ . '/vendor/autoload.php';
 
-FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger("web-fetch");
-    $trigger = new Trigger();
+    $logger = new yananob\mytools\Logger("web-fetch");
+    $trigger = new yananob\mytools\Trigger();
 
-    $config = Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
+    $config = yananob\mytools\Utils::getConfig(dirname(__FILE__) . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 
         if ($trigger->isLaunch($setting["timing"])) {
             $logger->log("Adding page to Pocket");
-            $pocket = new Pocket();
+            $pocket = new yananob\mytools\Pocket(__DIR__ . '/configs/pocket.json');
             $pocket->add($setting["url"]);
         }
     };

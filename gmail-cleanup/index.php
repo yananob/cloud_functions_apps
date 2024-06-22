@@ -1,25 +1,21 @@
 <?php declare(strict_types=1);
 
-use CloudEvents\V1\CloudEventInterface;
-use Google\Service\Gmail;
-use Google\Service\Gmail\BatchDeleteMessagesRequest;
-use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\GmailWrapper;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\Query;
+require_once __DIR__ . '/vendor/autoload.php';
 
-FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEventInterface $event): void
+Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger("gmail-cleanup");
-    $client = GmailWrapper::getClient();
-    $service = new Gmail($client);
-    $query = new Query();
+    $logger = new yananob\mytools\Logger("gmail-cleanup");
+    $client = yananob\mytools\GmailWrapper::getClient(
+        __DIR__ . '/configs/googleapi_clientsecret.json',
+        __DIR__ . '/configs/googleapi_token.json',
+    );
+    $service = new Google\Service\Gmail($client);
+    $query = new MyApp\Query();
 
     $user = 'me';
 
-    $config = Utils::getConfig(__DIR__ . "/configs/config.json");
+    $config = yananob\mytools\Utils::getConfig(__DIR__ . "/configs/config.json");
 
     foreach ($config["targets"] as $target) {
         $logger->log("Processing target: " . json_encode($target));
