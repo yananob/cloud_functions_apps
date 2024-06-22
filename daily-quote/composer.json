@@ -2,7 +2,6 @@
     "name": "yananob/daily-quote",
     "description": "yananob/daily-quote",
     "license": "proprietary",
-
     "require": {
         "php": ">= 8.2",
         "google/cloud-functions-framework": "^1.3",

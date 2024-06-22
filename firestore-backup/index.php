@@ -7,7 +7,7 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
 {
     $logger = new yananob\mytools\Logger("firestore-backup");
 
-    $db_accessor = Google\Cloud\Firestore\FirestoreClient([
+    $db_accessor = new Google\Cloud\Firestore\FirestoreClient([
         "keyFilePath" => __DIR__ . '/configs/firebase.json'
     ]);
     $storage = new Google\Cloud\Storage\StorageClient([
@@ -40,7 +40,7 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
     $logger->log("Succeeded.");
 }
 
-function __save_csv(array $columns, QuerySnapshot $documents): string
+function __save_csv(array $columns, Google\Cloud\Firestore\QuerySnapshot $documents): string
 {
     $tmpfname = tempnam(__DIR__ . DIRECTORY_SEPARATOR . "tmp", "temp.csv");
     $fp = fopen($tmpfname, "w");
