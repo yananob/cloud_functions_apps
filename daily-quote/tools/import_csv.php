@@ -1,23 +1,17 @@
 <?php declare(strict_types=1);
 
-require 'vendor/autoload.php';
+require __DIR__ . '../vendor/autoload.php';
 
 /*
     CSVインポーター
         CSVからの取り込み用
  */
 
-// use CloudEvents\V1\CloudEventInterface;
-// use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\FirestoreAccessor;
-
 const COLLECTION_NAME = "quote-test";     // for debug
 // const COLLECTION_NAME = "quote";     // for production
 
 function run($argv) {
-    $logger = new Logger("daily-quote_import-csv");
+    $logger = new \yananob\mytools\Logger("daily-quote_import-csv");
 
     if (count($argv) <= 1) {
         echo "argv[1]: csv file path \n";
@@ -30,7 +24,10 @@ function run($argv) {
         return;
     }
 
-    $firestore = FirestoreAccessor::getClient();
+    $firestore = new Google\Cloud\Firestore\FirestoreClient([
+        "keyFilePath" => __DIR__ . '/configs/firebase.json'
+    ]);
+
     $quote_col = $firestore->collection(COLLECTION_NAME);
 
     $line = 0;

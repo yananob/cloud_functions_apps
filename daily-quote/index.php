@@ -19,7 +19,7 @@ No. {$quote["no"]}
 
 [{$quote["author"]}] {$quote["source"]} {$quote["source_link"]}
 EOF;
-    $line = new yananob\mytools\Line();
+    $line = new yananob\mytools\Line(__DIR__ . '/configs/line.json');
     $line->sendMessage("stnb", $message);
 
     $logger->log("Succeeded.");

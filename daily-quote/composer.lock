@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc24da56b1d0de4166005bf5baef8fae",
+    "content-hash": "d90d65c25e8f3a3524134caa405d6d5d",
     "packages": [
         {
             "name": "brick/math",
@@ -2229,6 +2229,36 @@
             "time": "2024-05-31T15:07:36+00:00"
         },
         {
+            "name": "yananob/my_gcptools",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yananob/my_gcptools.git",
+                "reference": "746f0b9cbd89adce6e38469163de965cf87cf6e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yananob/my_gcptools/zipball/746f0b9cbd89adce6e38469163de965cf87cf6e3",
+                "reference": "746f0b9cbd89adce6e38469163de965cf87cf6e3",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-functions-framework": "^1.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yananob\\my_gcptools\\": "src/"
+                }
+            },
+            "support": {
+                "source": "https://github.com/yananob/my_gcptools/tree/main",
+                "issues": "https://github.com/yananob/my_gcptools/issues"
+            },
+            "time": "2024-06-21T10:06:26+00:00"
+        },
+        {
             "name": "yananob/mytools",
             "version": "dev-main",
             "source": {
@@ -3952,7 +3982,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yananob/mytools": 20
+        "yananob/mytools": 20,
+        "yananob/my_gcptools": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

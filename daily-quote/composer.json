@@ -9,7 +9,8 @@
         "google/protobuf": "^3.17",
         "google/cloud-firestore": "^1.37",
         "smarty/smarty": "^4.3",
-        "yananob/mytools": "dev-main"
+        "yananob/mytools": "dev-main",
+        "yananob/my_gcptools": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.3",

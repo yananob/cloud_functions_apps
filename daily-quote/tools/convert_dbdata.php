@@ -1,17 +1,12 @@
 <?php declare(strict_types=1);
 
-require 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 /*
     DBデータコンバータ
         項目追加等で一括更新が必要な際に使用
  */
 
-// use CloudEvents\V1\CloudEventInterface;
-// use Google\CloudFunctions\FunctionsFramework;
-use MyApp\common\Logger;
-use MyApp\common\Utils;
-use MyApp\common\FirestoreAccessor;
 use MyApp\Quotes;
 
 const COLLECTION_NAME = "quote-test";     // for debug
@@ -19,9 +14,11 @@ const COLLECTION_NAME = "quote-test";     // for debug
 
 function run($argv) {
     date_default_timezone_set("Asia/Tokyo");
-    $logger = new Logger("daily-quote");
+    $logger = new yananob\mytools\Logger("daily-quote");
 
-    $quote_collection = FirestoreAccessor::getClient()->collection(COLLECTION_NAME);
+    $quote_collection = (new Google\Cloud\Firestore\FirestoreClient([
+        "keyFilePath" => __DIR__ . '/configs/firebase.json'
+    ]))->collection(COLLECTION_NAME);
     $quotes_accessor = new Quotes(COLLECTION_NAME);
     $quotes = $quote_collection
         ->orderBy("created_at")
