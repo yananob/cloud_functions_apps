@@ -26,6 +26,11 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
         );
     }
 
+    private function __loadTestHtml(string $filename): string
+    {
+        return file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $filename);
+    }
+
     public function testLogin(): void
     {
         [$_, $res_body] = Utils::invokePrivateMethod($this->crawler, "__login");
@@ -34,9 +39,9 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString("予約一覧を見る", strval($res_body));
     }
 
-    public function testParseReservedBooksPage(): void
+    public function testParseReservedBooksPage_withBooks(): void
     {
-        $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "reserved-list.html");
+        $contents = $this->__loadTestHtml("reserved-list.html");
         $books = Utils::invokePrivateMethod($this->crawler, "__parseReservedBooksPage", $contents);
 
         $this->assertCount(12, $books);
@@ -53,23 +58,14 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
         ), $books[2]);
     }
 
-    // public static function providerParseReservedBooksPage_nextUrl(): array
-    // {
-    //     return [
-    //         // case => source file, next link
-    //         "has next page" => ["reserved-list_has-next-page.html", "mobrsvlst.do?startpos=4"],
-    //         "doesn't have next page" => ["reserved-list_no-next-page.html", ""],
-    //     ];
-    // }
-    // #[DataProvider('providerParseReservedBooksPage_nextUrl')]
-    // public function testParseReservedBooksPage_nextUrl(string $source_file, string $expected): void
-    // {
-    //     $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $source_file);
-    //     [$_, $next_url] = Utils::invokePrivateMethod($this->crawler, "__parseReservedBooksPage", $contents);
-    //     $this->assertSame($expected, $next_url);
-    // }
+    public function testParseReservedBooksPage_withoutBooks(): void
+    {
+        $contents = $this->__loadTestHtml("status_with-lending-reserved.html");
+        $books = Utils::invokePrivateMethod($this->crawler, "__parseReservedBooksPage", $contents);
+        $this->assertEmpty($books);
+    }
 
-    public function testParseLendingBooksPage(): void
+    public function testParseLendingBooksPage_withBooks(): void
     {
         $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "lending-list.html");
         $books = Utils::invokePrivateMethod($this->crawler, "__parseLendingBooksPage", $contents);
@@ -92,21 +88,12 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
         ), $books[1]);
     }
 
-    // public static function providerParseLendingBooksPage_nextUrl(): array
-    // {
-    //     return [
-    //         // case => source file, next link
-    //         "has next page" => ["lending-list_has-next-page.html", "moblenlst.do?startpos=13"],
-    //         "doesn't have next page" => ["lending-list_no-next-page.html", ""],
-    //     ];
-    // }
-    // #[DataProvider('providerParseLendingBooksPage_nextUrl')]
-    // public function testParseLendingBooksPage_nextUrl(string $source_file, string $expected): void
-    // {
-    //     $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . $source_file);
-    //     [$_, $next_url] = Utils::invokePrivateMethod($this->crawler, "__parseLendingBooksPage", $contents);
-    //     $this->assertSame($expected, $next_url);
-    // }
+    public function testParseLendingBooksPage_withoutBooks(): void
+    {
+        $contents = $this->__loadTestHtml("status_with-lending-reserved.html");
+        $books = Utils::invokePrivateMethod($this->crawler, "__parseLendingBooksPage", $contents);
+        $this->assertEmpty($books);
+    }
 
     public function testCrawlReservedBooks(): void
     {
