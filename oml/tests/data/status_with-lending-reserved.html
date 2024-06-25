@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>■□■ 大阪市立図書館 ■□■</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <script type="text/javascript" src="/webopac/jsp/script/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).bind("mobileinit", function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+    <link rel="stylesheet" href='/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.5.0-rc1.min.css' type="text/css">
+    <style type="text/css">
+        @import url(/webopac/css/swatch.css);
+    </style>
+    <script type="text/javascript" src="/webopac/jsp/mobile/jquery.mobile/jquery.mobile-1.5.0-rc1.min.js"></script>
+    <link rel="apple-touch-icon" href="/webopac/image/mobile/smlogo.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <meta name="format-detection" content="telephone=no" />
+</head>
+
+<body>
+
+    <div data-role="page" data-theme="c" data-add-back-btn="false">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <div style="padding: 8px 0px;">
+                <a href="mobtopmnu.do" data-role="button" data-icon="home" data-iconpos="notext">メニューへ</a>
+                <strong>■□■ 大阪市立図書館 ■□■</strong>
+            </div>
+        </div>
+        <div data-role="content" data-theme="c">
+            <div>
+
+                - 利用状況一覧 -
+
+                <br />
+                <br />
+
+                あなたの図書館利用状況は以下の通りです。<br />
+
+                <form name="askuseform" method="post" action="/webopac/useexe.do"><br />
+
+
+                    <strong>図書館からのメッセージ</strong>
+
+                    &nbsp;0件<br />
+
+                    <br />
+
+
+                    <strong>貸出中の資料</strong>
+
+                    &nbsp;10件<br />
+
+                    <a href="moblenlst.do" data-role="button" data-inline="true" data-icon="info">貸出一覧を見る</a>
+                    <br />
+
+                    <strong>予約中の資料</strong>
+                    &nbsp;14件<br />
+
+                    <a href="mobrsvlst.do" data-role="button" data-inline="true" data-icon="info">予約一覧を見る</a>
+                    <br />
+
+                    <strong>利用者情報の確認・変更</strong>
+
+                    <br />
+
+                    <a href="mobusedtl.do" data-role="button" data-inline="true" data-icon="info">確認する</a>
+                </form>
+                <hr>
+
+                <a data-role="button" data-icon="home" href="mobtopmnu.do">メニューへ</a>
+                <a data-role="button" data-icon="home" href="https://www.oml.city.osaka.lg.jp">PCサイトへ</a>
+            </div>
+
+            <div>
+                <br />
+                <a data-role="button" href="moboff.do?mode=logout&display=moblogout">ログアウト</a>
+            </div>
+        </div><!-- content -->
+        <div data-role="footer" data-theme="c">
+            <div align="center">
+                Copyright (C) 2014- OSAKA Municipal Library. All Rights Reserved. (001)
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    <!---
+        var sndFlg=false;
+        function checkSubmit(element) {
+            if(sndFlg==false){
+                sndFlg=true;
+                element.disabled = false;
+                return true;
+            }else{
+                element.disabled = true;
+                return false;
+            }
+        }
+    // --->
+</script>
+
+</html>

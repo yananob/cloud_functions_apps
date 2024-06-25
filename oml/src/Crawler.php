@@ -23,10 +23,9 @@ class Crawler
 {
     private Client $client;
     private CookieJar $cookieJar;
-    private string $userId;
-    private string $password;
 
-    public function __construct(string $userId, string $password) {
+    public function __construct(private string $userId, private string $password)
+    {
         // $decider = function ($retries, $request, $response, $exception) {
         //     if ($retries < 2) {    // Sends 3 requests totally including the first request
         //         return true;    // retry
@@ -49,9 +48,6 @@ class Crawler
             // 'handler' => $stack,     // 予約の登録時に二重予約になるみたいなので、無効化
         ]);
         $this->cookieJar = new CookieJar;
-
-        $this->userId = $userId;
-        $this->password = $password;
     }
 
     private function __checkResponse($response): void
@@ -90,6 +86,11 @@ class Crawler
         return [$response->getStatusCode(), $response->getBody()];
     }
 
+    private function __isStatusPage(string $contents): bool
+    {
+        return str_contains($contents, '- 利用状況一覧 -');
+    }
+
     public function crawlReservedBooks(): array
     {
         $this->__login();
@@ -107,6 +108,10 @@ class Crawler
 
     private function __parseReservedBooksPage(string $contents): array
     {
+        if ($this->__isStatusPage($contents)) {
+            return [];
+        }
+
         $contents = preg_replace('/[\S\s]+<form name="askrsvform"/m', "", $contents);
 
         $result = [];
@@ -154,6 +159,10 @@ class Crawler
 
     private function __parseLendingBooksPage(string $contents): array
     {
+        if ($this->__isStatusPage($contents)) {
+            return [];
+        }
+
         $contents = preg_replace('/.+<form name="asklenform"/', "", $contents);
 
         $result = [];
