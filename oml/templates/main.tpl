@@ -69,8 +69,8 @@
                         {$account_books["count_keeping"]}
                         </span>
                         /
-                        <span class="{if count($reserved_books) < 15}bg-warning{/if}">
-                        {count($reserved_books)}
+                        <span class="{if $reserved_books|@count < 15}bg-info{/if}">
+                            {$reserved_books|@count}
                         </span>
                     </td>
                     <td>
@@ -78,7 +78,7 @@
                         {$account_books["count_overdue"]}
                         </span>
                         /
-                        {count($lending_books)}
+                        {$lending_books|@count}
                     </td>
                     {*
                         <td>
@@ -92,9 +92,9 @@
                     </td>
                     *}
                     {assign var="total_keeping" value=$total_keeping+$account_books["count_keeping"]}
-                    {assign var="total_reserved" value=$total_reserved+count($reserved_books)}
+                    {assign var="total_reserved" value=$total_reserved+$reserved_books|@count}
                     {assign var="total_overdue" value=$total_overdue+$account_books["count_overdue"]}
-                    {assign var="total_lending" value=$total_lending+count($lending_books)}
+                    {assign var="total_lending" value=$total_lending+$lending_books|@count}
                 </tr>
             {/foreach}
             <tr class="total">

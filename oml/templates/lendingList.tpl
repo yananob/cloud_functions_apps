@@ -18,7 +18,6 @@
 {block name=content}
     {include file="_buttonUpdateList.tpl" updateCommand="update_all_lending"}
     <div class="row-cols-auto justify-content-center">
-        {assign var="today" value=date('Ymd')}
         <table id="area_content" class="table table-striped table-hover table-bordered">
             <thead>
                 <tr class="thead-light sticky-top">
@@ -35,7 +34,7 @@
                         <td>{$book->title} | {$book->author}</td>
                         <td style="text-align: center">{$book->state->value}</td>
                         <td style="text-align: center">
-                            <span class="{if $book->returnLimitDate >= today}bg-warning{/if}">
+                            <span class="{if $book->isReturndateCame()}bg-warning{/if}">
                                 {substr($book->returnLimitDate, 5, 5)}
                             </span>
                         </td>
