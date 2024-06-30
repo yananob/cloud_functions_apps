@@ -55,7 +55,7 @@ function search(keyword, title, author, searchPage, endPage) {
     let searchButton = $("#search_button");
     $.ajax({
         dataType: "json",
-        url: ".?cmd=json-search",
+        url: "{$base_path}?cmd=json-search",
         data: {
             keyword: keyword,
             title: title,
@@ -104,7 +104,7 @@ function attachReserveButtonEvent() {
         showProgress($(this));
         $.ajax({
             dataType: "json",
-            url: ".?cmd=json-reserve",
+            url: "{$base_path}?cmd=json-reserve",
             data: {
                 book_id: $(this).data().bookid,
             },
@@ -129,7 +129,7 @@ function processReserveInfoQueue() {
     // console.log("getting info: " + bookId);
     $.ajax({
         dataType: "json",
-        url: ".?cmd=json-bookreserveinfo",
+        url: "{$base_path}?cmd=json-bookreserveinfo",
         data: {
             bookId: bookId,
         },
@@ -156,7 +156,7 @@ function processReserveInfoQueue() {
 //     console.log("getting info: " + bookId);
 //     $.ajax({
 //         dataType: "json",
-//         url: ".?cmd=json-bookcontent",
+//         url: "{$base_path}?cmd=json-bookcontent",
 //         data: {
 //             bookId: bookId,
 //         },

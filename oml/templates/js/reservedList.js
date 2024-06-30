@@ -6,7 +6,7 @@ $(document).ready(function () {
         showProgress($(this));
         $.ajax({
             dataType: "json",
-            url: ".?cmd=json-reserveagain",
+            url: "{$base_path}?cmd=json-reserveagain",
             data: {
                 user_id: $(this).data().userid,
                 book_id: $(this).data().bookid,
@@ -28,7 +28,7 @@ $(document).ready(function () {
         showProgress($(this));
         $.ajax({
             dataType: "json",
-            url: ".?cmd=json-cancelreservation",
+            url: "{$base_path}?cmd=json-cancelreservation",
             data: {
                 user_id: $(this).data().userid,
                 book_id: $(this).data().bookid,
