@@ -17,8 +17,8 @@ on:
     paths:
       - 'daily-quote/**'
       - '.github/workflows/test-daily-quote.yml'
-  schedule:
-    - cron:  '05 21 * * 5'
+  # schedule:
+  #   - cron:  '05 21 * * 5'
   workflow_dispatch:
 
 defaults:
