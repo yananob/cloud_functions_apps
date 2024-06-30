@@ -3,7 +3,7 @@ $(document).ready(function () {
         showProgress($(this));
         $.ajax({
             dataType: "json",
-            url: ".?cmd=json-extend",
+            url: "{$base_path}?cmd=json-extend",
             data: {
                 user_id: $(this).data().userid,
                 book_id: $(this).data().bookid,
