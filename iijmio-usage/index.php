@@ -17,7 +17,7 @@ function main(\CloudEvents\V1\CloudEventInterface $event): void
     $result = $iijmio->callApi();
     $alert_info = $iijmio->judgeResult($result);
     if ($alert_info["isSend"]) {
-        $line = new \yananob\mytools\Line(__DIR__ . '/configs/config.json');
+        $line = new \yananob\mytools\Line(__DIR__ . '/configs/line.json');
         $line->sendMessage($config["alert"]["target"], $alert_info["message"]);
     }
 
