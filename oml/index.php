@@ -31,8 +31,13 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
     $isLocal = CFUtils::isLocalHttp($request);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
+    $config = Utils::getConfig(__DIR__ . "/configs/config.json");
+
     $oml = new Oml($isLocal);
-    $alerter = new Alerter("oml", CFUtils::getBaseUrl($isLocal, $request));
+    $alerter = new Alerter(
+        $isLocal ? $config["line_target_debug"] : $config["line_target"],
+        CFUtils::getBaseUrl($isLocal, $request)
+    );
     $messagesQueue = new yananob\mytools\MessagesQueue();
 
     $smarty->assign("is_local", $isLocal);
@@ -51,7 +56,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
         case Command::Main->value:    // TODO: ajax化（遅延で詳細取得）
             $books = $all_reserved_books = $all_lending_books = [];
             foreach ($oml->getUserIds() as $user_id) {
-                $logger->log("processing " . $user_id);
+                $logger->log("processing user " . $user_id);
                 $reserved_books = $oml->getReservedBooks($user_id);
                 $lending_books = $oml->getLendingBooks($user_id);
                 $count_keeping = 0; $count_overdue = 0;
