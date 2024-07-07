@@ -2234,12 +2234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yananob/my_gcptools.git",
-                "reference": "9c6b8be026cab4b37e2ba088ff253e2c3684ffe4"
+                "reference": "2795eb5dbd5353656636c3b6858667aef66cb58e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yananob/my_gcptools/zipball/9c6b8be026cab4b37e2ba088ff253e2c3684ffe4",
-                "reference": "9c6b8be026cab4b37e2ba088ff253e2c3684ffe4",
+                "url": "https://api.github.com/repos/yananob/my_gcptools/zipball/2795eb5dbd5353656636c3b6858667aef66cb58e",
+                "reference": "2795eb5dbd5353656636c3b6858667aef66cb58e",
                 "shasum": ""
             },
             "require": {
@@ -2256,11 +2256,12 @@
                     "yananob\\my_gcptools\\": "src/"
                 }
             },
+            "description": "My GCP-related tools",
             "support": {
                 "source": "https://github.com/yananob/my_gcptools/tree/main",
                 "issues": "https://github.com/yananob/my_gcptools/issues"
             },
-            "time": "2024-07-07T04:59:56+00:00"
+            "time": "2024-07-07T08:31:36+00:00"
         },
         {
             "name": "yananob/mytools",
@@ -2268,12 +2269,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yananob/mytools.git",
-                "reference": "6ccfc5c790a87b07ab47943c598b9bf7f18139ee"
+                "reference": "7034b9fa8a7af46f64ec6dc753dc455ef60fd89c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yananob/mytools/zipball/6ccfc5c790a87b07ab47943c598b9bf7f18139ee",
-                "reference": "6ccfc5c790a87b07ab47943c598b9bf7f18139ee",
+                "url": "https://api.github.com/repos/yananob/mytools/zipball/7034b9fa8a7af46f64ec6dc753dc455ef60fd89c",
+                "reference": "7034b9fa8a7af46f64ec6dc753dc455ef60fd89c",
                 "shasum": ""
             },
             "require": {
@@ -2291,12 +2292,12 @@
                     "yananob\\mytools\\": "src/"
                 }
             },
-            "description": "mytools",
+            "description": "My tools",
             "support": {
                 "source": "https://github.com/yananob/mytools/tree/main",
                 "issues": "https://github.com/yananob/mytools/issues"
             },
-            "time": "2024-07-07T04:53:41+00:00"
+            "time": "2024-07-07T08:33:14+00:00"
         }
     ],
     "packages-dev": [
