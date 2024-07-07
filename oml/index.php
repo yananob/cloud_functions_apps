@@ -131,6 +131,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::JsonSearch->value:
             try {
+                // TODO: ここで返すbooksの内容を変えさえすれば、何のリストでも処理できそう
                 $searchedBooks = $oml->search(
                     $params["keyword"], $params["title"], $params["author"], (int)$params["page"]);
                 $smarty->assign("books", $searchedBooks);

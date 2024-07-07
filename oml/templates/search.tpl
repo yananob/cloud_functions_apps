@@ -13,39 +13,57 @@
 {/block}
 
 {block name=content}
-    <form onsubmit="return false;">
-        <div class="row mb-1">
-            <div class="col-9">
-                <input type="search" name="keyword" class="form-control js_enter_search" placeholder="キーワード (3文字以上)">
-            </div>
-            <button type="button" class="btn btn-primary col-3" id="search_button" data-progress=".js_search_button_progress">
-                <i class="bi bi-search"></i> 検索
-            </button>
-            <button type="button" class="btn btn-primary col-3 js_search_button_progress" disabled style="display: none">
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            </button>
-            {*
-            <div class="col-1 align-self-center">
-                <label class="form-check-label js_toggle_search_detail js_search_detail" for="flexCheckDefault">
-                    <i class="bi bi-arrows-expand"></i>
-                </label>
-                <label class="form-check-label js_toggle_search_detail js_search_detail" for="flexCheckDefault" style="display: none">
-                    <i class="bi bi-arrows-collapse"></i>
-                </label>
-            </div>
-            *}
-        </div>
-        <div class="row mb-3 js_search_detail">
-            <div class="col-6">
-                <input type="search" name="title" class="form-control js_enter_search" placeholder="タイトル">
-            </div>
-            <div class="col-6">
-                <input type="search" name="author" class="form-control js_enter_search" placeholder="著者名">
-            </div>
-        </div>
-        <input type="hidden" name="max_page" value="{if $is_local}2{else}4{/if}">
-    </form>
-
+    <ul class="nav nav-tabs mb-2">
+        <li class="nav-item">
+            <a class="nav-link js_switch_tab" href="#" data-tab="search">検索</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link js_switch_tab" href="#" data-tab="new">入る本</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">貸出30</a>
+        </li>
+    </ul>
+    
+    <div id="tab-search">
+        <form onsubmit="return false;">
+            <div class="row mb-1">
+                <div class="col-9">
+                    <input type="search" name="keyword" class="form-control js_enter_search" placeholder="キーワード (3文字以上)">
+                </div>
+                <button type="button" class="btn btn-primary col-3" id="search_button" data-progress=".js_search_button_progress">
+                    <i class="bi bi-search"></i> 検索
+                </button>
+                <button type="button" class="btn btn-primary col-3 js_search_button_progress" disabled style="display: none">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </button>
+                {*
+                <div class="col-1 align-self-center">
+                    <label class="form-check-label js_toggle_search_detail js_search_detail" for="flexCheckDefault">
+                        <i class="bi bi-arrows-expand"></i>
+                    </label>
+                    <label class="form-check-label js_toggle_search_detail js_search_detail" for="flexCheckDefault" style="display: none">
+                        <i class="bi bi-arrows-collapse"></i>
+                    </label>
+                    </div>
+                    *}
+                    </div>
+                    <div class="row mb-3 js_search_detail">
+                        <div class="col-6">
+                            <input type="search" name="title" class="form-control js_enter_search" placeholder="タイトル">
+                        </div>
+                        <div class="col-6">
+                            <input type="search" name="author" class="form-control js_enter_search" placeholder="著者名">
+                        </div>
+                    </div>
+                    <input type="hidden" name="max_page" value="{if $is_local}2{else}4{/if}">
+                    </form>
+    </div>
+    
+    <div id="tab-new">
+        これから入る本！
+    </div>
+    
     <div class="row-cols-auto justify-content-center">
         <table id="area_content" class="table table-striped table-hover table-bordered" style="display: none;">
             <thead>
