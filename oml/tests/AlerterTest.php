@@ -15,7 +15,7 @@ final class AlerterTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->alerter = new Alerter(true, "nobu");
+        $this->alerter = new Alerter("nobu", "");
     }
 
     public static function providerAddAlert(): array

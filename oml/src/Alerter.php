@@ -12,7 +12,7 @@ final class Alerter
     private array $alerts;
     private $debugDate;
 
-    public function __construct(private bool $isLocal, private string $alertTo)
+    public function __construct(private string $alertTo, private string $baseUrl)
     {
         $this->alerts = [];
         $this->debugDate = null;
@@ -82,16 +82,15 @@ final class Alerter
     public function sendAlerts(): void
     {
         $alerts = implode("\n\n", $this->getMessages());
-        $baseUrl = Utils::getBaseUrl($this->isLocal, $this->alertTo);
         $message = <<<EOT
 oml books アラート:
 
 {$alerts}
 
-{$baseUrl}
+{$this->baseUrl}
 EOT;
         $line = new Line(__DIR__ . '/../configs/line.json');
-        $line->sendMessage("oml", $message);
+        $line->sendMessage($this->alertTo, $message);
     }
 
     public function checkAll(array $reserved_books, array $lending_books): void

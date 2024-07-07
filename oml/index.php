@@ -4,6 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use yananob\mytools\Logger;
 use yananob\mytools\Utils;
+use yananob\my_gcptools\CFUtils;
 use MyApp\AlertType;
 use MyApp\Alerter;
 use MyApp\BookState;
@@ -11,12 +12,10 @@ use MyApp\BookType;
 use MyApp\Command;
 use MyApp\Oml;
 
-const APP_NAME = "oml";
-
 Google\CloudFunctions\FunctionsFramework::http('main', 'main');
 function main(Psr\Http\Message\ServerRequestInterface $request): string
 {
-    $logger = new Logger(APP_NAME);
+    $logger = new Logger("oml");
     $params = $request->getQueryParams();
     $params = array_merge($params, $request->getParsedBody());
     $logger->log(str_repeat("-", 120));
@@ -29,15 +28,15 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
     $smarty = new Smarty();
     $smarty->setTemplateDir(__DIR__ . "/templates");
 
-    $isLocal = yananob\my_gcptools\GcpUtils::isLocalHttp($request);
+    $isLocal = CFUtils::isLocalHttp($request);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
-    $alerter = new Alerter($isLocal, "oml");
+    $alerter = new Alerter("oml", CFUtils::getBaseUrl($isLocal, $request));
     $messagesQueue = new yananob\mytools\MessagesQueue();
 
     $smarty->assign("is_local", $isLocal);
-    $smarty->assign("base_path", Utils::getBasePath($isLocal, APP_NAME));
+    $smarty->assign("base_path", CFUtils::getBasePath($isLocal, $request));
     $smarty->assign("updated_dates", $oml->getUpdatedDates());
     $smarty->assign("messages", $messagesQueue->popMessages());
     $smarty->assign("alerts", $messagesQueue->popAlerts());
@@ -106,12 +105,12 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
         case Command::UpdateAllReserved->value:    // TODO: ajax化
             __update_all_reserved($isLocal, $oml, $logger, $isParallel=!$isLocal);
             $messagesQueue->pushMessage("予約リストを更新しました。");
-            __redirect_to_reserved_list($isLocal);
+            __redirect(CFUtils::getBasePath($isLocal, $request) .  "?cmd=" . Command::ListReserved->value);
 
         case Command::UpdateAllLending->value:    // TODO: ajax化
             __update_all_lending($isLocal, $oml, $logger, $isParallel=!$isLocal);
             $messagesQueue->pushMessage("貸出リストを更新しました。");
-            __redirect_to_lending_list($isLocal);
+            __redirect(CFUtils::getBasePath($isLocal, $request) .  "?cmd=" . Command::ListLending->value);
 
         case Command::UpdateAccountReserved->value:
             $oml->updateReservedBooks($params["account"]);
@@ -267,16 +266,6 @@ function __update_books(BookType $bookType, bool $isLocal, Oml $oml, Logger $log
     }
 }
 
-function __redirect_to_reserved_list(bool $isLocal): void
-{
-    __redirect(Utils::getBasePath($isLocal, APP_NAME) .  "?cmd=" . Command::ListReserved->value);
-}
-
-function __redirect_to_lending_list(bool $isLocal): void
-{
-    __redirect(Utils::getBasePath($isLocal, APP_NAME) .  "?cmd=" . Command::ListLending->value);
-}
-
 function __redirect(string $path): void
 {
     header("Location: {$path}");
@@ -298,13 +287,13 @@ function __get_success_tag(string $info=""): string
 Google\CloudFunctions\FunctionsFramework::cloudEvent('update', 'update');
 function update(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new Logger(APP_NAME);
+    $logger = new Logger("oml");
 
-    $isLocal = yananob\my_gcptools\GcpUtils::isLocalEvent($event);
+    $isLocal = CFUtils::isLocalEvent($event);
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
-    $alerter = new Alerter($isLocal, "oml");
+    $alerter = new Alerter("oml", "");  // TODO: pass baseUrl
 
     __update_all_reserved($isLocal, $oml, $logger, $isParallel=false);
     __update_all_lending($isLocal, $oml, $logger, $isParallel=false);
