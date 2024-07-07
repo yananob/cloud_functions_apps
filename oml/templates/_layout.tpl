@@ -31,13 +31,13 @@
     </div>
 
     {if !empty($messages)}
-        <div class="alert alert-primary" role="alert">{implode("<br>", $messages)}</div>
+        <div class="alert alert-primary" role="alert">{"<br>"|implode:$messages}</div>
     {/if}
     {if !empty($alerts)}
-        <div class="alert alert-warning" role="alert">{implode("<br>", $alerts)}</div>
+        <div class="alert alert-warning" role="alert">{"<br>"|implode:$alerts}</div>
     {/if}
     {if !empty($errors)}
-        <div class="alert alert-danger" role="alert">{implode("<br>", $errors)}</div>
+        <div class="alert alert-danger" role="alert">{"<br>"|implode:$errors}</div>
     {/if}
 
     <div class="container">
