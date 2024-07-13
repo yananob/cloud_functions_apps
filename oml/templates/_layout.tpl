@@ -48,7 +48,7 @@
         <div class="row justify-content-center">
             <div class="col-1"></div>
             <div class="col-auto">
-                <a class="btn btn-primary position-fixed bottom-0 end-0 me-5 mb-5" href="#top">
+                <a class="btn btn-primary position-fixed start-0 bottom-0 ms-5 mb-5" href="#top">
                     <i class="bi bi-chevron-up"></i>
                 </a>
             </div>
