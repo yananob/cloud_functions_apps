@@ -155,9 +155,9 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::JsonShowList->value:
             try {
-                $books = $oml->getList(RssType::from($params["type"]), (int)$params["category"]);
+                $books = $oml->getList(RssType::from($params["type"]), $params["category"]);
                 if ($isLocal) {
-                    $books = array_slice($books, 0, 3);
+                    $books = array_slice($books, 0, 5);
                 }
 
                 $smarty->assign("books", $books);

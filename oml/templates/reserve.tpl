@@ -24,7 +24,7 @@
         <a class="nav-link js_switch_tab" href="#" data-tab="lending">貸出30</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="#">予約30</a>
+        <a class="nav-link js_switch_tab" href="#" data-tab="reserve">予約30</a>
     </li>
 </ul>
 
@@ -69,7 +69,14 @@
     {/foreach}
 </div>
 
-<div class="row-cols-auto justify-content-center">
+<div id="tab-reserve" style="display: none">
+    {foreach $bestList as $k => $v}
+    <span class="badge bg-primary js_show_list" data-type="reserve_best" data-category="{$k}"
+        data-progress=".js_search_button_progress">{$v}</span>
+    {/foreach}
+</div>
+
+<div class="row-cols-auto justify-content-center mt-2">
     <table id="area_content" class="table table-striped table-hover table-bordered" style="display: none;">
         <thead>
             <tr class="thead-light sticky-top">

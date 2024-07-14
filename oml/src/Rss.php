@@ -12,7 +12,7 @@ class Rss
     {
     }
 
-    private function __getUrl(int $category): string
+    private function __getUrl(string $category): string
     {
         switch ($this->rssType) {
             case RssType::Upcoming:
@@ -41,7 +41,7 @@ class Rss
         return (string)$response->getBody();
     }
 
-    public function listBooks(int $category): array
+    public function listBooks(string $category): array
     {
         if (!empty($this->rssType)) {
             $feed = $this->__fetch($this->__getUrl($category));
