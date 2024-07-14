@@ -56,28 +56,10 @@
 </div>
 
 <div id="tab-new">
-    これから入る本
     <ul>
-        <li class="js_show_list">読書・報道・雑学</li>
-        <li class="js_show_list">哲学・心理学・宗教</li>
-        <li class="js_show_list">歴史・伝記</li>
-        <li class="js_show_list">地理・旅行ガイド</li>
-        <li class="js_show_list">政治・法律・経済・社会科学</li>
-        <li class="js_show_list">社会福祉・教育</li>
-        <li class="js_show_list">自然科学</li>
-        <li class="js_show_list">動物・植物</li>
-        <li class="js_show_list">医学・薬学</li>
-        <li class="js_show_list">技術・工学・環境問題</li>
-        <li class="js_show_list">コンピュータ・情報科学</li>
-        <li class="js_show_list">生活・料理・育児</li>
-        <li class="js_show_list">産業・園芸・ペット</li>
-        <li class="js_show_list">芸術・音楽</li>
-        <li class="js_show_list">スポーツ・娯楽</li>
-        <li class="js_show_list">言語・語学・スピーチ</li>
-        <li><a href="#" class="js_show_list" data-lv2="17">文学</a></li>
-        <li><a href="#" class="js_show_list" data-lv2="18" data-progress=".js_search_button_progress">日本の小説</a></li>
-        <li class="js_show_list">外国の小説</li>
-        <li class="js_show_list">エッセイ</li>
+        {foreach $upcomingList as $k => $v}
+        <span class="badge bg-secondary js_show_list" data-lv2="{$k}" data-progress=".js_search_button_progress">{$v}</span>
+        {/foreach}
     </ul>
 </div>
 

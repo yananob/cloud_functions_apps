@@ -115,35 +115,31 @@ function search(keyword, title, author, searchPage, endPage) {
 }
 
 function showList(clickedLink) {
-    showProgress(clickedLink);
+    showProgress(clickedLink, false);
     $("#area_content").show("normal");
-
-    // let searchButton = $("#search_button");
+    $("#show_next_page").hide("normal");
     $.ajax({
         dataType: "json",
         url: "{$base_path}?cmd=json-showlist",
         data: {
             lv2: clickedLink.data().lv2,
         },
-    })
-        .done((data) => {
-            if (data.success) {
-                $("#books_list").append(data.html).show("normal");
-                $(".js_books_list").show("normal");
-                reserveInfoQueue.push(...data.bookIds);
-                processReserveInfoQueue();
-
-                return;
-            }
-            else {
-                alert(data.message);
-            }
-            stopProgress(clickedLink);
-            searching = false;
-        })
-    .fail( (data) => {
+    }).done((data) => {
+        if (data.success) {
+            $("#books_list").append(data.html).show("normal");
+            $(".js_books_list").show("normal");
+            reserveInfoQueue.push(...data.bookIds);
+            processReserveInfoQueue();
+        }
+        else {
+            alert(data.message);
+        }
+        stopProgress(clickedLink);
+        searching = false;
+        return;
+    }).fail((data) => {
         alert("処理に失敗しました");
-        stopProgress(searchButton);
+        stopProgress(clickedLink);
         searching = false;
     });
 }

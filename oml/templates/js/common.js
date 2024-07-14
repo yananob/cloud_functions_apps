@@ -18,10 +18,12 @@ function run(command, params) {
 //     $('#area_content').css('display', 'block');
 // }
 
-function showProgress(obj) {
+function showProgress(obj, hideobj = true) {
     // data-progressのエレメントを表示
     $($(obj).data().progress).show();
-    $(obj).hide();
+    if (hideobj) {
+        $(obj).hide();
+    }
 }
 
 function stopProgress(obj) {

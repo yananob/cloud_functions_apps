@@ -128,6 +128,28 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::Reserve->value:
             $smarty->assign("totalReservableCount", $oml->getTotalReservableCount());
+            $smarty->assign("upcomingList", [
+                1 => "読書・報道・雑学",
+                2 => "哲学・心理学・宗教",
+                3 => "歴史・伝記",
+                4 => "地理・旅行ガイド",
+                5 => "政治・法律・経済・社会科学",
+                6 => "社会福祉・教育",
+                7 => "自然科学",
+                8 => "動物・植物",
+                9 => "医学・薬学",
+                10 => "技術・工学・環境問題",
+                11 => "コンピュータ・情報科学",
+                12 => "生活・料理・育児",
+                13 => "産業・園芸・ペット",
+                14 => "芸術・音楽",
+                15 => "スポーツ・娯楽",
+                16 => "言語・語学・スピーチ",
+                17 => "文学",
+                18 => "日本の小説",
+                19 => "外国の小説",
+                20 => "エッセイ",
+            ]);
             return $smarty->fetch('reserve.tpl');
 
         case Command::JsonSearch->value:
