@@ -125,17 +125,36 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
             $oml->updateLendingBooks($params["account"]);
             return __json_response(200);
 
-        case Command::Search->value:
+        case Command::Reserve->value:
             $smarty->assign("totalReservableCount", $oml->getTotalReservableCount());
-            return $smarty->fetch('search.tpl');
+            return $smarty->fetch('reserve.tpl');
 
         case Command::JsonSearch->value:
             try {
-                // TODO: ここで返すbooksの内容を変えさえすれば、何のリストでも処理できそう
                 $searchedBooks = $oml->search(
-                    $params["keyword"], $params["title"], $params["author"], (int)$params["page"]);
+                    $params["keyword"],
+                    $params["title"],
+                    $params["author"],
+                    (int)$params["page"]
+                );
                 $smarty->assign("books", $searchedBooks);
-                $html = $smarty->fetch('ajax/searchedBooks.tpl');
+                $html = $smarty->fetch('ajax/booksList.tpl');
+                return json_encode([
+                    "success" => true,
+                    "html" => $html,
+                    "bookIds" => array_map(function ($book) {
+                        return $book->reservedBookId;
+                    }, $searchedBooks),
+                ]);
+            } catch (Exception $e) {
+                return json_encode(["success" => false, "message" => $e->getMessage()]);
+            }
+
+        case Command::JsonShowList->value:
+            try {
+                $searchedBooks = $oml->getList($params["lv2"]);
+                $smarty->assign("books", $searchedBooks);
+                $html = $smarty->fetch('ajax/booksList.tpl');
                 return json_encode([
                     "success" => true,
                     "html" => $html,

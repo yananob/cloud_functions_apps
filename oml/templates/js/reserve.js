@@ -13,6 +13,10 @@ $(document).ready(function () {
         triggerSearch(1);
     });
 
+    $(".js_show_list").click(function () {
+        showList($(this).data().lv2);
+    });
+
     $("#show_next_page").click(function() {
         triggerSearch(currentPage);
     });
@@ -56,7 +60,7 @@ function triggerSearch(startPage) {
     }
     searching = true;
     if (startPage === 1) {
-        $("#searched_books").hide("normal").html("");
+        $("#books_list").hide("normal").html("");
     }
     showProgress($("#search_button"));
     $("#area_content").show("normal");
@@ -79,13 +83,11 @@ function search(keyword, title, author, searchPage, endPage) {
     })
     .done( (data) => {
         if (data.success) {
-            $("#searched_books").append(data.html).show("normal");
+            $("#books_list").append(data.html).show("normal");
             attachReserveButtonEvent();
-            $(".js_searched_books").show("normal");
+            $(".js_books_list").show("normal");
             reserveInfoQueue.push(...data.bookIds);
             processReserveInfoQueue();
-            // bookContentQueue.push(...data.bookIds);
-            // processBookContentQueue();
 
             searchPage++;
             currentPage = searchPage;
@@ -105,6 +107,37 @@ function search(keyword, title, author, searchPage, endPage) {
             searching = false;
         }
     })
+        .fail((data) => {
+            alert("処理に失敗しました");
+            stopProgress(searchButton);
+            searching = false;
+        });
+}
+
+function showList(lv2) {
+    // let searchButton = $("#search_button");
+    $.ajax({
+        dataType: "json",
+        url: "{$base_path}?cmd=json-showlist",
+        data: {
+            lv2: lv2,
+        },
+    })
+        .done((data) => {
+            if (data.success) {
+                $("#books_list").append(data.html).show("normal");
+                $(".js_books_list").show("normal");
+                reserveInfoQueue.push(...data.bookIds);
+                processReserveInfoQueue();
+
+                return;
+            }
+            else {
+                alert(data.message);
+            }
+            stopProgress(searchButton);
+            searching = false;
+        })
     .fail( (data) => {
         alert("処理に失敗しました");
         stopProgress(searchButton);

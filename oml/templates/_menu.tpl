@@ -7,7 +7,7 @@
         <nav class="nav">
             {* TODO: MyApp\Command::Main だとNG *}
             <a class="nav-link" href="{$base_path}?cmd=main"><span class="btn btn-secondary btn-sm">トップ</span></a>
-            <a class="nav-link" href="{$base_path}?cmd=search"><span class="btn btn-secondary btn-sm">検索・予約</span></a>
+            <a class="nav-link" href="{$base_path}?cmd=reserve"><span class="btn btn-secondary btn-sm">予 約</span></a>
             <a class="nav-link" href="{$base_path}?cmd=list_reserved"><span class="btn btn-secondary btn-sm">予約一覧</span></a>
             <a class="nav-link" href="{$base_path}?cmd=list_lending"><span class="btn btn-secondary btn-sm">貸出一覧</span></a>
         </nav>
