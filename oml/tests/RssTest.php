@@ -17,8 +17,8 @@ final class RssTest extends TestCase
     public function testListBooks_remote(): void
     {
         $rss = new Rss(RssType::Upcoming);
-        foreach ([17, 18] as $lv2) {
-            $books = $rss->listBooks($lv2);
+        foreach (["17", "18"] as $category) {
+            $books = $rss->listBooks($category);
             $this->assertGreaterThanOrEqual(1, count($books));
         }
     }
@@ -26,7 +26,7 @@ final class RssTest extends TestCase
     public function testListBooks_local(): void
     {
         $rss = new Rss(null, $filePath = __DIR__ . "/data/rss/upcoming-18.xml");
-        $books = $rss->listBooks(18);
+        $books = $rss->listBooks("18");
         $this->assertSame(135, count($books));
         $this->assertEquals(
             new ListedBook(
