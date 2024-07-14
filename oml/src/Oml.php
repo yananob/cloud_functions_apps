@@ -234,6 +234,13 @@ final class Oml
         return $crawler->search($keyword, $title, $author, $page);
     }
 
+    function getList(RssType $rssType, int $lv2): array
+    {
+        $rss = new Rss($rssType);
+        $this->logger->log("getting rss list of {$rssType->value}.{$lv2}");
+        return $rss->listBooks($lv2);
+    }
+
     public function getBookReserveInfo(string $bookId): array
     {
         $crawler = new Crawler("", "");     // TODO: 検索時（ログインしないとき）のuseridの渡し方改善

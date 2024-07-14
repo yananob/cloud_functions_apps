@@ -6,7 +6,7 @@ use yananob\mytools\Utils;
 use MyApp\BookState;
 use MyApp\ReservedBook;
 use MyApp\LendingBook;
-use MyApp\SearchedBook;
+use MyApp\ListedBook;
 use MyApp\Crawler;
 
 final class CrawlerTest extends PHPUnit\Framework\TestCase
@@ -145,20 +145,20 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
         return [
             // case => keyword, title, author, page, expected (only 1st & 5th books)
             "キーワード＝ミルキー杉山, page=1" => ["ミルキー杉山", "", "", 1, [
-                new SearchedBook("もしかしたら名探偵∥杉山 亮/作∥偕成社∥1992.3∥Fスキヤ◇Fスキヤ◇913.6", "0000261123"),
-                new SearchedBook("そんなわけで名探偵∥杉山 亮/作∥偕成社∥1998.4∥Fスキヤ◇Fスキヤ◇913.6", "0000670401"),
+                new ListedBook("もしかしたら名探偵∥杉山 亮/作∥偕成社∥1992.3∥Fスキヤ◇Fスキヤ◇913.6", "0000261123"),
+                new ListedBook("そんなわけで名探偵∥杉山 亮/作∥偕成社∥1998.4∥Fスキヤ◇Fスキヤ◇913.6", "0000670401"),
             ]],
             "キーワード＝ミルキー杉山, page=2" => ["ミルキー杉山", "", "", 2, [
-                new SearchedBook("なんだかんだ名探偵∥杉山 亮/作∥偕成社∥1999.3∥Fスキヤ◇Fスキヤ◇913.6", "0000727189"),
-                new SearchedBook("あめあがりの名探偵([ミルキー杉山のあなたも名探偵シリーズ] [9])∥杉山 亮/作∥偕成社∥2005.12∥Fスキヤ◇Fスキヤ◇913.6", "0011103578"),
+                new ListedBook("なんだかんだ名探偵∥杉山 亮/作∥偕成社∥1999.3∥Fスキヤ◇Fスキヤ◇913.6", "0000727189"),
+                new ListedBook("あめあがりの名探偵([ミルキー杉山のあなたも名探偵シリーズ] [9])∥杉山 亮/作∥偕成社∥2005.12∥Fスキヤ◇Fスキヤ◇913.6", "0011103578"),
             ]],
             "著者＝宮部みゆき, page=1" => ["", "", "宮部みゆき", 1, [
-                new SearchedBook("推理小説代表作選集 -推理小説年鑑- 1988∥日本推理作家協会/編∥講談社∥1988.5∥F◇F◇913.68", "0070002503"),
-                new SearchedBook("東京(ウォーター・フロント)殺人暮色(カッパ・ノベルス)∥宮部 みゆき/著∥光文社∥1990.4∥Fミヤヘ◇Fミヤヘ◇913.6", "0000142263"),
+                new ListedBook("推理小説代表作選集 -推理小説年鑑- 1988∥日本推理作家協会/編∥講談社∥1988.5∥F◇F◇913.68", "0070002503"),
+                new ListedBook("東京(ウォーター・フロント)殺人暮色(カッパ・ノベルス)∥宮部 みゆき/著∥光文社∥1990.4∥Fミヤヘ◇Fミヤヘ◇913.6", "0000142263"),
             ]],
             "タイトル＝ガリレオ, 著者＝東野圭吾, page=1" => ["", "ガリレオ", "東野圭吾", 1, [
-                new SearchedBook("探偵ガリレオ([ガリレオ] [1])∥東野 圭吾/著∥文芸春秋∥1998.5∥Fヒカシ◇Fヒカシ◇913.6", "0000677804"),
-                new SearchedBook("容疑者Xの献身([ガリレオ] [3])∥東野 圭吾/著∥文藝春秋∥2005.8∥Fヒカシ◇Fヒカシ◇913.6", "0011043507"),
+                new ListedBook("探偵ガリレオ([ガリレオ] [1])∥東野 圭吾/著∥文芸春秋∥1998.5∥Fヒカシ◇Fヒカシ◇913.6", "0000677804"),
+                new ListedBook("容疑者Xの献身([ガリレオ] [3])∥東野 圭吾/著∥文藝春秋∥2005.8∥Fヒカシ◇Fヒカシ◇913.6", "0011043507"),
             ]],
         ];
     }
@@ -174,11 +174,11 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
     public function testParseSearchResultPage(): void
     {
         $expected = [
-            new SearchedBook("うえをむいて名探偵([ミルキー杉山のあなたも名探偵シリーズ] [25])∥杉山 亮/作∥偕成社∥2023.5∥Fスキヤ◇Fスキヤ◇913.6", "0015365135"),
+            new ListedBook("うえをむいて名探偵([ミルキー杉山のあなたも名探偵シリーズ] [25])∥杉山 亮/作∥偕成社∥2023.5∥Fスキヤ◇Fスキヤ◇913.6", "0015365135"),
             [],
             [],
             [],
-            new SearchedBook("まちがいなく名探偵([ミルキー杉山のあなたも名探偵シリーズ] [22])∥杉山 亮/作∥偕成社∥2020.5∥Fスキヤ◇Fスキヤ◇913.6", "0014859250"),
+            new ListedBook("まちがいなく名探偵([ミルキー杉山のあなたも名探偵シリーズ] [22])∥杉山 亮/作∥偕成社∥2020.5∥Fスキヤ◇Fスキヤ◇913.6", "0014859250"),
         ];
         $contents = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "search-result.html");
         $searchedBooks = Utils::invokePrivateMethod($this->crawler, "__parseSearchResultPage", $contents);

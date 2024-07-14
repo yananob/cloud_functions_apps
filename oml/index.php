@@ -11,6 +11,7 @@ use MyApp\BookState;
 use MyApp\BookType;
 use MyApp\Command;
 use MyApp\Oml;
+use MyApp\RssType;
 
 Google\CloudFunctions\FunctionsFramework::http('main', 'main');
 function main(Psr\Http\Message\ServerRequestInterface $request): string
@@ -152,7 +153,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::JsonShowList->value:
             try {
-                $searchedBooks = $oml->getList($params["lv2"]);
+                $searchedBooks = $oml->getList(RssType::Upcoming, $params["lv2"]);
                 $smarty->assign("books", $searchedBooks);
                 $html = $smarty->fetch('ajax/booksList.tpl');
                 return json_encode([

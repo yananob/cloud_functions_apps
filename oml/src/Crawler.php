@@ -309,7 +309,7 @@ class Crawler
         if (strpos($body, "- 書誌詳細 -") !== false) {
             $bookInfo = $this->__parseBookDetailPage($body);
             return [
-                new SearchedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
+                new ListedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
             ];
         }
         return [];
@@ -335,7 +335,7 @@ class Crawler
                 continue;
             }
 
-            $book = new SearchedBook(
+            $book = new ListedBook(
                 $title=$matches[2],
                 $reservedBookId=$matches[1],
             );
