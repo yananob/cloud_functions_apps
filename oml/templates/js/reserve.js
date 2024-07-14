@@ -65,6 +65,7 @@ function triggerSearch(startPage) {
     showProgress($("#search_button"));
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
+    reserveInfoQueue = [];  // TODO: もっと抽象化
     search(keyword, title, author, startPage, startPage + 3);
     // search(keyword, title, author, startPage, startPage + 1);
 }
@@ -119,6 +120,7 @@ function showList(clickedLink) {
     showProgress(clickedLink, false);
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
+    reserveInfoQueue = [];  // TODO: もっと抽象化
     $.ajax({
         dataType: "json",
         url: "{$base_path}?cmd=json-showlist",

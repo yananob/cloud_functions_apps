@@ -493,7 +493,7 @@ class Crawler
             $result["reserves"] = (int)$matches[1];
         }
         // 予想待ち週
-        $result["waitWeeks"] = (int)(ceil($result["reserves"] / $result["books"]) * 2);
+        $result["waitWeeks"] = $result["books"] > 0 ? (int)(ceil($result["reserves"] / $result["books"]) * 2) : 999;
 
         return $result;
     }
