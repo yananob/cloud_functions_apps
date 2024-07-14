@@ -25,19 +25,19 @@ final class RssTest extends TestCase
 
     public function testListBooks_local(): void
     {
-        $rss = new Rss(null, $filePath = __DIR__ . "/data/rss/lv2-18.xml");
+        $rss = new Rss(null, $filePath = __DIR__ . "/data/rss/upcoming-18.xml");
         $books = $rss->listBooks(18);
         $this->assertSame(135, count($books));
         $this->assertEquals(
             new ListedBook(
-                "合作探偵小説コレクション 7 むかで横丁/ジュピター殺人事件",
-                "0015547923",
+                "あのとき死なずにすんだ理由 -あの日、あのとき、あの場所で感じた理解不能な恐怖-∥平山 夢明/監修∥二見書房∥2024.7∥F◇F◇913.68&lt;図書&gt;",
+                "0015547946",
             ),
-            $books[1]
+            $books[0]
         );
         $this->assertEquals(
             new ListedBook(
-                "隣の席の高嶺の花は、僕の前世の妻らしい。 -今世でも僕のことが大好きだそうです。-(富士見ファンタジア文庫 わ-5-1-1)",
+                "隣の席の高嶺の花は、僕の前世の妻らしい。 -今世でも僕のことが大好きだそうです。-(富士見ファンタジア文庫 わ-5-1-1)∥渡 路/著∥KADOKAWA∥2024.6∥Fワタリ◇Fワタリ◇913.6&lt;図書&gt;",
                 "0015544252",
             ),
             $books[134]

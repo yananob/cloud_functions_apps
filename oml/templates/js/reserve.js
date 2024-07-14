@@ -115,6 +115,7 @@ function search(keyword, title, author, searchPage, endPage) {
 }
 
 function showList(clickedLink) {
+    $("#books_list").hide("normal").html("");
     showProgress(clickedLink, false);
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");

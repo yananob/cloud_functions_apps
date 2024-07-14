@@ -28,7 +28,7 @@
     </li>
 </ul>
 
-<div id="tab-search">
+<div id="tab-search" style="display: none">
     <form onsubmit="return false;">
         <div class="row mb-1">
             <div class="col-9">
@@ -55,14 +55,14 @@
     </form>
 </div>
 
-<div id="tab-new">
+<div id="tab-new" style="display: none">
     {foreach $upcomingList as $k => $v}
         <span class="badge bg-primary js_show_list" data-type="upcoming" data-category="{$k}"
             data-progress=".js_search_button_progress">{$v}</span>
         {/foreach}
 </div>
 
-<div id="tab-lending">
+<div id="tab-lending" style="display: none">
     {foreach $bestList as $k => $v}
     <span class="badge bg-primary js_show_list" data-type="lending_best" data-category="{$k}"
         data-progress=".js_search_button_progress">{$v}</span>

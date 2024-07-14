@@ -6,7 +6,7 @@ echo "Running PHPStan..."
 
 TEST_TARGET=""
 if [ $# -eq 1 ];then
-    TEST_TARGET=$1
+    TEST_TARGET=$1.php
 fi
 
 echo "Running PHPUnit $TEST_TARGET..."

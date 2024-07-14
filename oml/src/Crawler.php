@@ -306,7 +306,7 @@ class Crawler
         if (strpos($body, "- 書誌詳細 -") !== false) {
             $bookInfo = $this->__parseBookDetailPage($body);
             return [
-                new ListedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
+                new ListedBook($bookInfo["title"] . OmlBook::TITLE_DELIMITER . $bookInfo["author"] . OmlBook::TITLE_DELIMITER . $bookInfo["published_by"] . OmlBook::TITLE_DELIMITER . $bookInfo["published_year"], $bookInfo["book_id"])
             ];
         }
         return [];
