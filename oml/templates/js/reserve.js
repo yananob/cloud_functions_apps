@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
     $(".js_show_list").click(function () {
-        showList($(this).data().lv2);
+        showList($(this));
     });
 
     $("#show_next_page").click(function() {
@@ -114,13 +114,16 @@ function search(keyword, title, author, searchPage, endPage) {
         });
 }
 
-function showList(lv2) {
+function showList(clickedLink) {
+    showProgress(clickedLink);
+    $("#area_content").show("normal");
+
     // let searchButton = $("#search_button");
     $.ajax({
         dataType: "json",
         url: "{$base_path}?cmd=json-showlist",
         data: {
-            lv2: lv2,
+            lv2: clickedLink.data().lv2,
         },
     })
         .done((data) => {
@@ -135,7 +138,7 @@ function showList(lv2) {
             else {
                 alert(data.message);
             }
-            stopProgress(searchButton);
+            stopProgress(clickedLink);
             searching = false;
         })
     .fail( (data) => {

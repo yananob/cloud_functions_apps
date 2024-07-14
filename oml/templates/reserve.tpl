@@ -56,7 +56,7 @@
 </div>
 
 <div id="tab-new">
-    これから入る本！
+    これから入る本
     <ul>
         <li class="js_show_list">読書・報道・雑学</li>
         <li class="js_show_list">哲学・心理学・宗教</li>
@@ -75,7 +75,7 @@
         <li class="js_show_list">スポーツ・娯楽</li>
         <li class="js_show_list">言語・語学・スピーチ</li>
         <li><a href="#" class="js_show_list" data-lv2="17">文学</a></li>
-        <li><a href="#" class="js_show_list" data-lv2="18">日本の小説</a></li>
+        <li><a href="#" class="js_show_list" data-lv2="18" data-progress=".js_search_button_progress">日本の小説</a></li>
         <li class="js_show_list">外国の小説</li>
         <li class="js_show_list">エッセイ</li>
     </ul>
