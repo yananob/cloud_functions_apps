@@ -60,7 +60,7 @@ gcloud functions deploy $SCRIPT_NAME-update \
     --source=. \
     --entry-point=update \
     --trigger-topic=$SCRIPT_NAME-update \
-    --timeout=180 \
+    --timeout=300 \
     --max-instances 1
 
 popd
