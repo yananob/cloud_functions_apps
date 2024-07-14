@@ -58,7 +58,7 @@
 <div id="tab-new">
     <ul>
         {foreach $upcomingList as $k => $v}
-        <span class="badge bg-secondary js_show_list" data-lv2="{$k}" data-progress=".js_search_button_progress">{$v}</span>
+        <span class="badge bg-primary js_show_list" data-lv2="{$k}" data-progress=".js_search_button_progress">{$v}</span>
         {/foreach}
     </ul>
 </div>

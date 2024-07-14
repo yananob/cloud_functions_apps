@@ -127,6 +127,7 @@ function showList(clickedLink) {
     }).done((data) => {
         if (data.success) {
             $("#books_list").append(data.html).show("normal");
+            attachReserveButtonEvent();
             $(".js_books_list").show("normal");
             reserveInfoQueue.push(...data.bookIds);
             processReserveInfoQueue();
