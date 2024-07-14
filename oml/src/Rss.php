@@ -12,15 +12,15 @@ class Rss
     {
     }
 
-    private function __getUrl(int $lv2): string
+    private function __getUrl(int $category): string
     {
         switch ($this->rssType) {
             case RssType::Upcoming:
-                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/newexe.do?REQTP=RSS&locale=ja&newlv1=1&newlv2={$lv2}";
+                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/newexe.do?REQTP=RSS&locale=ja&newlv1=1&newlv2={$category}";
             case RssType::LendingBest:
-                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/besexe.do?REQTP=RSS&target=b202405&locale=ja&beslv1=1";
+                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/besexe.do?REQTP=RSS&target=b{$category}&locale=ja&beslv1=1";
             case RssType::ReserveBest:
-                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/brqexe.do?REQTP=RSS&target=q202405&locale=ja&beslv1=1";
+                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/brqexe.do?REQTP=RSS&target=q{$category}&locale=ja&beslv1=1";
             default:
                 throw new \Exception("Unknown RssType: " . $this->rssType->value);
         }
@@ -41,15 +41,15 @@ class Rss
         return (string)$response->getBody();
     }
 
-    public function listBooks(int $lv2): array
+    public function listBooks(int $category): array
     {
         if (!empty($this->rssType)) {
-            $feed = $this->__fetch($this->__getUrl($lv2));
+            $feed = $this->__fetch($this->__getUrl($category));
         } else {
             $feed = file_get_contents($this->filePath);
         }
         $rss = simplexml_load_string($feed);
-        
+
         $result = [];
         foreach ($rss->item as $item) {
             // https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&ufi_locale=ja&pkey=0015547923

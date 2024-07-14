@@ -122,7 +122,8 @@ function showList(clickedLink) {
         dataType: "json",
         url: "{$base_path}?cmd=json-showlist",
         data: {
-            lv2: clickedLink.data().lv2,
+            type: clickedLink.data().type,
+            category: clickedLink.data().category,
         },
     }).done((data) => {
         if (data.success) {

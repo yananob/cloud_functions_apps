@@ -21,7 +21,7 @@
         <a class="nav-link js_switch_tab" href="#" data-tab="new">入る本</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="#">貸出30</a>
+        <a class="nav-link js_switch_tab" href="#" data-tab="lending">貸出30</a>
     </li>
     <li class="nav-item">
         <a class="nav-link disabled" href="#">予約30</a>
@@ -56,11 +56,17 @@
 </div>
 
 <div id="tab-new">
-    <ul>
-        {foreach $upcomingList as $k => $v}
-        <span class="badge bg-primary js_show_list" data-lv2="{$k}" data-progress=".js_search_button_progress">{$v}</span>
+    {foreach $upcomingList as $k => $v}
+        <span class="badge bg-primary js_show_list" data-type="upcoming" data-category="{$k}"
+            data-progress=".js_search_button_progress">{$v}</span>
         {/foreach}
-    </ul>
+</div>
+
+<div id="tab-lending">
+    {foreach $bestList as $k => $v}
+    <span class="badge bg-primary js_show_list" data-type="lending_best" data-category="{$k}"
+        data-progress=".js_search_button_progress">{$v}</span>
+    {/foreach}
 </div>
 
 <div class="row-cols-auto justify-content-center">
