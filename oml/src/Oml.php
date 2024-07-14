@@ -234,6 +234,13 @@ final class Oml
         return $crawler->search($keyword, $title, $author, $page);
     }
 
+    function getList(RssType $rssType, string $category): array
+    {
+        $rss = new Rss($rssType);
+        $this->logger->log("getting rss list of {$rssType->value}.{$category}");
+        return $rss->listBooks($category);
+    }
+
     public function getBookReserveInfo(string $bookId): array
     {
         $crawler = new Crawler("", "");     // TODO: 検索時（ログインしないとき）のuseridの渡し方改善
@@ -307,7 +314,7 @@ final class Oml
         $this->updateReservedBooksUpdatedDate();
     }
 
-    public function __removeReservedBookInfo(string $userId, string $bookId): void
+    private function __removeReservedBookInfo(string $userId, string $bookId): void
     {
         $this->logger->log("removing reservedBook of {$bookId}");
         $query = $this->rootCollection->document(self::RESERVED_BOOKS_COLLECTION_NAME)
@@ -317,5 +324,46 @@ final class Oml
             throw new \Exception("Got more/less than " . count($documents) . " documents by bookId " . $bookId);
         }
         $documents[0]->reference()->delete();
+    }
+
+    public function getUpcomingList(): array
+    {
+        return [
+            "01" => "読書・報道・雑学",
+            "02" => "哲学・心理学・宗教",
+            "03" => "歴史・伝記",
+            "04" => "地理・旅行ガイド",
+            // "05"" => "政治・法律・経済・社会科学",
+            // "06" => "社会福祉・教育",
+            // "07" => "自然科学",
+            // "08" => "動物・植物",
+            // "09" => "医学・薬学",
+            // "10" => "技術・工学・環境問題",
+            "11" => "コンピュータ・情報科学",
+            "12" => "生活・料理・育児",
+            "13" => "産業・園芸・ペット",
+            // 14 => "芸術・音楽",
+            "15" => "スポーツ・娯楽",
+            // "16" => "言語・語学・スピーチ",
+            // "17" => "文学",
+            "18" => "日本の小説",
+            "19" => "外国の小説",
+            "20" => "エッセイ",
+        ];
+    }
+
+    public function getBestListPeriods(): array
+    {
+        $result = [];
+
+        $currentMonth = new \DateTime("last month");
+        for ($i = 0; $i < 12; $i++) {
+            $previousMonth = clone $currentMonth;
+            $previousMonth->modify("-1 month");
+            $result[$previousMonth->format("Ym")] = $currentMonth->format("Y/m");
+            $currentMonth->modify("-1 month");
+        }
+
+        return $result;
     }
 }

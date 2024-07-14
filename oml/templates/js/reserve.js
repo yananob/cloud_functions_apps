@@ -1,7 +1,6 @@
 let searching = false;
 let currentPage = 1;
 let reserveInfoQueue = [];  // 予約数取得用書籍IDキュー
-// let bookContentQueue = [];  // 書籍内容取得用書籍IDキュー
 
 $(document).ready(function () {
     $(".js_enter_search").keypress(function(event) {
@@ -14,6 +13,10 @@ $(document).ready(function () {
         triggerSearch(1);
     });
 
+    $(".js_show_list").click(function () {
+        showList($(this));
+    });
+
     $("#show_next_page").click(function() {
         triggerSearch(currentPage);
     });
@@ -22,6 +25,21 @@ $(document).ready(function () {
         $(".js_search_detail").toggle("fast");
     });
 
+    $(".js_switch_tab").click(function () {
+        const selectedTab = $(this).data().tab;
+        $(".js_switch_tab").each(function (_, element) {
+            const currentTab = $(element).data().tab;
+            if ($(element).data().tab === selectedTab) {
+                $("#tab-" + currentTab).show();
+                $(element).addClass("active");
+            } else {
+                $("#tab-" + currentTab).hide();
+                $(element).removeClass("active");
+            }
+        });
+    });
+
+    $(".js_switch_tab:first").click();
     $("input[name=keyword]").focus();
 });
 
@@ -42,11 +60,12 @@ function triggerSearch(startPage) {
     }
     searching = true;
     if (startPage === 1) {
-        $("#searched_books").hide("normal").html("");
+        $("#books_list").hide("normal").html("");
     }
     showProgress($("#search_button"));
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
+    reserveInfoQueue = [];  // TODO: もっと抽象化
     search(keyword, title, author, startPage, startPage + 3);
     // search(keyword, title, author, startPage, startPage + 1);
 }
@@ -65,13 +84,11 @@ function search(keyword, title, author, searchPage, endPage) {
     })
     .done( (data) => {
         if (data.success) {
-            $("#searched_books").append(data.html).show("normal");
+            $("#books_list").append(data.html).show("normal");
             attachReserveButtonEvent();
-            $(".js_searched_books").show("normal");
+            $(".js_books_list").show("normal");
             reserveInfoQueue.push(...data.bookIds);
             processReserveInfoQueue();
-            // bookContentQueue.push(...data.bookIds);
-            // processBookContentQueue();
 
             searchPage++;
             currentPage = searchPage;
@@ -91,9 +108,43 @@ function search(keyword, title, author, searchPage, endPage) {
             searching = false;
         }
     })
-    .fail( (data) => {
+        .fail((data) => {
+            alert("処理に失敗しました");
+            stopProgress(searchButton);
+            searching = false;
+        });
+}
+
+function showList(clickedLink) {
+    $("#books_list").hide("normal").html("");
+    showProgress(clickedLink, false);
+    $("#area_content").show("normal");
+    $("#show_next_page").hide("normal");
+    reserveInfoQueue = [];  // TODO: もっと抽象化
+    $.ajax({
+        dataType: "json",
+        url: "{$base_path}?cmd=json-showlist",
+        data: {
+            type: clickedLink.data().type,
+            category: clickedLink.data().category,
+        },
+    }).done((data) => {
+        if (data.success) {
+            $("#books_list").append(data.html).show("normal");
+            attachReserveButtonEvent();
+            $(".js_books_list").show("normal");
+            reserveInfoQueue.push(...data.bookIds);
+            processReserveInfoQueue();
+        }
+        else {
+            alert(data.message);
+        }
+        stopProgress(clickedLink);
+        searching = false;
+        return;
+    }).fail((data) => {
         alert("処理に失敗しました");
-        stopProgress(searchButton);
+        stopProgress(clickedLink);
         searching = false;
     });
 }
@@ -143,30 +194,3 @@ function processReserveInfoQueue() {
         $("#message_" + bookId).html("エラー");
     });
 }
-
-// function processBookContentQueue() {
-//     return;
-
-//     console.log("queue length: " + bookContentQueue.length);
-//     if (bookContentQueue.length === 0) {
-//         setTimeout(processBookContentQueue, 2000);
-//         return;
-//     }
-//     let bookId = bookContentQueue.shift();
-//     console.log("getting info: " + bookId);
-//     $.ajax({
-//         dataType: "json",
-//         url: "{$base_path}?cmd=json-bookcontent",
-//         data: {
-//             bookId: bookId,
-//         },
-//     })
-//     .done( (data) => {
-//         let elem = $("#title_" + bookId);
-//         elem.html("<a href='javascript:alert(\"" + data.content + "\")'>" + elem.html() + "</a>");
-//         processBookContentQueue();
-//     })
-//     .fail( (data) => {
-//         $("#message_" + bookId).html("エラー");
-//     });
-// }

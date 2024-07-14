@@ -4,17 +4,14 @@ namespace MyApp;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Handler\CurlHandler;
+// use GuzzleHttp\HandlerStack;
+// use GuzzleHttp\Handler\CurlHandler;
 // use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Middleware;
+// use GuzzleHttp\Exception\ConnectException;
+// use GuzzleHttp\Exception\RequestException;
+// use GuzzleHttp\Middleware;
 
-use MyApp\common\FirestoreAccessor;
 use MyApp\common\Logger;
-use MyApp\common\CacheStore;
-use MyApp\CacheItems;
 use MyApp\BookState;
 use MyApp\ReservedBook;
 use MyApp\Oml;
@@ -309,7 +306,7 @@ class Crawler
         if (strpos($body, "- 書誌詳細 -") !== false) {
             $bookInfo = $this->__parseBookDetailPage($body);
             return [
-                new SearchedBook($bookInfo["title"] . "∥" . $bookInfo["author"] . "∥" . $bookInfo["published_by"] . "∥" . $bookInfo["published_year"], $bookInfo["book_id"])
+                new ListedBook($bookInfo["title"] . OmlBook::TITLE_DELIMITER . $bookInfo["author"] . OmlBook::TITLE_DELIMITER . $bookInfo["published_by"] . OmlBook::TITLE_DELIMITER . $bookInfo["published_year"], $bookInfo["book_id"])
             ];
         }
         return [];
@@ -335,7 +332,7 @@ class Crawler
                 continue;
             }
 
-            $book = new SearchedBook(
+            $book = new ListedBook(
                 $title=$matches[2],
                 $reservedBookId=$matches[1],
             );
@@ -496,7 +493,7 @@ class Crawler
             $result["reserves"] = (int)$matches[1];
         }
         // 予想待ち週
-        $result["waitWeeks"] = (int)(ceil($result["reserves"] / $result["books"]) * 2);
+        $result["waitWeeks"] = $result["books"] > 0 ? (int)(ceil($result["reserves"] / $result["books"]) * 2) : 999;
 
         return $result;
     }

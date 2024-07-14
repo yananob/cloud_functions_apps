@@ -1,5 +1,5 @@
 {foreach $books as $book}
-    <tr class="js_searched_books" style="display: none">
+    <tr class="js_books_list" style="display: none">
         <td id="title_{$book->reservedBookId}">
             <a class="btn btn-secondary btn-sm" href="https://www.oml.city.osaka.lg.jp/?page_id=266#catdbl-{$book->reservedBookId}" target="_blank">内容</a>
             {$book->title} | {$book->author} | {$book->publishedYear}

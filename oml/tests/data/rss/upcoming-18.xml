@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/" xmlns="http://purl.org/rss/1.0/">
+	<channel rdf:about="http://web.oml.city.osaka.lg.jp/webopac_i_ja/newexe.do?REQTP=RSS&amp;locale=ja&amp;newlv1=1&amp;newlv2=18">
+		<title>これから入る本</title>
+		<link><![CDATA[ https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=newexe&ufi_locale=ja&target=01&newlv1=1&newlv2=18  ]]></link>
+		<description>これから入る本を表示しています。</description>
+		<language>ja</language>
+		<copyright>Copyright c 2014- OSAKA Municipal Library. All Rights Reserved. </copyright>
+		
+		<items>
+			<rdf:Seq>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547946"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547923"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545559"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546059"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542832"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544282"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544255"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544296"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546163"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544926"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545443"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547296"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545606"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546165"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545534"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548072"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547398"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549142"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542838"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544969"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544290"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544953"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546179"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542820"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544343"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545051"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542212"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548717"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547509"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542839"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544299"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544289"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545043"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548061"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549191"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544244"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547510"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546181"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545063"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545578"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545442"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547397"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545004"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542808"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547511"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546169"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542827"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547304"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549132"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544983"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544246"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546064"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542831"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544303"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546162"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548561"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545050"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546034"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548659"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546161"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544267"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542842"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549853"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544262"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549830"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547285"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547297"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545007"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547290"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544275"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544270"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546186"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549128"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548570"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548065"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545577"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542773"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541536"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546769"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542824"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544308"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545027"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548721"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544242"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544250"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546167"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547393"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545605"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542828"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546166"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544319"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547211"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547396"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015543247"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544305"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546175"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547308"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544261"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544257"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544298"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547307"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545047"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547301"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544358"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544306"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544958"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544925"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546037"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545537"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546779"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544947"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549842"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545059"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544231"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547294"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544335"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548683"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544353"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544268"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544293"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547512"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541539"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542214"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547213"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548603"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549838"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542822"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545527"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546173"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546182"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544258"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545538"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544272"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544304"/>
+				<rdf:li rdf:resource="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544252"/>
+				</rdf:Seq>
+		</items>
+	</channel>
+	
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547946">
+		<title>
+			 あのとき死なずにすんだ理由 -あの日、あのとき、あの場所で感じた理解不能な恐怖-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547946</link>
+		<description>
+			<![CDATA[
+				平山 夢明/監修∥二見書房∥2024.7∥F◇F◇913.68&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240619</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547923">
+		<title>
+			 合作探偵小説コレクション 7 むかで横丁/ジュピター殺人事件</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547923</link>
+		<description>
+			<![CDATA[
+				日下 三蔵/編∥春陽堂書店∥2024.6∥F◇F◇913.68&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784394770176</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545559">
+		<title>
+			 幻想と怪奇不思議な本棚ショートショート・カーニヴァル</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545559</link>
+		<description>
+			<![CDATA[
+				『幻想と怪奇』編集室/編∥新紀元社∥2024.6∥F◇F◇913.68&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784775321515</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546059">
+		<title>
+			 太宰治賞 2024</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546059</link>
+		<description>
+			<![CDATA[
+				筑摩書房編集部/編∥筑摩書房∥2024.6∥F◇F◇913.68&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784480805195</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542832">
+		<title>
+			 美少女生徒会長の十神さんは今日もポンコツで放っておけない(GA文庫 あ-21-03)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542832</link>
+		<description>
+			<![CDATA[
+				相崎 壁際/著∥SBクリエイティブ∥2024.6∥Fアイサ◇Fアイサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784815617790</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544282">
+		<title>
+			 ステイ! -ぼくとシェパードの5カ月の戦い-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544282</link>
+		<description>
+			<![CDATA[
+				青谷 真未/著∥早川書房∥2024.6∥Fアオヤ◇Fアオヤ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784152103369</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544255">
+		<title>
+			 校内三大美女のヒモしてます(富士見ファンタジア文庫 あ-35-1-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544255</link>
+		<description>
+			<![CDATA[
+				暁 貴々/著∥KADOKAWA∥2024.6∥Fアカツ◇Fアカツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040754925</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544296">
+		<title>
+			 この世界の顔面偏差値が高すぎて目が痛い 5</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544296</link>
+		<description>
+			<![CDATA[
+				暁 晴海/著∥TOブックス∥2024.7∥Fアカツ◇Fアカツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942178</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546163">
+		<title>
+			 緋弾のアリア 41 原罪の龍王(MF文庫J あ-05-55)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546163</link>
+		<description>
+			<![CDATA[
+				赤松 中学/著∥KADOKAWA∥2024.6∥Fアカマ◇Fアカマ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837011</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544926">
+		<title>
+			 完本神坐す山の物語</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544926</link>
+		<description>
+			<![CDATA[
+				浅田 次郎/著∥双葉社∥2024.6∥Fアサタ◇Fアサタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784575247466</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545443">
+		<title>
+			 魂婚心中</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545443</link>
+		<description>
+			<![CDATA[
+				芦沢 央/著∥早川書房∥2024.6∥Fアシサ◇Fアシサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784152103376</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547296">
+		<title>
+			 月が導く異世界道中 20</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547296</link>
+		<description>
+			<![CDATA[
+				あずみ 圭/[著]∥アルファポリス∥2024.6∥Fアスミ◇Fアスミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340888</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545606">
+		<title>
+			 魔導具師ダリヤはうつむかない -今日から自由な職人ライフ- 10(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545606</link>
+		<description>
+			<![CDATA[
+				甘岸 久弥/著∥KADOKAWA∥2024.6∥Fアマキ◇Fアマキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837127</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546165">
+		<title>
+			 スタァ・ミライプロジェクト 歌姫編(MF文庫J あ-20-18)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546165</link>
+		<description>
+			<![CDATA[
+				綾里 けいし/著∥KADOKAWA∥2024.6∥Fアヤサ◇Fアヤサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837028</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545534">
+		<title>
+			 ジャックジャンヌ七つ風(JUMP J BOOKS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545534</link>
+		<description>
+			<![CDATA[
+				石田 スイ/原作・イラスト∥集英社∥2024.6∥Fイシタ◇Fイシタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784087035469</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548072">
+		<title>
+			 地獄の沙汰も黄金次第 -会社をクビになったけど、錬金術とかいうチートスキルを手に入れたので人生一発逆転を目指します- 3(Mノベルス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548072</link>
+		<description>
+			<![CDATA[
+				出雲 大吉/著∥双葉社∥2024.7∥Fイスモ◇Fイスモ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784575247503</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547398">
+		<title>
+			 大江戸秘密指令 -書き下ろし長編時代小説- 5 長屋の仇討ち(二見時代小説文庫 い4-5)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547398</link>
+		<description>
+			<![CDATA[
+				伊丹 完/著∥二見書房∥2024.7∥Fイタミ◇Fイタミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240572</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549142">
+		<title>
+			 明智恭介の奔走</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549142</link>
+		<description>
+			<![CDATA[
+				今村 昌弘/著∥東京創元社∥2024.6∥Fイマム◇Fイマム◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784488029067</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542838">
+		<title>
+			 毎晩ちゅーしてデレる吸血鬼のお姫様 2(GA文庫 い-08-07)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542838</link>
+		<description>
+			<![CDATA[
+				岩柄 イズカ/著∥SBクリエイティブ∥2024.6∥Fイワツ◇Fイワツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784815623036</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544969">
+		<title>
+			 軒猿の娘(中公文庫 い138-8)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544969</link>
+		<description>
+			<![CDATA[
+				岩室 忍/著∥中央公論新社∥2024.6∥Fイワム◇Fイワム◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784122075252</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544290">
+		<title>
+			 悪役令嬢の兄に転生しました 8</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544290</link>
+		<description>
+			<![CDATA[
+				内河 弘児/著∥TOブックス∥2024.7∥Fウチカ◇Fウチカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942147</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544953">
+		<title>
+			 猫と罰</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544953</link>
+		<description>
+			<![CDATA[
+				宇津木 健太郎/著∥新潮社∥2024.6∥Fウツキ◇Fウツキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784103556718</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546179">
+		<title>
+			 泥船貴族のご令嬢 -幼い弟を息子と偽装し、隣国でしぶとく生き残る!- 2(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546179</link>
+		<description>
+			<![CDATA[
+				江本 マシメサ/著∥KADOKAWA∥2024.6∥Fエモト◇Fエモト◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046835512</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542820">
+		<title>
+			 神の庭付き楠木邸 7(電撃の新文芸)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542820</link>
+		<description>
+			<![CDATA[
+				えんじゅ/著∥KADOKAWA∥2024.6∥Fエンシ◇Fエンシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049156614</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544343">
+		<title>
+			 戦国時代に宇宙要塞でやって来ました。 9(MORNING STAR BOOKS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544343</link>
+		<description>
+			<![CDATA[
+				横蛍/著∥新紀元社∥2024.6∥Fオウケ◇Fオウケ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784775321546</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545051">
+		<title>
+			 攻撃力ゼロから始める剣聖譚 -幼馴染の皇女に捨てられ魔法学園に入学したら、魔王と契約することになった- 3(オーバーラップ文庫 お-07-15)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545051</link>
+		<description>
+			<![CDATA[
+				大崎 アイル/著∥オーバーラップ∥2024.6∥Fオオサ◇Fオオサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008244</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542212">
+		<title>
+			 ぬくもりの旋律</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542212</link>
+		<description>
+			<![CDATA[
+				岡田 真理/著∥河出書房新社∥2024.6∥Fオカタ◇Fオカタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784309031910</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548717">
+		<title>
+			 かつての暗殺者は来世で違う生き方をする 01</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548717</link>
+		<description>
+			<![CDATA[
+				丘野 優/著∥KADOKAWA∥2024.6∥Fオカノ◇Fオカノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784047379763</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547509">
+		<title>
+			 碧のかたみ(キャラ文庫 お3-9)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547509</link>
+		<description>
+			<![CDATA[
+				尾上 与一/著∥徳間書店∥2024.6∥Fオカミ◇Fオカミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784199011344</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542839">
+		<title>
+			 噓つきリップは恋で崩れる 2(GA文庫 お-13-02)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542839</link>
+		<description>
+			<![CDATA[
+				織島 かのこ/著∥SBクリエイティブ∥2024.6∥Fオリシ◇Fオリシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784815623418</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544299">
+		<title>
+			 迷宮都市の錬金薬師 -覚醒スキル&lt;製薬&gt;で今度こそ幸せに暮らします!- 2</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544299</link>
+		<description>
+			<![CDATA[
+				織部 ソマリ/著∥アルファポリス∥2024.6∥Fオリヘ◇Fオリヘ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340710</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544289">
+		<title>
+			 ザ・ニュー・ゲート 23 黄金の博兎</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544289</link>
+		<description>
+			<![CDATA[
+				風波 しのぎ/著∥アルファポリス∥2024.6∥Fカサナ◇Fカサナ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340635</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545043">
+		<title>
+			 太っちょ貴族は迷宮でワルツを踊る 3(OVERLAP NOVELS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545043</link>
+		<description>
+			<![CDATA[
+				風見鶏/著∥オーバーラップ∥2024.6∥Fカサミ◇Fカサミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008589</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548061">
+		<title>
+			 ブルーマリッジ -Break away(from the past)-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548061</link>
+		<description>
+			<![CDATA[
+				カツセ マサヒコ/著∥新潮社∥2024.6∥Fカツセ◇Fカツセ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784103556916</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549191">
+		<title>
+			 新心霊探偵八雲 -赤眼の呪縛-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549191</link>
+		<description>
+			<![CDATA[
+				神永 学/著∥講談社∥2024.6∥Fカミナ◇Fカミナ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784065359341</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544244">
+		<title>
+			 聖女先生の魔法は進んでる! 2 竜姫の秘めしもの(富士見ファンタジア文庫 か-24-3-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544244</link>
+		<description>
+			<![CDATA[
+				鴉 ぴえろ/著∥KADOKAWA∥2024.6∥Fカラス◇Fカラス◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040752303</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547510">
+		<title>
+			 おれが殺す愛しい半魔へ(キャラ文庫 か9-3)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547510</link>
+		<description>
+			<![CDATA[
+				かわい恋/著∥徳間書店∥2024.6∥Fカワイ◇Fカワイ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784199011375</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546181">
+		<title>
+			 家臣に恵まれた転生貴族の幸せな日常 2(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546181</link>
+		<description>
+			<![CDATA[
+				企業戦士/著∥KADOKAWA∥2024.6∥Fキキヨ◇Fキキヨ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837103</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545063">
+		<title>
+			 一生働きたくない俺が、クラスメイトの大人気アイドルに懐かれたら 6 国民的美少女アイドルたちとのクリスマス(オーバーラップ文庫 き-09-06)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545063</link>
+		<description>
+			<![CDATA[
+				岸本 和葉/著∥オーバーラップ∥2024.6∥Fキシモ◇Fキシモ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008527</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545578">
+		<title>
+			 みんな蛍を殺したかった(二見文庫 き1-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545578</link>
+		<description>
+			<![CDATA[
+				木爾 チレン/著∥二見書房∥2024.7∥Fキナ◇Fキナ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240633</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545442">
+		<title>
+			 了巷説百物語</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545442</link>
+		<description>
+			<![CDATA[
+				京極 夏彦/著∥KADOKAWA∥2024.6∥Fキヨウ◇Fキヨウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784041117200</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547397">
+		<title>
+			 ねこ浄土 -書き下ろし長編時代小説-(二見時代小説文庫 く2-41)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547397</link>
+		<description>
+			<![CDATA[
+				倉阪 鬼一郎/著∥二見書房∥2024.7∥Fクラサ◇Fクラサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240565</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545004">
+		<title>
+			 出稼ぎ令嬢の婚約騒動 7 次期公爵様は愛妻が守らせてくれなくて心配です。(一迅社文庫アイリス く-03-13)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545004</link>
+		<description>
+			<![CDATA[
+				黒湖 クロコ/著∥一迅社∥2024.7∥Fクロコ◇Fクロコ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784758096508</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542808">
+		<title>
+			 かわいいわたしのFe(文研じゅべにーるYA)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542808</link>
+		<description>
+			<![CDATA[
+				神戸 遙真/作∥文研出版∥2024.6∥Fコウヘ◇Fコウヘ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784580826182</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547511">
+		<title>
+			 3月22日、花束を捧げよ 上(キャラ文庫 こ4-8)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547511</link>
+		<description>
+			<![CDATA[
+				小中 大豆/著∥徳間書店∥2024.6∥Fコナカ◇Fコナカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784199011368</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546169">
+		<title>
+			 経学少女伝 -試験地獄の男装令嬢-(MF文庫J こ-07-01)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546169</link>
+		<description>
+			<![CDATA[
+				小林 湖底/著∥KADOKAWA∥2024.6∥Fコハヤ◇Fコハヤ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837059</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542827">
+		<title>
+			 植物魔法で気ままにガーデニング・ライフ -ハクと精霊さんたちの植物園-(電撃の新文芸)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542827</link>
+		<description>
+			<![CDATA[
+				さいき/著∥KADOKAWA∥2024.6∥Fサイキ◇Fサイキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049155945</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547304">
+		<title>
+			 バタン島漂流記</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547304</link>
+		<description>
+			<![CDATA[
+				西條 奈加/著∥光文社∥2024.6∥Fサイシ◇Fサイシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784334103569</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549132">
+		<title>
+			 ミチノオク</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549132</link>
+		<description>
+			<![CDATA[
+				佐伯 一麦/著∥新潮社∥2024.6∥Fサエキ◇Fサエキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784103814061</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544983">
+		<title>
+			 不連続殺人事件(中公文庫 さ77-3)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544983</link>
+		<description>
+			<![CDATA[
+				坂口 安吾/著∥中央公論新社∥2024.6∥Fサカク◇Fサカク◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784122075313</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544246">
+		<title>
+			 やり直し悪徳領主は反省しない! 2(富士見ファンタジア文庫 さ-11-2-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544246</link>
+		<description>
+			<![CDATA[
+				桜生 懐/著∥KADOKAWA∥2024.6∥Fサクラ◇Fサクラ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040754451</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546064">
+		<title>
+			 雪渡の黒つぐみ</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546064</link>
+		<description>
+			<![CDATA[
+				桜井 真城/著∥講談社∥2024.6∥Fサクラ◇Fサクラ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784065354834</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542831">
+		<title>
+			 その王妃は異邦人 -東方妃婚姻譚- 2(GAノベル)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542831</link>
+		<description>
+			<![CDATA[
+				sasasa/著∥SBクリエイティブ∥2024.6∥Fサササ◇Fサササ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784815620103</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544303">
+		<title>
+			 高卒、無職、ボッチの俺が、現代ダンジョンで億を稼げたワケ -会社が倒産して無職になったので、今日から秘密のダンジョンに潜って稼いでいこうと思います-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544303</link>
+		<description>
+			<![CDATA[
+				砂糖 多労/著∥TOブックス∥2024.7∥Fサトウ◇Fサトウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942130</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546162">
+		<title>
+			 ただの村人の僕が、三百年前の暴君皇子に転生してしまいました -前世の知識で暗殺フラグを回避して、穏やかに生き残ります!- 2(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546162</link>
+		<description>
+			<![CDATA[
+				サンボン/著∥KADOKAWA∥2024.6∥Fサンホ◇Fサンホ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837158</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548561">
+		<title>
+			 あの花が咲く丘で、君とまた出会えたら。 -Another-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548561</link>
+		<description>
+			<![CDATA[
+				汐見 夏衛/著∥スターツ出版∥2024.6∥Fシオミ◇Fシオミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784813793410</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545050">
+		<title>
+			 聖人公爵様がラスボスだということを私だけが知っている -転生悪女は破滅回避を模索中- 2(OVERLAP NOVELS f)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545050</link>
+		<description>
+			<![CDATA[
+				しきみ 彰/著∥オーバーラップ∥2024.6∥Fシキミ◇Fシキミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008619</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546034">
+		<title>
+			 暗殺</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546034</link>
+		<description>
+			<![CDATA[
+				柴田 哲孝/著∥幻冬舎∥2024.6∥Fシハタ◇Fシハタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784344043060</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548659">
+		<title>
+			 ちびころ転生者のモフモフ森暮らし 1(GC NOVELS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548659</link>
+		<description>
+			<![CDATA[
+				ジャジャ丸/著∥マイクロマガジン社∥2024.7∥Fシヤシ◇Fシヤシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867165959</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546161">
+		<title>
+			 いのちの食べ方 5(MF文庫J し-05-21)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546161</link>
+		<description>
+			<![CDATA[
+				十文字 青/著∥KADOKAWA∥2024.6∥Fシユウ◇Fシユウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046835413</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544267">
+		<title>
+			 双子まとめて『カノジョ』にしない? 3(富士見ファンタジア文庫 し-9-2-3)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544267</link>
+		<description>
+			<![CDATA[
+				白井 ムク/著∥KADOKAWA∥2024.6∥Fシライ◇Fシライ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040755021</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542842">
+		<title>
+			 りゅうおうのおしごと! 19(GA文庫 し-04-39)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542842</link>
+		<description>
+			<![CDATA[
+				白鳥 士郎/著∥SBクリエイティブ∥2024.6∥Fシラト◇Fシラト◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784815625863</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549853">
+		<title>
+			 俺は義妹に噓をつく -血の繫がらない妹を俺が引き取ることにした- 2(ダッシュエックス文庫 し-18-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549853</link>
+		<description>
+			<![CDATA[
+				城野 白/著∥集英社∥2024.6∥Fシロノ◇Fシロノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784086315579</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544262">
+		<title>
+			 正しい勇者の作り方(富士見ファンタジア文庫 し-11-2-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544262</link>
+		<description>
+			<![CDATA[
+				進九郎/著∥KADOKAWA∥2024.6∥Fシンク◇Fシンク◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040755014</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549830">
+		<title>
+			 命日 -六つの愛の物語-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549830</link>
+		<description>
+			<![CDATA[
+				瀬戸内 寂聴/著∥講談社∥2024.6∥Fセトウ◇Fセトウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784065358092</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547285">
+		<title>
+			 悪役令嬢だそうですが、攻略対象その5以外は興味ありません 3(レジーナブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547285</link>
+		<description>
+			<![CDATA[
+				千 遊雲/[著]∥アルファポリス∥2024.7∥Fセン◇Fセン◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340826</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547297">
+		<title>
+			 ヤンデレ至上主義の悪役令嬢はハッピーヤンデレカップルを慈しみたい!(レジーナブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547297</link>
+		<description>
+			<![CDATA[
+				染井 由乃/[著]∥アルファポリス∥2024.7∥Fソメイ◇Fソメイ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434339394</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545007">
+		<title>
+			 生まれ変わっても君を愛すると言ってくれたのは婚約者の弟でした(一迅社文庫アイリス そ-03-01)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545007</link>
+		<description>
+			<![CDATA[
+				そらほし/著∥一迅社∥2024.7∥Fソラホ◇Fソラホ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784758096515</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547290">
+		<title>
+			 嫌われ者の&lt;白豚令嬢&gt;の巻き戻り。二度目の人生は失敗しませんわ! 2(レジーナブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547290</link>
+		<description>
+			<![CDATA[
+				大福金/[著]∥アルファポリス∥2024.7∥Fタイフ◇Fタイフ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340833</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544275">
+		<title>
+			 転生幼女はお詫びチートで異世界ごーいんぐまいうぇい 4</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544275</link>
+		<description>
+			<![CDATA[
+				高木 コン/[著]∥アルファポリス∥2024.6∥Fタカキ◇Fタカキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340697</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544270">
+		<title>
+			 美来さんは見た目だけ地雷系(富士見ファンタジア文庫 た-19-2-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544270</link>
+		<description>
+			<![CDATA[
+				高科 恭介/著∥KADOKAWA∥2024.6∥Fタカシ◇Fタカシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040755045</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546186">
+		<title>
+			 スキル&lt;庭いじり&gt;持ち令嬢、島流しにあう -未開の島でスキルが大進化!簡単開拓始めます- 1(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546186</link>
+		<description>
+			<![CDATA[
+				たかた ちひろ/著∥KADOKAWA∥2024.6∥Fタカタ◇Fタカタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837165</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549128">
+		<title>
+			 響け!ユーフォニアム 北宇治高校吹奏楽部のみんなの話(宝島社文庫 Cた-8-16)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549128</link>
+		<description>
+			<![CDATA[
+				武田 綾乃/著∥宝島社∥2024.7∥Fタケタ◇Fタケタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784299056214</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548570">
+		<title>
+			 紙呪</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548570</link>
+		<description>
+			<![CDATA[
+				田中 俊行/著∥二見書房∥2024.7∥Fタナカ◇Fタナカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240602</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548065">
+		<title>
+			 出遅れテイマーのその日暮らし 12(GC NOVELS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548065</link>
+		<description>
+			<![CDATA[
+				棚架 ユウ/著∥マイクロマガジン社∥2024.7∥Fタナカ◇Fタナカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867165935</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545577">
+		<title>
+			 致死量の友だち(二見文庫 た1-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545577</link>
+		<description>
+			<![CDATA[
+				田辺 青蛙/著∥二見書房∥2024.7∥Fタナヘ◇Fタナヘ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240640</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542773">
+		<title>
+			[-大活字] 谷崎潤一郎大活字本シリーズ 2 春琴抄</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542773</link>
+		<description>
+			<![CDATA[
+				谷崎 潤一郎/著∥三和書籍∥2024.6∥Fタニサ◇Fタニサ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784862515520</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541536">
+		<title>
+			 オルクセン王国史 -野蛮なオークの国は、如何にして平和なエルフの国を焼き払うに至ったか- 2(Saga Forest)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541536</link>
+		<description>
+			<![CDATA[
+				樽見 京一郎/著∥一二三書房∥2024.6∥Fタルミ◇Fタルミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824201867</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546769">
+		<title>
+			 後宮の弔妃(メディアワークス文庫 と3-9)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546769</link>
+		<description>
+			<![CDATA[
+				冬馬 倫/[著]∥KADOKAWA∥2024.6∥Fトウマ◇Fトウマ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049152340</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542824">
+		<title>
+			 如月十兵衛 娘鍼医の用心棒 巻の2 鬼の舌震い(論創ノベルス 012)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542824</link>
+		<description>
+			<![CDATA[
+				扉 修一郎/著∥論創社∥2024.6∥Fトヒラ◇Fトヒラ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784846023195</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544308">
+		<title>
+			 転生難民少女は市民権を0から目指して働きます! 3</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544308</link>
+		<description>
+			<![CDATA[
+				鳥助/著∥TOブックス∥2024.7∥Fトリス◇Fトリス◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942185</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545027">
+		<title>
+			 魯鈍の人 -信長の弟、信秀の十男と言われて-(MORNING STAR BOOKS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545027</link>
+		<description>
+			<![CDATA[
+				牛一/著∥新紀元社∥2024.6∥Fトン◇Fトン◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784775321560</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548721">
+		<title>
+			 異世界のんびり農家 17</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548721</link>
+		<description>
+			<![CDATA[
+				内藤 騎之介/著∥KADOKAWA∥2024.6∥Fナイト◇Fナイト◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784047380295</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544242">
+		<title>
+			 経験済みなキミと、経験ゼロなオレが、お付き合いする話。 その8(富士見ファンタジア文庫 な-2-6-8)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544242</link>
+		<description>
+			<![CDATA[
+				長岡 マキ子/著∥KADOKAWA∥2024.6∥Fナカオ◇Fナカオ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040750125</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544250">
+		<title>
+			 彼女が生きてる世界線!</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544250</link>
+		<description>
+			<![CDATA[
+				中田 永一/著∥ポプラ社∥2024.6∥Fナカタ◇Fナカタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784591182062</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546167">
+		<title>
+			 Re:ゼロから始める異世界生活 38(MF文庫J な-07-55)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546167</link>
+		<description>
+			<![CDATA[
+				長月 達平/著∥KADOKAWA∥2024.6∥Fナカツ◇Fナカツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837042</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547393">
+		<title>
+			 鬼の軍人と稀血の花嫁 [2] 桜の下の契り(スターツ出版文庫 Sな7-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547393</link>
+		<description>
+			<![CDATA[
+				夏 みのる/著∥スターツ出版∥2024.6∥Fナツ◇Fナツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784813716020</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545605">
+		<title>
+			 名代辻そば異世界店 2(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545605</link>
+		<description>
+			<![CDATA[
+				西村 西/著∥KADOKAWA∥2024.6∥Fニシム◇Fニシム◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046835468</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542828">
+		<title>
+			 ダンジョン付き古民家シェアハウス 2(電撃の新文芸)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542828</link>
+		<description>
+			<![CDATA[
+				猫野 美羽/著∥KADOKAWA∥2024.6∥Fネコノ◇Fネコノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049157109</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546166">
+		<title>
+			 男子禁制ゲーム世界で俺がやるべき唯一のこと -百合の間に挟まる男として転生してしまいました- 5(MF文庫J は-14-05)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546166</link>
+		<description>
+			<![CDATA[
+				端桜 了/著∥KADOKAWA∥2024.6∥Fハサク◇Fハサク◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837035</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544319">
+		<title>
+			 報道協定</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544319</link>
+		<description>
+			<![CDATA[
+				初瀬 礼/著∥新潮社∥2024.6∥Fハツセ◇Fハツセ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784103400530</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547211">
+		<title>
+			 girls(くもんの児童文学)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547211</link>
+		<description>
+			<![CDATA[
+				濱野 京子/作∥くもん出版∥2024.6∥Fハマノ◇Fハマノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784774337623</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547396">
+		<title>
+			 剣客旗本と半玉同心捕物暦 -書き下ろし長編時代小説- 2 海猫の遺恨(二見時代小説文庫 は1-50)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547396</link>
+		<description>
+			<![CDATA[
+				早見 俊/著∥二見書房∥2024.7∥Fハヤミ◇Fハヤミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784576240558</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015543247">
+		<title>
+			 古本食堂 -新装開店-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015543247</link>
+		<description>
+			<![CDATA[
+				原田 ひ香/[著]∥角川春樹事務所∥2024.6∥Fハラタ◇Fハラタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784758414678</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544305">
+		<title>
+			 乙女ゲームのヒロインで最強サバイバル 8</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544305</link>
+		<description>
+			<![CDATA[
+				春の日びより/著∥TOブックス∥2024.7∥Fハルノ◇Fハルノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942161</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546175">
+		<title>
+			 拝啓見知らぬ旦那様、離婚していただきます 4(メディアワークス文庫 ひ7-6)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546175</link>
+		<description>
+			<![CDATA[
+				久川 航璃/[著]∥KADOKAWA∥2024.6∥Fヒサカ◇Fヒサカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049157406</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547308">
+		<title>
+			 室蘭地球岬のフィナーレ</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547308</link>
+		<description>
+			<![CDATA[
+				平石 貴樹/著∥光文社∥2024.6∥Fヒライ◇Fヒライ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784334103583</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544261">
+		<title>
+			 小さな大魔法使いの自分探しの旅 -親に見捨てられたけど、無自覚チートで街の人を笑顔にします-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544261</link>
+		<description>
+			<![CDATA[
+				藤 なごみ/著∥アルファポリス∥2024.6∥Fフシ◇Fフシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340680</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544257">
+		<title>
+			 余りモノ異世界人の自由生活 -勇者じゃないので勝手にやらせてもらいます- 7</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544257</link>
+		<description>
+			<![CDATA[
+				藤森 フクロウ/著∥アルファポリス∥2024.6∥Fフシモ◇Fフシモ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434337758</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544298">
+		<title>
+			 じゃない孔明転生記。 -軍師の師だといわれましても-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544298</link>
+		<description>
+			<![CDATA[
+				二水 うなむ/著∥TOブックス∥2024.7∥Fフタミ◇Fフタミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942192</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547307">
+		<title>
+			 その溺愛、間違ってます! -義家族に下女扱いされている私に、義姉の婚約者が本気で迫ってくるんだけど-(レジーナブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547307</link>
+		<description>
+			<![CDATA[
+				buchi/著∥アルファポリス∥2024.7∥Fフチ◇Fフチ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340819</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545047">
+		<title>
+			 完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる 6(OVERLAP NOVELS f)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545047</link>
+		<description>
+			<![CDATA[
+				冬月 光輝/著∥オーバーラップ∥2024.6∥Fフユツ◇Fフユツ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008626</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547301">
+		<title>
+			 捨てられ令嬢、皇女に成り上がる -追放された薔薇は隣国で深く愛される-(レジーナブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547301</link>
+		<description>
+			<![CDATA[
+				冬野 月子/[著]∥アルファポリス∥2024.7∥Fフユノ◇Fフユノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434337826</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544358">
+		<title>
+			 死ねばいい! -呪った女と暮らします-</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544358</link>
+		<description>
+			<![CDATA[
+				保坂 祐希/著∥中央公論新社∥2024.6∥Fホサカ◇Fホサカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784120057977</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544306">
+		<title>
+			 ウォルテニア戦記 27(HJ NOVELS HJN09-27)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544306</link>
+		<description>
+			<![CDATA[
+				保利 亮太/著∥ホビージャパン∥2024.6∥Fホリ◇Fホリ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784798635071</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544958">
+		<title>
+			 九人のレジェンドと愚か者が一人</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544958</link>
+		<description>
+			<![CDATA[
+				本城 雅人/著∥東京創元社∥2024.6∥Fホンシ◇Fホンシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784488029050</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544925">
+		<title>
+			 首木の民</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544925</link>
+		<description>
+			<![CDATA[
+				誉田 哲也/著∥双葉社∥2024.6∥Fホンタ◇Fホンタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784575247473</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546037">
+		<title>
+			 六月のぶりぶりぎっちょう</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546037</link>
+		<description>
+			<![CDATA[
+				万城目 学/著∥文藝春秋∥2024.6∥Fマキメ◇Fマキメ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784163918624</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545537">
+		<title>
+			 憧れの美人生徒会長にお喋りインコが勝手に告白したけど、会長の気持ちもインコが暴露しやがった(オーバーラップ文庫 ま-08-01)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545537</link>
+		<description>
+			<![CDATA[
+				間咲 正樹/著∥オーバーラップ∥2024.6∥Fマサキ◇Fマサキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008473</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546779">
+		<title>
+			 薔薇姫と氷皇子の波乱なる結婚 2(メディアワークス文庫 ま2-15)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546779</link>
+		<description>
+			<![CDATA[
+				マサト 真希/[著]∥KADOKAWA∥2024.6∥Fマサト◇Fマサト◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049157376</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544947">
+		<title>
+			 女神から『孵化』のスキルを授かった俺が、なぜか幻獣や神獣を従える最強テイマーになるまで 1(HJ NOVELS HJN85-01)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544947</link>
+		<description>
+			<![CDATA[
+				まるせい/著∥ホビージャパン∥2024.6∥Fマルセ◇Fマルセ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784798635545</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549842">
+		<title>
+			 地味なおじさん、実は英雄でした。 -自覚がないまま無双してたら、姪のダンジョン配信で晒されてたようです-(ダッシュエックス文庫 み-9-5)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549842</link>
+		<description>
+			<![CDATA[
+				三河 ごーすと/[著]∥集英社∥2024.6∥Fミカワ◇Fミカワ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784086315548</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545059">
+		<title>
+			 あたしは星間国家の英雄騎士! 3(オーバーラップ文庫 み-04-11)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545059</link>
+		<description>
+			<![CDATA[
+				三嶋 与夢/著∥オーバーラップ∥2024.6∥Fミシマ◇Fミシマ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008497</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544231">
+		<title>
+			 左遷でしたら喜んで! -王宮魔術師の第二の人生はのんびり、もふもふ、ときどきキノコ?- 3</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544231</link>
+		<description>
+			<![CDATA[
+				みずうし/著∥アルファポリス∥2024.6∥Fミスウ◇Fミスウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340673</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547294">
+		<title>
+			 救世主</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547294</link>
+		<description>
+			<![CDATA[
+				水生 大海/著∥光文社∥2024.6∥Fミスキ◇Fミスキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784334103552</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544335">
+		<title>
+			 金融破綻列島</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544335</link>
+		<description>
+			<![CDATA[
+				水野 梓/著∥幻冬舎∥2024.6∥Fミスノ◇Fミスノ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784344043046</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548683">
+		<title>
+			 昨日まで名前も呼んでくれなかった公爵様が、急に溺愛してくるのですが? 2</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548683</link>
+		<description>
+			<![CDATA[
+				三月 叶姫/著∥TOブックス∥2024.7∥Fミツキ◇Fミツキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942246</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544353">
+		<title>
+			 噓つきな彼との話</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544353</link>
+		<description>
+			<![CDATA[
+				三羽 省吾/著∥中央公論新社∥2024.6∥Fミツハ◇Fミツハ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784120057984</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544268">
+		<title>
+			 異世界ゆるり紀行 -子育てしながら冒険者します- 16</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544268</link>
+		<description>
+			<![CDATA[
+				水無月 静琉/[著]∥アルファポリス∥2024.6∥Fミナス◇Fミナス◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340666</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544293">
+		<title>
+			 トカゲ&lt;本当は神竜&gt;を召喚した聖獣使い、竜の背中で開拓ライフ -無能と言われ追放されたので、空の上に建国します- 4</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544293</link>
+		<description>
+			<![CDATA[
+				水都 蓮/著∥アルファポリス∥2024.6∥Fミナト◇Fミナト◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340659</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547512">
+		<title>
+			 錬金術師の最愛の悪魔(キャラ文庫 み4-12)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547512</link>
+		<description>
+			<![CDATA[
+				宮緒 葵/著∥徳間書店∥2024.6∥Fミヤオ◇Fミヤオ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784199011351</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541539">
+		<title>
+			 カノンレディ -砲兵令嬢戦記- 2(Saga Forest)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015541539</link>
+		<description>
+			<![CDATA[
+				村井 啓/著∥一二三書房∥2024.6∥Fムライ◇Fムライ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824201928</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542214">
+		<title>
+			 氷の侯爵様に甘やかされたいっ! -シリアス展開しかない幼女に転生してしまった私の奮闘記- 6</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542214</link>
+		<description>
+			<![CDATA[
+				もちだ もちこ/著∥TOブックス∥2024.7∥Fモチタ◇Fモチタ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942109</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547213">
+		<title>
+			 なんで死体がスタジオに!?</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015547213</link>
+		<description>
+			<![CDATA[
+				森 バジル/著∥文藝春秋∥2024.6∥Fモリ◇Fモリ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784163918631</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548603">
+		<title>
+			 神保町・喫茶ソウセキ真実は黒カレーのスパイスに(宝島社文庫 Cや-9-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015548603</link>
+		<description>
+			<![CDATA[
+				柳瀬 みちる/著∥宝島社∥2024.7∥Fヤナセ◇Fヤナセ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784299055811</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549838">
+		<title>
+			 難問の多い料理店</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015549838</link>
+		<description>
+			<![CDATA[
+				結城 真一郎/著∥集英社∥2024.6∥Fユウキ◇Fユウキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784087718706</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542822">
+		<title>
+			 物語の黒幕に転生して -進化する魔剣とゲーム知識ですべてをねじ伏せる- 4(電撃の新文芸)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015542822</link>
+		<description>
+			<![CDATA[
+				結城 涼/著∥KADOKAWA∥2024.6∥Fユウキ◇Fユウキ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049152081</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545527">
+		<title>
+			 巻き込まれ転生者は不運なだけでは終われない 1(OVERLAP NOVELS)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545527</link>
+		<description>
+			<![CDATA[
+				雪菊/著∥オーバーラップ∥2024.6∥Fユキク◇Fユキク◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008565</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546173">
+		<title>
+			 後宮食医の薬膳帖 -廃姫は毒を喰らいて薬となす- 4(メディアワークス文庫 ゆ5-5)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546173</link>
+		<description>
+			<![CDATA[
+				夢見里 龍/[著]∥KADOKAWA∥2024.6∥Fユメミ◇Fユメミ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784049157369</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546182">
+		<title>
+			 転生したら、子どもに厳しい世界でした 2(MFブックス)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015546182</link>
+		<description>
+			<![CDATA[
+				梨香/著∥KADOKAWA∥2024.6∥Fリカ◇Fリカ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784046837134</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544258">
+		<title>
+			 夏目漱石ファンタジア 2(富士見ファンタジア文庫 れ-1-1-2)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544258</link>
+		<description>
+			<![CDATA[
+				零余子/著∥KADOKAWA∥2024.6∥Fレイヨ◇Fレイヨ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040754956</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545538">
+		<title>
+			 眠れる森の悪魔 -転生少女×倫理欠落天才一族- 1(OVERLAP NOVELS f)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015545538</link>
+		<description>
+			<![CDATA[
+				鹿条 シキ/著∥オーバーラップ∥2024.6∥Fロクシ◇Fロクシ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784824008602</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544272">
+		<title>
+			 没落した貴族家に拾われたので恩返しで復興させます 3</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544272</link>
+		<description>
+			<![CDATA[
+				六山 葵/[著]∥アルファポリス∥2024.6∥Fロクヤ◇Fロクヤ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784434340703</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544304">
+		<title>
+			 奴隷に鍛えられる異世界生活</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544304</link>
+		<description>
+			<![CDATA[
+				路地裏の茶屋/著∥TOブックス∥2024.7∥Fロシウ◇Fロシウ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784867942123</dc:identifier></item>
+	<item rdf:about="https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544252">
+		<title>
+			 隣の席の高嶺の花は、僕の前世の妻らしい。 -今世でも僕のことが大好きだそうです。-(富士見ファンタジア文庫 わ-5-1-1)</title>
+		<link>https://web.oml.city.osaka.lg.jp/webopac_i_ja/ufirdi.do?ufi_target=catdbl&amp;ufi_locale=ja&amp;pkey=0015544252</link>
+		<description>
+			<![CDATA[
+				渡 路/著∥KADOKAWA∥2024.6∥Fワタリ◇Fワタリ◇913.6&lt;図書&gt;
+			]]>
+		</description>
+		<dc:date>2024-07-10T22:05:14+0900</dc:date>
+		<acpdt>2024-07-10T22:05:14+0900</acpdt>
+		<dc:identifier>9784040754895</dc:identifier></item>
+	</rdf:RDF>

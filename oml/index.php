@@ -11,6 +11,7 @@ use MyApp\BookState;
 use MyApp\BookType;
 use MyApp\Command;
 use MyApp\Oml;
+use MyApp\RssType;
 
 Google\CloudFunctions\FunctionsFramework::http('main', 'main');
 function main(Psr\Http\Message\ServerRequestInterface $request): string
@@ -125,22 +126,48 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
             $oml->updateLendingBooks($params["account"]);
             return __json_response(200);
 
-        case Command::Search->value:
+        case Command::Reserve->value:
             $smarty->assign("totalReservableCount", $oml->getTotalReservableCount());
-            return $smarty->fetch('search.tpl');
+            $smarty->assign("upcomingList", $oml->getUpcomingList());
+            $smarty->assign("bestList", $oml->getBestListPeriods());
+            return $smarty->fetch('reserve.tpl');
 
         case Command::JsonSearch->value:
             try {
                 $searchedBooks = $oml->search(
-                    $params["keyword"], $params["title"], $params["author"], (int)$params["page"]);
+                    $params["keyword"],
+                    $params["title"],
+                    $params["author"],
+                    (int)$params["page"]
+                );
                 $smarty->assign("books", $searchedBooks);
-                $html = $smarty->fetch('ajax/searchedBooks.tpl');
+                $html = $smarty->fetch('ajax/booksList.tpl');
+                return json_encode([
+                    "success" => true,
+                    "html" => $html,
+                    "bookIds" => array_map(function ($book) {
+                        return $book->reservedBookId;
+                    }, $searchedBooks),
+                ]);
+            } catch (Exception $e) {
+                return json_encode(["success" => false, "message" => $e->getMessage()]);
+            }
+
+        case Command::JsonShowList->value:
+            try {
+                $books = $oml->getList(RssType::from($params["type"]), $params["category"]);
+                if ($isLocal) {
+                    $books = array_slice($books, 0, 5);
+                }
+
+                $smarty->assign("books", $books);
+                $html = $smarty->fetch('ajax/booksList.tpl');
                 return json_encode([
                     "success" => true,
                     "html" => $html,
                     "bookIds" => array_map(function($book) {
                         return $book->reservedBookId;
-                    }, $searchedBooks),
+                    }, $books),
                 ]);
             }
             catch (Exception $e) {

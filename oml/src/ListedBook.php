@@ -2,7 +2,7 @@
 
 namespace MyApp;
 
-final class SearchedBook extends OmlBook
+final class ListedBook extends OmlBook
 {
     public string $reservedBookId;  // メモ：予約しても変わらない
 
@@ -23,9 +23,9 @@ final class SearchedBook extends OmlBook
         ];
     }
 
-    public static function fromArray(array $array): SearchedBook
+    public static function fromArray(array $array): ListedBook
     {
-        return new SearchedBook(
+        return new ListedBook(
             $array["title"], $array["reserved_book_id"]
         );
     }

@@ -4,12 +4,13 @@ namespace MyApp;
 
 class OmlBook
 {
-    public string $fullTitle;
     public string $title;
     public string $author;
     public string $publishedYear;
 
-    public function __construct(string $fullTitle)
+    const TITLE_DELIMITER = "∥";
+
+    public function __construct(public string $fullTitle)
     {
         $this->fullTitle = $fullTitle;
 
@@ -20,7 +21,7 @@ class OmlBook
 
     private function __getTitlePart(int $index): string
     {
-        $titles = explode("∥", $this->fullTitle);
+        $titles = explode(self::TITLE_DELIMITER, $this->fullTitle);
         if (count($titles) > $index) {
             return $titles[$index];
         }
