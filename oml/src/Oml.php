@@ -354,10 +354,16 @@ final class Oml
 
     public function getBestListPeriods(): array
     {
-        // TODO: 12ヶ月分を自動で返す
-        return [
-            "202405" => "～2024/06",
-            "202404" => "～2024/05",
-        ];
+        $result = [];
+
+        $currentMonth = new \DateTime("last month");
+        for ($i = 0; $i < 12; $i++) {
+            $previousMonth = clone $currentMonth;
+            $previousMonth->modify("-1 month");
+            $result[$previousMonth->format("Ym")] = $currentMonth->format("Y/m");
+            $currentMonth->modify("-1 month");
+        }
+
+        return $result;
     }
 }
