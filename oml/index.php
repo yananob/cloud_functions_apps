@@ -176,8 +176,9 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
         case Command::JsonShowList->value:
             try {
                 $books = $oml->getList(RssType::Upcoming, (int)$params["lv2"]);
-                // DEBUG
-                $books = array_slice($books, 0, 3);
+                if ($isLocal) {
+                    $books = array_slice($books, 0, 3);
+                }
 
                 $smarty->assign("books", $books);
                 $html = $smarty->fetch('ajax/booksList.tpl');
