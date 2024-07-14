@@ -153,15 +153,18 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::JsonShowList->value:
             try {
-                $searchedBooks = $oml->getList(RssType::Upcoming, $params["lv2"]);
-                $smarty->assign("books", $searchedBooks);
+                $books = $oml->getList(RssType::Upcoming, (int)$params["lv2"]);
+                // DEBUG
+                $books = array_slice($books, 0, 3);
+
+                $smarty->assign("books", $books);
                 $html = $smarty->fetch('ajax/booksList.tpl');
                 return json_encode([
                     "success" => true,
                     "html" => $html,
                     "bookIds" => array_map(function($book) {
                         return $book->reservedBookId;
-                    }, $searchedBooks),
+                    }, $books),
                 ]);
             }
             catch (Exception $e) {

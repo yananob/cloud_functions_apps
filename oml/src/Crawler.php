@@ -4,17 +4,14 @@ namespace MyApp;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Handler\CurlHandler;
+// use GuzzleHttp\HandlerStack;
+// use GuzzleHttp\Handler\CurlHandler;
 // use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Middleware;
+// use GuzzleHttp\Exception\ConnectException;
+// use GuzzleHttp\Exception\RequestException;
+// use GuzzleHttp\Middleware;
 
-use MyApp\common\FirestoreAccessor;
 use MyApp\common\Logger;
-use MyApp\common\CacheStore;
-use MyApp\CacheItems;
 use MyApp\BookState;
 use MyApp\ReservedBook;
 use MyApp\Oml;
