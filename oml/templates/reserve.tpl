@@ -6,6 +6,11 @@
 <script type="text/javascript">
     {include file = "js/reserve.js" }
 </script>
+<style>
+    .badge {
+        font-size: 0.85em;
+    }
+</style>
 {/block}
 
 {block name=header_info}

@@ -116,6 +116,13 @@ function search(keyword, title, author, searchPage, endPage) {
 }
 
 function showList(clickedLink) {
+    // reset active
+    $(".js_show_list").each(function (index) {
+        if ($(this).hasClass("bg-success")) {
+            $(this).removeClass("bg-success").addClass("bg-primary");
+        }
+    });
+    clickedLink.removeClass("bg-primary").addClass("bg-success");
     $("#books_list").hide("normal").html("");
     showProgress(clickedLink, false);
     $("#area_content").show("normal");
