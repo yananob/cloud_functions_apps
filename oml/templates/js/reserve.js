@@ -62,6 +62,7 @@ function triggerSearch(startPage) {
     if (startPage === 1) {
         $("#books_list").hide("normal").html("");
     }
+    $("#search_button").focus();
     showProgress($("#search_button"));
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
