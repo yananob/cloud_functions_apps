@@ -282,6 +282,7 @@ class Crawler
             "year" => "",
             "year2" => "",
             "sortkey" => "syear,scntry/" . strtoupper($order),
+            "lang_type" => "T",
             "lang" => "JPN",
         ];
         // $this->logger->log($form_params);
