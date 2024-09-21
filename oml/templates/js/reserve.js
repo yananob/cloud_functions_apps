@@ -179,6 +179,7 @@ function attachEventsToBookList() {
     });
 
     $(".js_search_with_author").unbind("click.search_with_author").bind("click.search_with_author", function () {
+        $(".js_switch_tab:first").click();
         $("input[name=keyword]").val("");
         $("input[name=title]").val("");
         $("input[name=author]").val($(this).data().author);
