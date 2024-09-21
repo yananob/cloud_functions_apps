@@ -2,7 +2,9 @@
     <tr class="js_books_list" style="display: none">
         <td id="title_{$book->reservedBookId}">
             <a class="btn btn-secondary btn-sm" href="https://www.oml.city.osaka.lg.jp/?page_id=266#catdbl-{$book->reservedBookId}" target="_blank">内容</a>
-            {$book->title} | {$book->author} | {$book->publishedYear}
+            {$book->title} | <a href="#" class="js_search_with_author" data-author="{$book->authorForSearch}">{$book->author}</a>
+            |
+            {$book->publishedYear}
         </td>
         <td class="text-end" id="reserves_{$book->reservedBookId}">
             <div class="spinner-border spinner-border-sm text-info" role="status"></div>

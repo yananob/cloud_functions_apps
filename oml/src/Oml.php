@@ -24,7 +24,8 @@ final class Oml
     public const MAX_RESERVABLE_COUNT = 15;
     public const MAX_LENDABLE_COUNT = 15;
 
-    public function __construct($is_test=true) {
+    public function __construct(bool $is_test = true)
+    {
         date_default_timezone_set('Asia/Tokyo');
 
         $this->logger = new Logger("Oml");

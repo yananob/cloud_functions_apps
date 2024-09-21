@@ -1,4 +1,4 @@
-let searching = false;
+let searchedTimestamp;
 let currentPage = 1;
 let reserveInfoQueue = [];  // 予約数取得用書籍IDキュー
 
@@ -55,10 +55,7 @@ function triggerSearch(startPage) {
         return;
     }
 
-    if (searching) {
-        return;
-    }
-    searching = true;
+    searchedTimestamp = Date.now();
     if (startPage === 1) {
         $("#books_list").hide("normal").html("");
     }
@@ -73,6 +70,7 @@ function triggerSearch(startPage) {
 
 function search(keyword, title, author, searchPage, endPage) {
     let searchButton = $("#search_button");
+    let triggeredTimestamp = searchedTimestamp;
     $.ajax({
         dataType: "json",
         url: "{$base_path}?cmd=json-search",
@@ -84,9 +82,13 @@ function search(keyword, title, author, searchPage, endPage) {
         },
     })
     .done( (data) => {
+        // 新たな検索が実行されていたら、何もせず終了する
+        if (triggeredTimestamp != searchedTimestamp) {
+            return;
+        }
         if (data.success) {
             $("#books_list").append(data.html).show("normal");
-            attachReserveButtonEvent();
+            attachEventsToBookList();
             $(".js_books_list").show("normal");
             reserveInfoQueue.push(...data.bookIds);
             processReserveInfoQueue();
@@ -95,7 +97,6 @@ function search(keyword, title, author, searchPage, endPage) {
             currentPage = searchPage;
             if ((currentPage > endPage) || (data.html.length === 0)) {
                 stopProgress(searchButton);
-                searching = false;
                 if ((searchPage >= endPage) && (data.html.length !== 0)) {
                     $("#show_next_page").show("normal");
                 }
@@ -106,13 +107,15 @@ function search(keyword, title, author, searchPage, endPage) {
         else {
             alert(data.message);
             stopProgress(searchButton);
-            searching = false;
         }
     })
         .fail((data) => {
+            // 新たな検索が実行されていたら、何もせず終了する
+            if (triggeredTimestamp != searchedTimestamp) {
+                return;
+            }
             alert("処理に失敗しました");
             stopProgress(searchButton);
-            searching = false;
         });
 }
 
@@ -139,7 +142,7 @@ function showList(clickedLink) {
     }).done((data) => {
         if (data.success) {
             $("#books_list").append(data.html).show("normal");
-            attachReserveButtonEvent();
+            attachEventsToBookList();
             $(".js_books_list").show("normal");
             reserveInfoQueue.push(...data.bookIds);
             processReserveInfoQueue();
@@ -148,16 +151,14 @@ function showList(clickedLink) {
             alert(data.message);
         }
         stopProgress(clickedLink);
-        searching = false;
         return;
     }).fail((data) => {
         alert("処理に失敗しました");
         stopProgress(clickedLink);
-        searching = false;
     });
 }
 
-function attachReserveButtonEvent() {
+function attachEventsToBookList() {
     // bind only once
     $(".js_btn_reserve").unbind("click.reserve").bind("click.reserve", function() {
         showProgress($(this));
@@ -176,6 +177,14 @@ function attachReserveButtonEvent() {
             stopProgress(this);
         });
     });
+
+    $(".js_search_with_author").unbind("click.search_with_author").bind("click.search_with_author", function () {
+        $("input[name=keyword]").val("");
+        $("input[name=title]").val("");
+        $("input[name=author]").val($(this).data().author);
+        $("#search_button").click();
+    });
+
 }
 
 function processReserveInfoQueue() {
