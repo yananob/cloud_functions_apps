@@ -66,3 +66,5 @@ gcloud functions deploy $SCRIPT_NAME-update \
 popd
 rm -rf ./$SCRIPT_NAME
 popd
+
+rm -f ./templates_c/*.php

@@ -14,7 +14,8 @@ class Accounts
     private FirestoreClient $dbAccessor;
     private CollectionReference $accountsCollection;
 
-    public function __construct($is_test=true) {
+    public function __construct(bool $is_test = true)
+    {
         $this->dbAccessor = new \Google\Cloud\Firestore\FirestoreClient(["keyFilePath" => __DIR__ . '/../configs/firebase.json']);
         $collection_name = "oml";
         if ($is_test) {
