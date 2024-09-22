@@ -59,13 +59,11 @@ function triggerSearch(startPage) {
     if (startPage === 1) {
         $("#books_list").hide("normal").html("");
     }
-    $("#search_button").focus();
     showProgress($("#search_button"));
     $("#area_content").show("normal");
     $("#show_next_page").hide("normal");
     reserveInfoQueue = [];  // TODO: もっと抽象化
     search(keyword, title, author, startPage, startPage + 3);
-    // search(keyword, title, author, startPage, startPage + 1);
 }
 
 function search(keyword, title, author, searchPage, endPage) {
