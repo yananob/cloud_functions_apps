@@ -33,9 +33,9 @@
                 {foreach $books as $book}
                     <tr>
                         <td>
-                            {$book->title} | {$book->author}
                             <a class="btn btn-secondary btn-sm"
                                 href="https://www.oml.city.osaka.lg.jp/?page_id=266#catdbl-{$book->reservedBookId}" target="_blank">内容</a>
+                            {$book->title} | {$book->author}
                         </td>
                         <td style="text-align: center">
                             <span class="{if $book->state->value === '取置中'}bg-warning{/if}">

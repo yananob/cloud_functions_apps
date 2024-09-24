@@ -5,6 +5,7 @@ let reserveInfoQueue = [];  // 予約数取得用書籍IDキュー
 $(document).ready(function () {
     $(".js_enter_search").keypress(function(event) {
         if (event.key === "Enter") {
+            $("#search_button").focus();
             $("#search_button").click();
         }
     });
