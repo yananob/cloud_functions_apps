@@ -6,7 +6,8 @@ namespace MyApp;
 
 enum RssType: string
 {
-    case Upcoming = "upcoming";
+    case UpcomingAdult = "upcoming_adult";
+    case UpcomingChild = "upcoming_child";
     case LendingBest = "lending_best";
     case ReserveBest = "reserve_best";
 }

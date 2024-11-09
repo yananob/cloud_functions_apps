@@ -16,7 +16,7 @@ final class RssTest extends TestCase
 
     public function testListBooks_remote(): void
     {
-        $rss = new Rss(RssType::Upcoming);
+        $rss = new Rss(RssType::UpcomingAdult);
         foreach (["17", "18"] as $category) {
             $books = $rss->listBooks($category);
             $this->assertGreaterThanOrEqual(1, count($books));

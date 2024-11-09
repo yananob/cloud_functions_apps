@@ -128,7 +128,8 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
         case Command::Reserve->value:
             $smarty->assign("totalReservableCount", $oml->getTotalReservableCount());
-            $smarty->assign("upcomingList", $oml->getUpcomingList());
+            $smarty->assign("upcomingAdultList", $oml->getUpcomingAdultList());
+            $smarty->assign("upcomingChildList", $oml->getUpcomingChildList());
             $smarty->assign("bestList", $oml->getBestListPeriods());
             return $smarty->fetch('reserve.tpl');
 

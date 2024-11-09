@@ -15,8 +15,10 @@ class Rss
     private function __getUrl(string $category): string
     {
         switch ($this->rssType) {
-            case RssType::Upcoming:
+            case RssType::UpcomingAdult:
                 return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/newexe.do?REQTP=RSS&locale=ja&newlv1=1&newlv2={$category}";
+            case RssType::UpcomingChild:
+                return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/newexe.do?REQTP=RSS&locale=ja&newlv1=2&newlv2={$category}";
             case RssType::LendingBest:
                 return "https://web.oml.city.osaka.lg.jp/webopac_i_ja/besexe.do?REQTP=RSS&target=b{$category}&locale=ja&beslv1=1";
             case RssType::ReserveBest:
