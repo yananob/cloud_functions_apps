@@ -23,7 +23,10 @@
         <a class="nav-link js_switch_tab" href="#" data-tab="search">検索</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link js_switch_tab" href="#" data-tab="new">入る本</a>
+        <a class="nav-link js_switch_tab" href="#" data-tab="new_adult">新/大</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link js_switch_tab" href="#" data-tab="new_child">新/子</a>
     </li>
     <li class="nav-item">
         <a class="nav-link js_switch_tab" href="#" data-tab="lending">貸出30</a>
@@ -60,11 +63,18 @@
     </form>
 </div>
 
-<div id="tab-new" style="display: none">
-    {foreach $upcomingList as $k => $v}
-        <span class="badge bg-primary js_show_list" data-type="upcoming" data-category="{$k}"
-            data-progress=".js_search_button_progress">{$v}</span>
-        {/foreach}
+<div id="tab-new_adult" style="display: none">
+    {foreach $upcomingAdultList as $k => $v}
+    <span class="badge bg-primary js_show_list" data-type="upcoming_adult" data-category="{$k}"
+        data-progress=".js_search_button_progress">{$v}</span>
+    {/foreach}
+</div>
+
+<div id="tab-new_child" style="display: none">
+    {foreach $upcomingChildList as $k => $v}
+    <span class="badge bg-primary js_show_list" data-type="upcoming_child" data-category="{$k}"
+        data-progress=".js_search_button_progress">{$v}</span>
+    {/foreach}
 </div>
 
 <div id="tab-lending" style="display: none">

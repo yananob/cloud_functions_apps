@@ -327,7 +327,7 @@ final class Oml
         $documents[0]->reference()->delete();
     }
 
-    public function getUpcomingList(): array
+    public function getUpcomingAdultList(): array
     {
         return [
             "00" => "読書・報道・雑学",
@@ -350,6 +350,27 @@ final class Oml
             "18" => "日本の小説",
             "19" => "外国の小説",
             "20" => "エッセイ",
+        ];
+    }
+
+    public function getUpcomingChildList(): array
+    {
+        return [
+            "02" => "歴史・伝記",
+            "04" => "社会・仕事",
+            "05" => "バリアフリー・教育",
+            "06" => "科学・算数・宇宙",
+            "07" => "動物・植物",
+            "09" => "工業・環境・乗り物",
+            "11" => "手芸・料理",
+            "12" => "産業・生き物の育て方",
+            "13" => "芸術・工作・音楽",
+            "14" => "絵本",
+            "15" => "スポーツ・遊び",
+            "16" => "言葉・外国語",
+            "17" => "文学",
+            "18" => "日本の物語",
+            "19" => "外国の物語",
         ];
     }
 
