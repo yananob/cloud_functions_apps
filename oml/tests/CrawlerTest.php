@@ -35,8 +35,8 @@ final class CrawlerTest extends PHPUnit\Framework\TestCase
     {
         [$_, $res_body] = Utils::invokePrivateMethod($this->crawler, "__login");
         $this->assertStringContainsString("あなたの図書館利用状況は以下の通りです。", strval($res_body));
-        $this->assertStringContainsString("貸出一覧を見る", strval($res_body));
-        $this->assertStringContainsString("予約一覧を見る", strval($res_body));
+        $this->assertStringContainsString("メニューへ", strval($res_body));
+        $this->assertStringContainsString("ログアウト", strval($res_body));
     }
 
     public function testParseReservedBooksPage_withBooks(): void
