@@ -2,10 +2,13 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use GuzzleHttp\Psr7\Response;
 use yananob\mytools\Logger;
 
 Google\CloudFunctions\FunctionsFramework::http('main', 'main');
-function main(Psr\Http\Message\ServerRequestInterface $request): string
+function main(ServerRequestInterface $request): ResponseInterface
 {
     $logger = new Logger("webhook-receive");
     $params = $request->getQueryParams();
@@ -13,5 +16,6 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
     $logger->log(str_repeat("-", 120));
     $logger->log("Params: " . json_encode($params));
 
-    return json_encode($params);
+    $headers = ['Content-Type' => 'application/json'];
+    return new Response(200, $headers, json_encode($params));
 }
