@@ -2,20 +2,23 @@
 
 namespace MyApp;
 
-use yananob\mytools\Utils;
 use yananob\mytools\Line;
 use MyApp\AlertType;
 use MyApp\BookState;
 
 final class Alerter
 {
+    private string $bot;
+    private string $target;
     private array $alerts;
     private $debugDate;
 
-    public function __construct(private string $alertTo, private string $baseUrl)
+    public function __construct(array $config, private string $baseUrl)
     {
         $this->alerts = [];
         $this->debugDate = null;
+        $this->bot = $config["line_bot"];
+        $this->target = $config["line_target"];
     }
 
     public function setDebugDate(string $debugDate): void
@@ -90,7 +93,7 @@ oml books アラート:
 {$this->baseUrl}
 EOT;
         $line = new Line(__DIR__ . '/../configs/line.json');
-        $line->sendMessage($this->alertTo, $message);
+        $line->sendMessage($this->bot, $this->target, $message);
     }
 
     public function checkAll(array $reserved_books, array $lending_books): void
