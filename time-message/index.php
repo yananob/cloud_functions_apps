@@ -2,20 +2,27 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
-function main(CloudEvents\V1\CloudEventInterface $event): void
-{
-    $logger = new yananob\mytools\Logger("time-message");
-    $trigger = new yananob\mytools\Trigger();
-    $line = new yananob\mytools\Line(__DIR__ . '/configs/line.json');
+use Google\CloudFunctions\FunctionsFramework;
+use CloudEvents\V1\CloudEventInterface;
+use yananob\mytools\Logger;
+use yananob\mytools\Utils;
+use yananob\mytools\Trigger;
+use yananob\mytools\Line;
 
-    $config = yananob\mytools\Utils::getConfig(__DIR__ . "/configs/config.json");
+FunctionsFramework::cloudEvent('main', 'main');
+function main(CloudEventInterface $event): void
+{
+    $logger = new Logger("time-message");
+    $trigger = new Trigger();
+    $line = new Line(__DIR__ . '/configs/line.json');
+
+    $config = Utils::getConfig(__DIR__ . "/configs/config.json");
     foreach ($config["settings"] as $setting) {
         $logger->log("Processing target: " . json_encode($setting));
 
         if ($trigger->isLaunch($setting["timing"])) {
             $logger->log("Sending message");
-            $line->sendMessage($setting["target"], $setting["message"]);
+            $line->sendMessage($setting["bot"], $setting["target"], $setting["message"]);
         }
     };
 
