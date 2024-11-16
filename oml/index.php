@@ -36,7 +36,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
 
     $oml = new Oml($isLocal);
     $alerter = new Alerter(
-        $isLocal ? $config["line_target_debug"] : $config["line_target"],
+        $isLocal ? $config["alert_debug"] : $config["alert"],
         CFUtils::getBaseUrl($isLocal, $request)
     );
     $messagesQueue = new yananob\mytools\MessagesQueue();
@@ -326,7 +326,11 @@ function update(CloudEvents\V1\CloudEventInterface $event): void
     $logger->log("Running as " . ($isLocal ? "local" : "cloud") . " mode");
 
     $oml = new Oml($isLocal);
-    $alerter = new Alerter("oml", "");  // TODO: pass baseUrl
+    $config = Utils::getConfig(__DIR__ . "/configs/config.json");
+    $alerter = new Alerter(
+        $isLocal ? $config["alert_debug"] : $config["alert"],
+        ""    // TODO: pass baseUrl
+    );
 
     __update_all_reserved($isLocal, $oml, $logger, $isParallel=false);
     __update_all_lending($isLocal, $oml, $logger, $isParallel=false);

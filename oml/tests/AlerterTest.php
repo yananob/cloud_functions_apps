@@ -15,7 +15,11 @@ final class AlerterTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->alerter = new Alerter("nobu", "");
+        $config = [
+            "line_bot" => "nobu",
+            "line_target" => "nobu",
+        ];
+        $this->alerter = new Alerter($config, "");
     }
 
     public static function providerAddAlert(): array
