@@ -11,11 +11,18 @@ Google\CloudFunctions\FunctionsFramework::http('main', 'main');
 function main(ServerRequestInterface $request): ResponseInterface
 {
     $logger = new Logger("webhook-receive");
-    $params = $request->getQueryParams();
-    $params = array_merge($params, $request->getParsedBody());
     $logger->log(str_repeat("-", 120));
-    $logger->log("Params: " . json_encode($params));
+
+    $logger->log("headers: " . json_encode($request->getHeaders()));
+
+    $logger->log("params: " . json_encode($request->getQueryParams()));
+
+    $logger->log("parsedBody: " . json_encode($request->getParsedBody()));
+
+    $body = $request->getBody()->getContents();
+    $logger->log("body: " . $body);
+    $logger->log("body_json: " . json_encode(json_decode($body)));
 
     $headers = ['Content-Type' => 'application/json'];
-    return new Response(200, $headers, json_encode($params));
+    return new Response(200, $headers, json_encode($body));
 }
