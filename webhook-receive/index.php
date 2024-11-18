@@ -24,7 +24,33 @@ function main(ServerRequestInterface $request): ResponseInterface
     $logger->log("body_json: " . json_encode(json_decode($body)));
 
     // sample:
-    // body: {"destination":"XXXX","events":[{"type":"message","message":{"type":"text","id":"XXXX","quoteToken":"XXXX","text":"わわわわわ"},"webhookEventId":"XXXX","deliveryContext":{"isRedelivery":false},"timestamp":1731926933496,"source":{"type":"user","userId":"XXXX"},"replyToken":"XXXX","mode":"active"}]}
+    /* body: 
+    {
+        "destination": "XXXX",
+        "events" : [
+            {
+                "type": "message",
+                "message": {
+                    "type":"text",
+                    "id":"XXXX",
+                    "quoteToken":"XXXX",
+                    "text":"わわわわわ"
+                },
+                "webhookEventId": "XXXX",
+                "deliveryContext": {
+                    "isRedelivery": false
+                },
+                "timestamp":1731926933496,
+                "source":{
+                    "type":"user",
+                    "userId":"XXXX"
+                },
+                "replyToken":"XXXX",
+                "mode":"active"
+            }
+        ]
+    }
+    */
 
     $headers = ['Content-Type' => 'application/json'];
     return new Response(200, $headers, json_encode($body));
