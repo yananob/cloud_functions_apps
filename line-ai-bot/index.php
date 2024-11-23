@@ -7,6 +7,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Google\CloudFunctions\FunctionsFramework;
 use GuzzleHttp\Psr7\Response;
 use yananob\mytools\Logger;
+use yananob\mytools\Utils;
 use yananob\mytools\Line;
 use yananob\mytools\Gpt;
 
@@ -15,14 +16,16 @@ const GPT_CONTEXT = <<<EOM
 
 カウンセリング相手の情報：
 <human/characteristics>
+
+カウンセリング相手からのメッセージに対して、カウンセリング相手の特徴を反映して、ポジティブなフィードバックを、400〜600字ぐらいで返してください。
 EOM;
 
 function getContext($config): string
 {
     $result = GPT_CONTEXT;
     $replaceSettings = [
-        ["search" => "'<bot/characteristics>'", "replace" => $config->bot->characteristics],
-        ["search" => "'<human/characteristics>'", "replace" => $config->human->characteristics],
+        ["search" => "<bot/characteristics>", "replace" => $config->bot->characteristics],
+        ["search" => "<human/characteristics>", "replace" => $config->human->characteristics],
     ];
     foreach ($replaceSettings as $replaceSetting) {
         $result = str_replace($replaceSetting["search"], $replaceSetting["replace"], $result);
@@ -50,7 +53,7 @@ function main(ServerRequestInterface $request): ResponseInterface
     $gpt = new Gpt(__DIR__ . "/configs/gpt.json");
     $answer = $gpt->getAnswer(
         context: getContext($config),
-        message: "カウンセリング相手からのメッセージに対して、カウンセリング相手の特徴を反映して、ポジティブなフィードバックを、400〜600字ぐらいで返してください。",
+        message: $message,
     );
 
     // TODO: LINE Webhookから来たデータを処理するラッパーがあったほうがよさそう
