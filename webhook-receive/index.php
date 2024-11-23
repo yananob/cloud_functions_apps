@@ -24,7 +24,7 @@ function main(ServerRequestInterface $request): ResponseInterface
     $body = $request->getBody()->getContents();
     $logger->log("body: " . $body);
     $logger->log("body_json: " . json_encode(json_decode($body)));
-    $body = json_decode($body, true);
+    $body = json_decode($body, false);
 
     // sample:
     /* body: 
