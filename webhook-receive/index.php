@@ -39,10 +39,10 @@ function main(ServerRequestInterface $request): ResponseInterface
 
     $line = new Line(__DIR__ . "/configs/line.json");
     $line->sendMessage(
-        bot: "aisan",
+        bot: "test",
         // target: "dailylog",
         targetId: $targetId,
-        message: "Got Message: \n" . $message,
+        message: "Type: {$type}\nTargetId: {$targetId}\nMessage: {$message}",
         replyToken: $event->replyToken
     );
   
