@@ -8,6 +8,27 @@ use Google\CloudFunctions\FunctionsFramework;
 use GuzzleHttp\Psr7\Response;
 use yananob\mytools\Logger;
 use yananob\mytools\Line;
+use yananob\mytools\Gpt;
+
+const GPT_CONTEXT = <<<EOM
+<bot/characteristics>
+
+カウンセリング相手の情報：
+<human/characteristics>
+EOM;
+
+function getContext($config): string
+{
+    $result = GPT_CONTEXT;
+    $replaceSettings = [
+        ["search" => "'<bot/characteristics>'", "replace" => $config->bot->characteristics],
+        ["search" => "'<human/characteristics>'", "replace" => $config->human->characteristics],
+    ];
+    foreach ($replaceSettings as $replaceSetting) {
+        $result = str_replace($replaceSetting["search"], $replaceSetting["replace"], $result);
+    }
+    return $result;
+}
 
 FunctionsFramework::http('main', 'main');
 function main(ServerRequestInterface $request): ResponseInterface
@@ -24,6 +45,15 @@ function main(ServerRequestInterface $request): ResponseInterface
     $event = $body->events[0];
     $message = $event->message->text;
 
+    $config = Utils::getConfig(__DIR__ . "/configs/config.json", asArray: false);
+
+    $gpt = new Gpt(__DIR__ . "/configs/gpt.json");
+    $answer = $gpt->getAnswer(
+        context: getContext($config),
+        message: "カウンセリング相手からのメッセージに対して、カウンセリング相手の特徴を反映して、ポジティブなフィードバックを、400〜600字ぐらいで返してください。",
+    );
+
+    // TODO: LINE Webhookから来たデータを処理するラッパーがあったほうがよさそう
     $type = $event->source->type;
     $targetId = null;
     // typeを判定して、idを取得
@@ -39,10 +69,9 @@ function main(ServerRequestInterface $request): ResponseInterface
 
     $line = new Line(__DIR__ . "/configs/line.json");
     $line->sendMessage(
-        bot: "test",
-        // target: "dailylog",
+        bot: $config->bot->line_target,
         targetId: $targetId,
-        message: "Type: {$type}\nTargetId: {$targetId}\nMessage: {$message}",
+        message: $answer,
         replyToken: $event->replyToken
     );
   
