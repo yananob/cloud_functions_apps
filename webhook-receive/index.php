@@ -14,54 +14,17 @@ function main(ServerRequestInterface $request): ResponseInterface
 {
     $logger = new Logger("webhook-receive");
     $logger->log(str_repeat("-", 120));
-
     $logger->log("headers: " . json_encode($request->getHeaders()));
-
     $logger->log("params: " . json_encode($request->getQueryParams()));
-
     $logger->log("parsedBody: " . json_encode($request->getParsedBody()));
-
     $body = $request->getBody()->getContents();
     $logger->log("body: " . $body);
-    $logger->log("body_json: " . json_encode(json_decode($body)));
     $body = json_decode($body, false);
 
-    // sample:
-    /* body: 
-    {
-        "destination": "XXXX",
-        "events" : [
-            {
-                "type": "message",
-                "message": {
-                    "type":"text",
-                    "id":"XXXX",
-                    "quoteToken":"XXXX",
-                    "text":"わわわわわ"
-                },
-                "webhookEventId": "XXXX",
-                "deliveryContext": {
-                    "isRedelivery": false
-                },
-                "timestamp":1731926933496,
-                "source":{
-                    "type":"user",
-                    "userId":"XXXX"
-                },
-                "replyToken":"XXXX",
-                "mode":"active"
-            }
-        ]
-    }
-    */
-
     $event = $body->events[0];
-
-    // typeを取得 
-    $type = $event->source->type;
-
     $message = $event->message->text;
 
+    $type = $event->source->type;
     $targetId = null;
     // typeを判定して、idを取得
     if ($type === 'user') {
@@ -77,7 +40,7 @@ function main(ServerRequestInterface $request): ResponseInterface
     $line = new Line(__DIR__ . "/configs/line.json");
     $line->sendMessage(
         bot: "aisan",
-        // target: "dailylog", // TODO: 書き換え
+        // target: "dailylog",
         targetId: $targetId,
         message: "Got Message: \n" . $message,
         replyToken: $event->replyToken
