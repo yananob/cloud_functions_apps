@@ -1,3 +1,0 @@
-LINE Messaging APIのWebhook用に作ったものの、
-パラメーターをログに吐いてくれなかった。
-代わりにGAS版で対応済み
