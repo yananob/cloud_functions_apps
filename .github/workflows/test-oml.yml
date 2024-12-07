@@ -63,7 +63,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: Put firebase config
-      uses: ./.github/actions/put_firebase_config
+      uses: ./_cf-common/.github/actions/put_firebase_config
       with:
         COMMON_FIREBASE_BASE64: ${{ secrets.COMMON_FIREBASE_BASE64 }}
 
