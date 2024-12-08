@@ -4,9 +4,9 @@ namespace MyApp;
 
 use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Firestore\CollectionReference;
-use yananob\mytools\Utils;
-use yananob\mytools\Logger;
-use yananob\mytools\CacheStore;
+use yananob\MyTools\Utils;
+use yananob\MyTools\Logger;
+use yananob\MyTools\CacheStore;
 use MyApp\CacheItems;
 use MyApp\Accounts;
 

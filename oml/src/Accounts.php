@@ -6,7 +6,7 @@ use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Firestore\CollectionReference;
 // use Google\Cloud\Firestore\DocumentReference;
 // use MyApp\common\FirestoreAccessor;
-use yananob\mytools\CacheStore;
+use yananob\MyTools\CacheStore;
 use MyApp\CacheItems;
 
 class Accounts

@@ -10,8 +10,8 @@
         "google/cloud-firestore": "^1.37",
         "smarty/smarty": "^4.3",
         "guzzlehttp/guzzle": "^7.8",
-        "yananob/mytools": "dev-main",
-        "yananob/my_gcptools": "dev-main"
+        "yananob/my-tools": "dev-main",
+        "yananob/my-gcp-tools": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.3",
@@ -24,7 +24,7 @@
         },
         {
             "type": "vcs",
-            "url": "git@github.com:yananob/my_gcptools.git"
+            "url": "git@github.com:yananob/my-gcp-tools.git"
         }
     ],
     "scripts": {

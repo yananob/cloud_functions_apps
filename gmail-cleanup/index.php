@@ -5,8 +5,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
 function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new yananob\mytools\Logger("gmail-cleanup");
-    $client = yananob\mytools\GmailWrapper::getClient(
+    $logger = new yananob\MyTools\Logger("gmail-cleanup");
+    $client = yananob\MyTools\GmailWrapper::getClient(
         __DIR__ . '/configs/googleapi_clientsecret.json',
         __DIR__ . '/configs/googleapi_token.json',
     );
@@ -15,7 +15,7 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
 
     $user = 'me';
 
-    $config = yananob\mytools\Utils::getConfig(__DIR__ . "/configs/config.json");
+    $config = yananob\MyTools\Utils::getConfig(__DIR__ . "/configs/config.json");
 
     foreach ($config["targets"] as $target) {
         $logger->log("Processing target: " . json_encode($target));

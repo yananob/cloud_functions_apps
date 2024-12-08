@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use yananob\mytools\Utils;
-use yananob\mytools\CacheStore;
+use yananob\MyTools\Utils;
+use yananob\MyTools\CacheStore;
 use MyApp\Oml;
 use MyApp\ReservedBook;
 use MyApp\LendingBook;
