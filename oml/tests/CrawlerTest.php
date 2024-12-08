@@ -2,7 +2,7 @@
 
 // use PHPUnit\Framework\Attributes\DataProvider;
 // use PHPUnit\Framework\TestCase;
-use yananob\mytools\Utils;
+use yananob\MyTools\Utils;
 use MyApp\BookState;
 use MyApp\ReservedBook;
 use MyApp\LendingBook;

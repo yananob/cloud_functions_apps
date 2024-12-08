@@ -2238,16 +2238,16 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
-            "name": "yananob/my_gcptools",
+            "name": "yananob/my-gcp-tools",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yananob/my_gcptools.git",
+                "url": "https://github.com/yananob/my-gcp-tools.git",
                 "reference": "2795eb5dbd5353656636c3b6858667aef66cb58e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yananob/my_gcptools/zipball/2795eb5dbd5353656636c3b6858667aef66cb58e",
+                "url": "https://api.github.com/repos/yananob/my-gcp-tools/zipball/2795eb5dbd5353656636c3b6858667aef66cb58e",
                 "reference": "2795eb5dbd5353656636c3b6858667aef66cb58e",
                 "shasum": ""
             },
@@ -2262,18 +2262,18 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "yananob\\my_gcptools\\": "src/"
+                    "yananob\\my-gcp-tools\\": "src/"
                 }
             },
             "description": "My GCP-related tools",
             "support": {
-                "source": "https://github.com/yananob/my_gcptools/tree/main",
-                "issues": "https://github.com/yananob/my_gcptools/issues"
+                "source": "https://github.com/yananob/my-gcp-tools/tree/main",
+                "issues": "https://github.com/yananob/my-gcp-tools/issues"
             },
             "time": "2024-07-07T08:31:36+00:00"
         },
         {
-            "name": "yananob/mytools",
+            "name": "yananob/my-tools",
             "version": "dev-main",
             "source": {
                 "type": "git",
@@ -3996,8 +3996,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yananob/mytools": 20,
-        "yananob/my_gcptools": 20
+        "yananob/my-tools": 20,
+        "yananob/my-gcp-tools": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

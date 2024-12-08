@@ -4,10 +4,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Google\CloudFunctions\FunctionsFramework;
 use CloudEvents\V1\CloudEventInterface;
-use yananob\mytools\Logger;
-use yananob\mytools\Utils;
-use yananob\mytools\Trigger;
-use yananob\mytools\Line;
+use yananob\MyTools\Logger;
+use yananob\MyTools\Utils;
+use yananob\MyTools\Trigger;
+use yananob\MyTools\Line;
 
 FunctionsFramework::cloudEvent('main', 'main');
 function main(CloudEventInterface $event): void

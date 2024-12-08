@@ -2,7 +2,7 @@
 
 namespace MyApp;
 
-use yananob\mytools\Line;
+use yananob\MyTools\Line;
 use MyApp\AlertType;
 use MyApp\BookState;
 

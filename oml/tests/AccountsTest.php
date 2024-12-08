@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use yananob\mytools\Utils;
+use yananob\MyTools\Utils;
 use MyApp\Accounts;
 
 final class AccountsTest extends PHPUnit\Framework\TestCase

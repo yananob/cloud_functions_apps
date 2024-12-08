@@ -6,8 +6,8 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Google\CloudFunctions\FunctionsFramework;
 use GuzzleHttp\Psr7\Response;
-use yananob\mytools\Logger;
-use yananob\mytools\Line;
+use yananob\MyTools\Logger;
+use yananob\MyTools\Line;
 
 FunctionsFramework::http('main', 'main');
 function main(ServerRequestInterface $request): ResponseInterface

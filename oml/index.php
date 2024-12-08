@@ -2,9 +2,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use yananob\mytools\Logger;
-use yananob\mytools\Utils;
-use yananob\my_gcptools\CFUtils;
+use yananob\MyTools\Logger;
+use yananob\MyTools\Utils;
+use yananob\MyGcpTools\CFUtils;
 use MyApp\AlertType;
 use MyApp\Alerter;
 use MyApp\BookState;

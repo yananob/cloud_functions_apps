@@ -1451,7 +1451,7 @@
             "time": "2024-05-31T15:07:36+00:00"
         },
         {
-            "name": "yananob/mytools",
+            "name": "yananob/my-tools",
             "version": "dev-main",
             "source": {
                 "type": "git",
@@ -3174,7 +3174,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yananob/mytools": 20
+        "yananob/my-tools": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
