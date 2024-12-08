@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 Google\CloudFunctions\FunctionsFramework::cloudEvent('main', 'main');
 function main(CloudEvents\V1\CloudEventInterface $event): void
 {
-    $logger = new yananob\mytools\Logger("firestore-backup");
+    $logger = new yananob\MyTools\Logger("firestore-backup");
 
     $db_accessor = new Google\Cloud\Firestore\FirestoreClient([
         "keyFilePath" => __DIR__ . '/configs/firebase.json'
@@ -13,7 +13,7 @@ function main(CloudEvents\V1\CloudEventInterface $event): void
     $storage = new Google\Cloud\Storage\StorageClient(['keyFile' => json_decode(file_get_contents(__DIR__ . '/configs/gcp_serviceaccount.json'), true)
     ]);
 
-    $config = \yananob\mytools\Utils::getConfig(__DIR__ . '/configs/config.json');
+    $config = \yananob\MyTools\Utils::getConfig(__DIR__ . '/configs/config.json');
 
     foreach ($config["firestore"] as $target) {
         $logger->log("Processing [" . $target["path"] . "]");

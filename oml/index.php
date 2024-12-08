@@ -39,7 +39,7 @@ function main(Psr\Http\Message\ServerRequestInterface $request): string
         $isLocal ? $config["alert_debug"] : $config["alert"],
         CFUtils::getBaseUrl($isLocal, $request)
     );
-    $messagesQueue = new yananob\mytools\MessagesQueue();
+    $messagesQueue = new yananob\MyTools\MessagesQueue();
 
     $smarty->assign("is_local", $isLocal);
     $smarty->assign("base_path", CFUtils::getBasePath($isLocal, $request));
@@ -259,7 +259,7 @@ function __update_books(BookType $bookType, bool $isLocal, Oml $oml, Logger $log
     //     $generator = function () use ($bookType, $oml, $isLocal, $logger) {
     //         foreach ($oml->getUserIds() as $userId) {
     //             $command = ($bookType === BookType::Reserved ? Command::UpdateAccountReserved->value : Command::UpdateAccountLending->value);
-    //             $url = yananob\mytools\Utils::getBaseUrl($isLocal, APP_NAME) . "?cmd={$command}&account={$userId}";
+    //             $url = yananob\MyTools\Utils::getBaseUrl($isLocal, APP_NAME) . "?cmd={$command}&account={$userId}";
     //             $logger->log("updating {$bookType->value} books of {$userId}: {$url}");
     //             yield new Request('GET', $url);
     //         }
